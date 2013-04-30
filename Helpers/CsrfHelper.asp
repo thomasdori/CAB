@@ -1,6 +1,8 @@
 <!-- #include File="Md5Helper.asp" -->
 
 <%
+	'Dependencies: Md5Helper.asp, ErrorHandler.asp
+
 	Dim csrf
 	Set csrf = new CsrfHelper
 

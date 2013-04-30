@@ -1,6 +1,8 @@
 <!-- #include File="../../Helpers/ConfigurationHelper.asp" -->
 <!-- #include File="../../Helpers/CsrfHelper.asp" -->
 <!-- #include File="../../Helpers/OutputHelper.asp" -->
+<!-- #include File="../../Helpers/CookieHelper.asp" -->
+<!-- #include File="../../Helpers/EncodingHelper.asp" -->
 <!-- #include File="../../Libraries/stingerASP/Stinger.asp" -->
 
 <%
