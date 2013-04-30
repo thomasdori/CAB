@@ -1,8 +1,24 @@
 <%
+	'Dependencies: OutputHelper.asp
+
 	Dim error
 	Set error = new ErrorHelper
 
 	Class ErrorHelper
+		Function handle(errorCode)
+			If (Request.ServerVariables("HTTP_X-Requested-With") == "XMLHttpRequest") Then
+				Select Case errorCode
+					Case CSRF_ERROR_CODE
+						Response.Redirect("/Views/Errors/InvalidRequestError.asp")
+					Case Else
+						Response.Redirect("/Views/Errors/UnknownError.asp")
+				End Select
+			Else
+				' TODO: generate error output for ajax requests
+				output.writeLine("An error occured.")
+			End If
+		End Function
+
 		Function throwError
 			'Err.Raise 1, "Stinger", "The [" + Server.HTMLEncode(header) + "] header was unexpected"
 		End Function

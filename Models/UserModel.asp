@@ -1,8 +1,8 @@
 <!-- #include File="../Libraries/adovbs.inc" -->
 <%
-Class UserModel
-	Function getUserList()
+	Class UserModel
+		Function getUserList()
 
-	End Function
-End Class
+		End Function
+	End Class
 %>

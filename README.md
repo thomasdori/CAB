@@ -72,7 +72,7 @@ Security Issues Not Addressed in CAB
 	* Fix: Apply http://www.reedolsen.com/show-errors-for-classic-asp-pages-in-iis-6/
 
 7. Information Leakage - Database Error
-	* Fix: Apply
+	* Fix: SERVER SETTING
 
 3. Session ID remains the same after login
 	* Fix: Call Session.Abandon() after successfull login
@@ -90,13 +90,13 @@ Security Issues Not Addressed in CAB
 	* Fix: Don't display email addresses with @
 
 8. Web Server Version Disclosure from HTTP Header
-	* Fix Remove header - IIS setting
+	* Fix Remove header - SERVER SETTING
 
 9. HTTPS only
-	* Fix: Server setting
+	* Fix: SERVER SETTING
 
 10. Account Lockout
-	* Fix: Implement logic - after 10 unsuccessful attempts set account to inactive
+	* Fix: Implement logic - e.g. after 10 unsuccessful attempts set account to inactive
 
 
 
@@ -107,6 +107,6 @@ Open Issues
 * Cookie access or setting "; Secure; HttpOnly" on server
 * Controller implementation
 * Model implementation
-* javascript frameworks like dhtmlx
+* javascript frameworks like dhtmlx + ActivityIndicator
 * Error handling - no asp/server/sql messages
-* Inline code documentation could be bore extensive
+* Inline code documentation could be more extensive

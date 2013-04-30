@@ -4,7 +4,11 @@
 
 	Class GuidHelper
 		Function getGUID()
-		    getGUID = CreateObject("Scriptlet.TypeLib").GUID
+		    Set objTypeLib = Server.CreateObject("ScriptLet.TypeLib")
+			guidNew = Left(objTypeLib.GUID, 38)
+			Set objTypeLib = Nothing
+
+			getGUID = guidNew
 		End Function
 	End Class
 %>
