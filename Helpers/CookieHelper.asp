@@ -4,17 +4,17 @@
 	Dim cookie
 	Set cookie = new CookieHelper
 
-	Dim safeCookies
-	Set safeCookies = Server.CreateObject("Scripting.Dictionary")
-	Dim safeCookieParams
-	Set safeCookieParams = Server.CreateObject("Scripting.Dictionary")
+	'Dim safeCookies
+	'Set safeCookies = Server.CreateObject("Scripting.Dictionary")
+	'Dim safeCookieParams
+	'Set safeCookieParams = Server.CreateObject("Scripting.Dictionary")
 
 	Class CookieHelper
-		Function read(key)
-			read = encoder.encode(Request.Cookies(key))
+		Public Function Read(key)
+			read = encoder.Encode(Request.Cookies(key))
 		End Function
 
-		Sub write(key, value)
+		Public Sub Write(key, value)
 			'Response.Cookies(key)=value
 			Response.AddHeader "Cookie", key & "=" & value & "; Secure; HttpOnly"
 '			Call SetSafeCookieOption(key, "expires", Now)

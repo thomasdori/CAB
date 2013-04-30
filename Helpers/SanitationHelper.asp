@@ -6,7 +6,7 @@
 		' Description: Function to remove unallowed strings like 'script'
 		' Developer: tdor
 		' Creation Date: 22.07.2012
-		Function removeUnallowedStrings(value)
+		Public Function RemoveUnallowedStrings(value)
 			if(value<>"") then
 				value = Replace(value, "javascript", "")
 		        value = Replace(value, "iframe", "")
@@ -15,7 +15,7 @@
 		        value = Replace(value, "]]>", "")
 			end if
 
-			removeUnallowedStrings = value
+			RemoveUnallowedStrings = value
 		End Function
 	End Class
 %>

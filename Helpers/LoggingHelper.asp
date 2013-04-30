@@ -3,7 +3,7 @@
 	Set loggingHelper = new LoggingHelper
 
 	Class LoggingHelper
-		Sub log(message)
+		Public Sub Log(message)
 
 		End Sub
 	End Class

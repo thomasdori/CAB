@@ -1,7 +1,7 @@
 <!-- #include File="Partials/HeaderPartial.asp" -->
 <!-- #include File="Partials/FooterPartial.asp" -->
 
-<%=header.getContent()%>
+<%=header.GetContent()%>
     <!-- Add your site or application content here -->
     <p>Hello world! This is HTML5 Boilerplate.</p>
 
@@ -24,4 +24,4 @@
 
     	//send a successfull request
     </script>
-<%=footer.getContent()%>
+<%=footer.GetContent()%>

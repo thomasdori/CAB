@@ -5,8 +5,8 @@
 	Set error = new ErrorHelper
 
 	Class ErrorHelper
-		Function handle(errorCode)
-			If (Request.ServerVariables("HTTP_X-Requested-With") == "XMLHttpRequest") Then
+		Public Function Handle(errorCode)
+			If (Request.ServerVariables("HTTP_X-Requested-With") = "XMLHttpRequest") Then
 				Select Case errorCode
 					Case CSRF_ERROR_CODE
 						Response.Redirect("/Views/Errors/InvalidRequestError.asp")
@@ -19,18 +19,18 @@
 			End If
 		End Function
 
-		Function throwError
+		Public Function ThrowError
 			'Err.Raise 1, "Stinger", "The [" + Server.HTMLEncode(header) + "] header was unexpected"
 		End Function
 
-		Function getErrors
+		Public Function getErrors
 			'clear buffer'
 			'write error message
 			'response flush'
-			getErrors = ""
+			GetErrors = ""
 		End Function
 
-		Function getCustomErrors
+		Public Function GetCustomErrors
 			'Custom Error Handling
 			If (Session("error") <> "") Then
 				'todo: display a pupup or inline error message
@@ -41,7 +41,7 @@
 			End If
 		End Function
 
-		Function getAspErrors
+		Public Function GetAspErrors
 			'ASP Error Handling
 			Dim oError
 			Set oError = Server.GetLastError()
@@ -57,14 +57,14 @@
 			'output.write("Number: " & oError.Number & "<br />")
 			'output.write("Source: " & oError.Source & "<br />")
 
-			getAspErrors = ""
+			GetAspErrors = ""
 
 			If (Err.Number <> 0) Then
 			     Err.Clear
 			End If
 		End Function
 
-		Function getStingerErrors
+		Public Function GetStingerErrors
 		    if session("PageLoadedOnce") then
 			    Dim errors, returnValue
 			    returnValue = ""
@@ -84,7 +84,7 @@
 		    end if
 		    Session("PageLoadedOnce") = true
 
-		    getStingerErrors = returnValue
+		    GetStingerErrors = returnValue
 		End Function
 	End Class
 %>

@@ -5,8 +5,8 @@
 	set input = new InputHelper
 
 	Class InputHelper
-		Function getParameter(name)
-			getParameter = Request.Form(encoder.encode(name))
+		Public Function GetParameter(name)
+			GetParameter = Request.Form(encoder.encode(name))
 		End Function
 	End Class
 %>

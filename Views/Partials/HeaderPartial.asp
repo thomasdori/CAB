@@ -11,8 +11,8 @@
   Set header = new HeaderPartial
 
   Class HeaderPartial
-    Function getContent()
-      getContent = "<!DOCTYPE html>" &_
+    Function GetContent()
+      GetContent = "<!DOCTYPE html>" &_
                   "<!--[if lt IE 7]>      <html class=""no-js lt-ie9 lt-ie8 lt-ie7""> <![endif]-->" &_
                   "<!--[if IE 7]>         <html class=""no-js lt-ie9 lt-ie8""> <![endif]-->" &_
                   "<!--[if IE 8]>         <html class=""no-js lt-ie9""> <![endif]-->" &_

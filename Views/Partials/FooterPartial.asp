@@ -4,8 +4,8 @@
 	Set footer = new FooterPartial
 
 	Class FooterPartial
-		Function getContent
-			getContent = error.getCustomErrors & error.getStingerErrors & error.getAspErrors & "</body></html>"
+		Function GetContent
+			GetContent = error.getCustomErrors & error.getStingerErrors & error.getAspErrors & "</body></html>"
 		End Function
 	End Class
 %>

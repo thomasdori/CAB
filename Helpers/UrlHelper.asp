@@ -3,7 +3,7 @@
 	Set url = new UrlHelper
 
 	Class UrlHelper
-		Function getApplicationUrl
+		Public Function GetApplicationUrl
 			Dim protocol, https, domainname, filename, fullpath, port
 
 	       	if Request.ServerVariables("SERVER_PORT") = "80" then
@@ -21,10 +21,10 @@
 		    filename = right(fullpath, InStr(StrReverse(fullpath), StrReverse("/")))
 
 		    ' does not work for subdirectories
-		    getApplicationUrl = Replace(fullpath, filename, "/")
+		    GetApplicationUrl = Replace(fullpath, filename, "/")
 
 		    ' todo: refactor
-		    getApplicationUrl = protocol & "://" & domainname & port & "/cab"
+		    GetApplicationUrl = protocol & "://" & domainname & port & "/cab"
 		End Function
 	End Class
 %>

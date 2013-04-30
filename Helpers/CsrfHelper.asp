@@ -8,25 +8,25 @@
 	Set csrf = new CsrfHelper
 
 	' Calling the procedure to check if the
-	Call csrf.checkParameter
+	Call csrf.CheckParameter
 
 
 	Class CsrfHelper
-		Function getParameter()
+		Public Function GetParameter()
 			getParameter = Session("token")
 		End Function
 
 		' According to the Synchronizer Token Pattern
 		' Source: http://stackoverflow.com/questions/6421417/howto-implement-synchronizer-token-pattern-in-classic-asp
-		Sub checkParameter
+		Public Sub CheckParameter
 			' checks to make sure the request method is truly a post-back
 			If Request.ServerVariables("REQUEST_METHOD") = "POST" Then
 			    ' Prevent CSRF (Cross-Site Request Forgeries) by comparing request-generated tokens.
 			    If Request.Form("token") = Session("token") Then
 			    	' Create new token
-					Session("token") = md5(guid.getGuid())
+					Session("token") = md5(guid.GetGuid())
 			    Else
-			    	error.handle(CSRF_ERROR_CODE)
+			    	error.Handle(CSRF_ERROR_CODE)
 			    End If
 			End If
 		End Sub

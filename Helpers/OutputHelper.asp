@@ -3,15 +3,15 @@
 	Set output = new OutputHelper
 
 	Class OutputHelper
-		Sub write(value)
+		Public Sub Write(value)
 			Response.Write(Server.HTMLEncode(value))
 		End Sub
 
-		Sub writeLine(value)
-			write(value & vbCrLf)
+		Public Sub WriteLine(value)
+			Write(value & vbCrLf)
 		End Sub
 
-		Sub writeURL(value)
+		Public Sub WriteURL(value)
 			Response.Write(Server.URLEncode(value))
 		End Sub
 	End Class
