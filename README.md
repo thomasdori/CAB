@@ -40,7 +40,9 @@ Security Issues
 	* Setting X-Frame option in ConfigurationHelper: Response.AddHeader "X-FRAME-OPTIONS", "DENY"
 	* Adding JavaScript for browser which do not support X-Frame option: <antiClickjack> + related script block below
 
-8. Information Leakage - Database Error
+8. Information Leakage
+	* In general errors should not be considered (On Error Resume Next in ConfigurationHelper.asp)
+	* Application and database errors should not be delivered to the client
 
 9. Content Tampering
 	* Because URL parameter are not used (see 5. CSRF) they can not be displayed on the page.
@@ -51,9 +53,11 @@ Security Issues
 
 
 
+
 Maintainability Issues
 ----------------------
 _TODO_
+
 
 
 Security Issues Not Addressed in CAB
@@ -66,6 +70,9 @@ Security Issues Not Addressed in CAB
 
 7. Information Leakage - Application Error
 	* Fix: Apply http://www.reedolsen.com/show-errors-for-classic-asp-pages-in-iis-6/
+
+7. Information Leakage - Database Error
+	* Fix: Apply
 
 3. Session ID remains the same after login
 	* Fix: Call Session.Abandon() after successfull login
@@ -96,7 +103,7 @@ Security Issues Not Addressed in CAB
 
 Open Issues
 -----------
-* Tests
+* Tests: stinger
 * Cookie access or setting "; Secure; HttpOnly" on server
 * Controller implementation
 * Model implementation

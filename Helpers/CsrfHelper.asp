@@ -1,7 +1,8 @@
 <!-- #include File="Md5Helper.asp" -->
+<!-- #include File="GuidHelper.asp" -->
 
 <%
-	'Dependencies: Md5Helper.asp, ErrorHandler.asp
+	'Dependencies: Md5Helper.asp, ErrorHandler.asp, GuidHelper.asp
 
 	Dim csrf
 	Set csrf = new CsrfHelper
@@ -23,7 +24,7 @@
 			    ' Prevent CSRF (Cross-Site Request Forgeries) by comparing request-generated tokens.
 			    If Request.Form("token") = Session("token") Then
 			    	' Create new token
-					Session("token") = md5(GetGUID())
+					Session("token") = md5(guid.getGuid())
 			    Else
 			    	error.handle(CSRF_ERROR_CODE)
 			    End If

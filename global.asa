@@ -10,6 +10,7 @@ sub Application_onEnd
 end sub
 
 sub Session_onStart
+	Session("serverToConnect") = ""
     Session.TimeOut = 15
     Session.codePage = 65001 ' UTF-8
     Session.lcid = 1033 ' en-us

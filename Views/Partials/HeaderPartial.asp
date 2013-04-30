@@ -3,6 +3,7 @@
 <!-- #include File="../../Helpers/OutputHelper.asp" -->
 <!-- #include File="../../Helpers/CookieHelper.asp" -->
 <!-- #include File="../../Helpers/EncodingHelper.asp" -->
+<!-- #include File="../../Helpers/UrlHelper.asp" -->
 <!-- #include File="../../Libraries/stingerASP/Stinger.asp" -->
 
 <%
@@ -32,9 +33,9 @@
                   "  <meta http-equiv=""cache-control"" content=""no-cache"" />" &_
                   "  <meta http-equiv=""cache-control"" content=""post-check=0,pre-check=0"" />" &_
                   "  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->" &_
-                  "  <script type=""text/javascript"" src=""/Assets/js/script.js""></script>" &_
-                  "  <script type=""text/javascript"" src=""/Assets/js/jquery-1.9.1.min.js""></script>" &_
-                  "  <link rel=""stylesheet"" type=""text/css"" href=""/Assets/css/style.css"">" &_
+                  "  <script type=""text/javascript"" src=""" & url.getApplicationUrl() & "/Assets/js/script.js""></script>" &_
+                  "  <script type=""text/javascript"" src=""" & url.getApplicationUrl() & "/Assets/js/jquery-1.9.1.min.js""></script>" &_
+                  "  <link rel=""stylesheet"" type=""text/css"" href=""" & url.getApplicationUrl() & "/Assets/css/style.css"">" &_
                   "  <!-- Anti ClickJacking Script -->" &_
                   "  <style id=""antiClickjack"">body{display: none;}</style>" &_
                   "  <script type=""text/javascript"">" &_

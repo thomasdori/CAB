@@ -1,6 +1,7 @@
-function CommunicationHandler {
-	function post(url, data) {
+function CommunicationHandler() {
+	this.post = function(url, data) {
 		data.token = $("#token").val();
+
 		$.post(url, data)
 		.done(function(data) { console.log("second success"); })
 		.fail(function(data) { console.log("error"); })
