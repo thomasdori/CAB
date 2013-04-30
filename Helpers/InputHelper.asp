@@ -2,7 +2,7 @@
 	'Dependcies: EncodingHelper.asp
 
 	Dim input
-	set input = new InputHelper
+	set input = New InputHelper
 
 	Class InputHelper
 		Public Function GetParameter(name)

@@ -1,6 +1,6 @@
 <%
 	Dim output
-	Set output = new OutputHelper
+	Set output = New OutputHelper
 
 	Class OutputHelper
 		Public Sub Write(value)

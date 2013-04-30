@@ -2,7 +2,7 @@
 	'Dependencies: OutputHelper.asp
 
 	Dim error
-	Set error = new ErrorHelper
+	Set error = New ErrorHelper
 
 	Class ErrorHelper
 		Public Function Handle(errorCode)
@@ -15,7 +15,7 @@
 				End Select
 			Else
 				' TODO: generate error output for ajax requests
-				output.writeLine("An error occured.")
+				output.WriteLine("An error occured.")
 			End If
 		End Function
 
@@ -34,7 +34,7 @@
 			'Custom Error Handling
 			If (Session("error") <> "") Then
 				'todo: display a pupup or inline error message
-				getCustomErrors = ""
+				GetCustomErrors = ""
 
 				'clear the error variable
 				Session("error") = ""

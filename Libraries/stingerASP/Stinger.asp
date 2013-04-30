@@ -29,7 +29,7 @@
  ' @author jeff.williams@aspectsecurity.com
  '/
 Dim validator
-set validator = new Stinger
+set validator = New Stinger
 
 class Stinger
 

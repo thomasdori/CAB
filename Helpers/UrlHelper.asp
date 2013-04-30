@@ -1,6 +1,6 @@
 <%
 	Dim url
-	Set url = new UrlHelper
+	Set url = New UrlHelper
 
 	Class UrlHelper
 		Public Function GetApplicationUrl

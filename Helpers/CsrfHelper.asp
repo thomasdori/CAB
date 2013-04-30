@@ -5,7 +5,7 @@
 	'Dependencies: Md5Helper.asp, ErrorHandler.asp, GuidHelper.asp
 
 	Dim csrf
-	Set csrf = new CsrfHelper
+	Set csrf = New CsrfHelper
 
 	' Calling the procedure to check if the
 	Call csrf.CheckParameter
@@ -13,7 +13,7 @@
 
 	Class CsrfHelper
 		Public Function GetParameter()
-			getParameter = Session("token")
+			GetParameter = Session("token")
 		End Function
 
 		' According to the Synchronizer Token Pattern

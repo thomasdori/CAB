@@ -1,6 +1,6 @@
 <%
 	Dim guid
-	Set guid = new GuidHelper
+	Set guid = New GuidHelper
 
 	Class GuidHelper
 		Public Function GetGUID()

@@ -8,9 +8,13 @@
 <!-- #include File="../Models/UserModel.asp" -->
 
 <%
+	Dim controller
+	Set controller = New Controller
+
 	Dim userController
-	Set userController = new UserController
-	Call userController.ProcessRequest
+	Set userController = New UserController
+
+	controller.childProcessor = ByRef(userController.ProcessRequest)
 
 	Class UserController
 

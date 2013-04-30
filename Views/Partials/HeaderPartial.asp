@@ -8,7 +8,7 @@
 
 <%
   Dim header
-  Set header = new HeaderPartial
+  Set header = New HeaderPartial
 
   Class HeaderPartial
     Function GetContent()

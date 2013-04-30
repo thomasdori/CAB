@@ -2,7 +2,7 @@
 	'Dependencies: SanitationHelper.asp
 
 	Dim encoder
-	Set encoder = new EncodingHelper
+	Set encoder = New EncodingHelper
 
 	Class EncodingHelper
 		Public Function Decode(sText)
