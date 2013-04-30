@@ -32,7 +32,7 @@ Addressed Issues
 Issues not addressed in CAB
 ---------------------------
 1. Malicious File Upload
-   Will not be addressed
+> Will not be addressed
 2. Insecure Cryptographic Storage
    Could be addressed by encrypting email addresses but can not be tested with black box tests
 3. Session ID remains the same after login
