@@ -6,11 +6,13 @@
     <p>Hello world! This is HTML5 Boilerplate.</p>
     <div>
     	<%
-    		Call cookie.write("test","<>!@#$%^&*()_+")
+    		Call cookie.write("test1","<>!@#$%^&*()_+")
             Call cookie.write("test2","thomas")
             Call cookie.write("test3","xyz")
 
-    		output.write(cookie.read("test"))
+    		output.writeLine("test1: " & cookie.read("test1"))
+            output.writeLine("test2: " & cookie.read("test2"))
+            output.writeLine("test3: " & cookie.read("test3"))
     	%>
     </div>
 

@@ -40,13 +40,14 @@ Security Issues
 	* Setting X-Frame option in ConfigurationHelper: Response.AddHeader "X-FRAME-OPTIONS", "DENY"
 	* Adding JavaScript for browser which do not support X-Frame option: <antiClickjack> + related script block below
 
-7. Information Leakage - Application Error
-
 8. Information Leakage - Database Error
 
 9. Content Tampering
+	* Because URL parameter are not used (see 5. CSRF) they can not be displayed on the page.
 
 10. Cookies not Marked HttpsOnly
+	* All cookies are accessed via the CookieHelper class
+	* Usage of cookies not using HttpOnly is prohibitted
 
 
 
@@ -58,62 +59,47 @@ _TODO_
 Security Issues Not Addressed in CAB
 ---------------------------
 1. Malicious File Upload
-
-	Will not be addressed
-
+	* Will not be addressed
 
 2. Insecure Cryptographic Storage
+	* Fix: Could be addressed by encrypting email addresses but can not be tested with black box tests
 
-   Could be addressed by encrypting email addresses but can not be tested with black box tests
-
+7. Information Leakage - Application Error
+	* Fix: Apply http://www.reedolsen.com/show-errors-for-classic-asp-pages-in-iis-6/
 
 3. Session ID remains the same after login
-
-	Call Session.Abandon() after successfull login
-
+	* Fix: Call Session.Abandon() after successfull login
 
 4. Company Password/User/Password Enumeration
-
-	Display only one error message
-
+	* Fix: Display only one error message
 
 5. Weak Password Policy
-
-	Implement password policy
+	* Fix: Implement password policy
 
 6. Bruteforce Possible on Login
-
-   Implement RECAPTCHA
-
+	* Fix: Implement RECAPTCHA
 
 7. Email Address Disclosure
-
-   Don't display email addresses with @
-
+	* Fix: Don't display email addresses with @
 
 8. Web Server Version Disclosure from HTTP Header
-
-   Remove header - IIS setting
-
+	* Fix Remove header - IIS setting
 
 9. HTTPS only
-
-   Server setting
-
+	* Fix: Server setting
 
 10. Account Lockout
-
-   Implement logic - after 10 unsuccessful attempts set account to inactive
+	* Fix: Implement logic - after 10 unsuccessful attempts set account to inactive
 
 
 
 
 Open Issues
 -----------
-* tests
-* controller impl
-* model impl
+* Tests
+* Cookie access or setting "; Secure; HttpOnly" on server
+* Controller implementation
+* Model implementation
 * javascript frameworks like dhtmlx
-* error handling - no asp/server/sql messages
-* httpsonly cookie
-* inline code documentation could be more extensive
+* Error handling - no asp/server/sql messages
+* Inline code documentation could be bore extensive

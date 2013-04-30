@@ -7,6 +7,10 @@
 			Response.Write(Server.HTMLEncode(value))
 		End Sub
 
+		Sub writeLine(value)
+			write(value & vbCrLf)
+		End Sub
+
 		Sub writeURL(value)
 			Response.Write(Server.URLEncode(value))
 		End Sub
