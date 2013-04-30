@@ -1,4 +1,4 @@
-<!-- #include File="Helpers/Md5Helper.asp" -->
+<!-- #include File="Md5Helper.asp" -->
 
 <%
 	Dim csrf

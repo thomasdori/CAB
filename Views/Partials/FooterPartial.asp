@@ -1,14 +1,11 @@
-<!-- #include File="Helpers/ErrorHelper.asp" -->
+<!-- #include File="../../Helpers/ErrorHelper.asp" -->
 <%
 	Dim footer
 	Set footer = new FooterPartial
 
-	Class FooterView
+	Class FooterPartial
 		Function getContent
-			getContent = 	Call error.getCustomErrors &
-			  					Call error.getStingerErrors &
-								Call error.getAspErrors &
-								"</body></html>"
+			getContent = error.getCustomErrors & error.getStingerErrors & error.getAspErrors & "</body></html>"
 		End Function
-	Endl Class
+	End Class
 %>
