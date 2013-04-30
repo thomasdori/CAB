@@ -5,21 +5,18 @@
 <!-- #include File="../Helpers/CsrfHelper.asp" -->
 <!-- #include file="../Libraries/StingerASP/stinger.asp" -->
 
+<!-- #include File="Controller.asp" -->
 <!-- #include File="../Models/UserModel.asp" -->
 
 <%
-	Dim controller
-	Set controller = New Controller
+	'Dim userController
+	'Set userController = New UserControllerClass
+	controller.AcceptRequest()
 
-	Dim userController
-	Set userController = New UserController
+	'Class UserControllerClass
+		Public Sub ProcessRequest
+			output.write("inProcessRequest")
 
-	controller.childProcessor = ByRef(userController.ProcessRequest)
-
-	Class UserController
-
-		Sub ProcessRequest
-			output.write("test0")
 			output.write(Request.ServerVariables("HTTP_X-Requested-With"))
 			output.write("test1")
 			'Send Javascript Code for better user experience, pass form name as parameter
@@ -28,5 +25,5 @@
 
 			'Dim name = input.getParameter("name")
 		End Sub
-	End Class
+	'End Class
  %>

@@ -1,8 +1,8 @@
 <%
-	Dim loggingHelper
-	Set loggingHelper = New LoggingHelper
+	Dim logging
+	Set logging = New LoggingHelperClass
 
-	Class LoggingHelper
+	Class LoggingHelperClass
 		Public Sub Log(message)
 
 		End Sub

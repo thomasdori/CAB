@@ -1,8 +1,8 @@
 <%
 	Dim sanitation
-	Set sanitation = New SanitationHelper
+	Set sanitation = New SanitationHelperClass
 
-	Class SanitationHelper
+	Class SanitationHelperClass
 		' Description: Function to remove unallowed strings like 'script'
 		' Developer: tdor
 		' Creation Date: 22.07.2012

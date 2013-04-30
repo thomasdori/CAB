@@ -5,13 +5,13 @@
 	'Dependencies: Md5Helper.asp, ErrorHandler.asp, GuidHelper.asp
 
 	Dim csrf
-	Set csrf = New CsrfHelper
+	Set csrf = New CsrfHelperClass
 
 	' Calling the procedure to check if the
 	Call csrf.CheckParameter
 
 
-	Class CsrfHelper
+	Class CsrfHelperClass
 		Public Function GetParameter()
 			GetParameter = Session("token")
 		End Function

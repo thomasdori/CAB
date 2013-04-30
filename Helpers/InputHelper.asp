@@ -2,9 +2,9 @@
 	'Dependcies: EncodingHelper.asp
 
 	Dim input
-	set input = New InputHelper
+	set input = New InputHelperClass
 
-	Class InputHelper
+	Class InputHelperClass
 		Public Function GetParameter(name)
 			GetParameter = Request.Form(encoder.encode(name))
 		End Function

@@ -2,9 +2,9 @@
 	'Dependencies: OutputHelper.asp
 
 	Dim error
-	Set error = New ErrorHelper
+	Set error = New ErrorHelperClass
 
-	Class ErrorHelper
+	Class ErrorHelperClass
 		Public Function Handle(errorCode)
 			If (Request.ServerVariables("HTTP_X-Requested-With") = "XMLHttpRequest") Then
 				Select Case errorCode

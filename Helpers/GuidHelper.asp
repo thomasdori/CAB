@@ -1,8 +1,8 @@
 <%
 	Dim guid
-	Set guid = New GuidHelper
+	Set guid = New GuidHelperClass
 
-	Class GuidHelper
+	Class GuidHelperClass
 		Public Function GetGUID()
 		    Set objTypeLib = Server.CreateObject("ScriptLet.TypeLib")
 			guidNew = Left(objTypeLib.GUID, 38)

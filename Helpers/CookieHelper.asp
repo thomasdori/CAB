@@ -2,14 +2,14 @@
 	'Dependencies: EncodingHelper.asp
 
 	Dim cookie
-	Set cookie = new CookieHelper
+	Set cookie = New CookieHelperClass
 
 	'Dim safeCookies
 	'Set safeCookies = Server.CreateObject("Scripting.Dictionary")
 	'Dim safeCookieParams
 	'Set safeCookieParams = Server.CreateObject("Scripting.Dictionary")
 
-	Class CookieHelper
+	Class CookieHelperClass
 		Public Function Read(key)
 			read = encoder.Encode(Request.Cookies(key))
 		End Function

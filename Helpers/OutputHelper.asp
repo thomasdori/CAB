@@ -1,8 +1,8 @@
 <%
 	Dim output
-	Set output = New OutputHelper
+	Set output = New OutputHelperClass
 
-	Class OutputHelper
+	Class OutputHelperClass
 		Public Sub Write(value)
 			Response.Write(Server.HTMLEncode(value))
 		End Sub

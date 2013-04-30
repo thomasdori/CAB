@@ -1,9 +1,16 @@
-<!-- #include File="Partials/HeaderPartial.asp" -->
-<!-- #include File="Partials/FooterPartial.asp" -->
+<!-- #include File="../Helpers/ViewHelper.asp" -->
 
-<%=header.GetContent()%>
+<%
+
+' idee: dim userPage
+' set userPage = New Page
+' userPage.'
+
+%>
+
+<%=view.GetHeader()%>
     <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <p>Hello world! This is Classic Asp Boilerplate.</p>
 
 	<%
 		' Unfortunately does not work. Solution: do not use cookies ;)
@@ -24,4 +31,4 @@
 
     	//send a successfull request
     </script>
-<%=footer.GetContent()%>
+<%=view.GetFooter()%>

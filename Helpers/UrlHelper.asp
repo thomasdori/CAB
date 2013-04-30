@@ -1,8 +1,8 @@
 <%
 	Dim url
-	Set url = New UrlHelper
+	Set url = New UrlHelperClass
 
-	Class UrlHelper
+	Class UrlHelperClass
 		Public Function GetApplicationUrl
 			Dim protocol, https, domainname, filename, fullpath, port
 

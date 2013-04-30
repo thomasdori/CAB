@@ -2,9 +2,9 @@
 	'Dependencies: SanitationHelper.asp
 
 	Dim encoder
-	Set encoder = New EncodingHelper
+	Set encoder = New EncodingHelperClass
 
-	Class EncodingHelper
+	Class EncodingHelperClass
 		Public Function Decode(sText)
 			if Nvl(stext,"") <> "" then
 				Dim i
