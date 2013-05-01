@@ -1,53 +1,53 @@
+<!-- #include File="../Libraries/adovbs.inc" -->
+<!-- #include File="../Extensions/List.asp" -->
+
 <%
 	Dim model : Set model = New ModelClass
 
 	Class ModelClass
-		Public Function CallProcedure(procedureName, parameters)
+		Public Function CallProcedure(procedureName, parameterList, hasContentHandler, rowHandler)
+			Dim recordSet 	  : Set recordSet 	  = Server.CreateObject("ADODB.Recordset")
+			Dim objConn   	  : Set objConn	  	  = Server.CreateObject("ADODB.Connection")
+			Dim command   	  : Set command   	  = Server.CreateObject("ADODB.Command")
+
+			objConn.ConnectionString = GetConnectionString()
+			objConn.Open
+
+			command.ActiveConnection = con
+			command.CommandType = adobjConnStoredProc
+			command.CommandTimeout = 0
+			command.CommandText = procedureName
 
 
+			'todo: iterate over parameter
+			For Each parameter In parameterList
+				command.Parameters.Append objConn.CreateParameter(parameter.Name, parameter.Type, adParamInput, -1, parameter.Value)
+			Next
 
+			Set recordSet = command.Execute()
 
-		Dim recordSet : Set recordSet = Server.CreateObject("ADODB.Recordset")
-		Dim objConn   : Set objConn	  = Server.CreateObject("ADODB.Connection")
-		Dim command   : Set command   = Server.CreateObject("ADODB.Command")
+			With recordSet
+				.CursorLocation = 3 'adUseClient
+				.CursorType     = 0 'adOpenForwardOnly
+				.LockType       = 4 'adLockBatchOptimistic
+			End With
 
-		objConn.ConnectionString = GetConnectionString()
-		objConn.Open
-
-		command.ActiveConnection = con
-		command.CommandType = adobjConnStoredProc
-		command.CommandTimeout = 0
-		command.CommandText = procedureName
-		command.Parameters.Append objConn.CreateParameter("@usNo", adInteger, adParamInput, -1, session("usrNr"))
-
-		Set recordSet = command.execute()
-
-		With recordSet
-			.CursorLocation = 3 'adUseClient
-			.CursorType     = 0 'adOpenForwardOnly
-			.LockType       = 4 'adLockBatchOptimistic
-		End With
-
-		Do While Not recordSet.Eof
-			' do something with recordSet("column")
-			recordSet.movenext
-		Loop
-
-	    recordSet.Close
-	    Set recordSet = Nothing
-
-
-
-
-
-
-			Set objConn = Nothing
-
-			If recordSet.RecordCount > 0 Then
-
+			If Not recordSet.Eof
+				Call HasContentHandler(recordSet)
+				Do While Not recordSet.Eof
+					Call RowHandler(recordSet)
+					recordSet.movenext
+				Loop
 			End If
 
+		    recordSet.Close
+		    Set recordSet = Nothing
 
+		    objConn.Close
+			Set objConn = Nothing
+		End Function
+
+		Private Function AddParameter(paremeter)
 
 		End Function
 
