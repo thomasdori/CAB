@@ -1,0 +1,291 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 0.8
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* reset.css */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td { font-weight:normal;}
+table, td, th {}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+
+/* typography.css */
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#666;}
+h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:2em;padding: 2px 0; margin: 10px 0; line-height: 1em;border-bottom: 1px solid #dcdcdc;}
+h3 {font-size:1.5em;line-height:1;margin: 0 0 10px 0;}
+h4 {font-size:1.2em;line-height:1.25;margin:1.25em 0;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+h6 {font-size:1em;font-weight:bold;}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+p {margin:10px 0 20px;}
+p img.left {float:left;margin: 0 1.5em 1.5em 0;padding:2px; border: 1px solid #d7d7d7;}
+p img.right {float:right;margin:0 0 1.5em 1.5em; padding:2px; border: 1px solid #d7d7d7;}
+a:focus, a:hover {color:#000;}
+a {text-decoration:underline;}
+blockquote {margin:1.5em;color:#666;font-style:italic;}
+strong {font-weight:bold;}
+em, dfn {font-style:italic;}
+dfn {font-weight:bold;}
+sup, sub {line-height:0;}
+abbr, acronym {border-bottom:1px dotted #666;}
+address {margin:0 0 1.5em;font-style:italic;}
+del {color:#666;}
+pre {margin:1.5em 0;white-space:pre;}
+pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+li ul, li ol {margin:1em 3em;}
+ul, ol {margin:1em 3em;}
+ul {list-style-type:disc;}
+ul.none {list-style-type:none; margin:0}
+ol {list-style-type:decimal;}
+dl {margin:0 0 1.5em 0;}
+dl dt {font-weight:bold;}
+dd {margin-left:1.5em;}
+table {margin: 0 0 10px 0;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
+caption {background:#eee;}
+.small {font-size:.8em;}
+.large {font-size:1.2em;}
+.hide {display:none;}
+.quiet {color:#666;}
+.loud {color:#000;}
+.highlight {background:#ff0;}
+.added {background:#060;color:#fff;}
+.removed {background:#900;color:#fff;}
+.first {margin-left:0;padding-left:0;}
+.last {margin-right:0;padding-right:0;}
+.top {margin-top:0;padding-top:0;}
+.bottom {margin-bottom:0;padding-bottom:0;}
+.right { float: right; }
+.thin {font-weight:normal;}
+
+.helphint	{
+	font-size: 90%;
+	color:		#666;
+	font-style:italic;
+	width:		200px;
+	border: 	1px solid #d7d7d7;
+    padding: 	5px;
+    background: #fff;
+    z-index:100;
+    position:absolute;
+}
+
+.helphint  li {margin: 1px 10px 1px 20px;padding: 0; }
+.ccvn_hint {
+	width:		310px;
+	border: 	1px solid #add8e6;
+    padding: 	5px;
+    background: #fff;
+    z-index:100;
+    position:absolute;
+}
+
+.grey_box { padding: 10px; background: #efefef; border: 1px solid #d7d7d7; }
+.yellow_box { padding: 10px; background: #FFFED1; border: 1px solid #E5E4A0; }
+.green_box { padding: 10px; background: #f5fffa; border: 1px solid #69CB4B; }
+.blue_box { padding: 10px; background: #f0f8ff; border: 1px solid #add8e6; }
+.red_box { padding: 10px; background: #faebd7; border: 1px solid #ffa07a; }
+.white_box { padding: 10px; background: #fff; border: 1px solid #d7d7d7; }
+.box_space_sm { margin: 10px; }
+.box_space_md { margin: 20px; }
+
+
+/* grid.css */
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.showgrid {
+	background: #990000;
+}
+
+
+
+
+
+div.span-half, div.thirdscol, div.thirds, div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, div.span-6, div.span-7, div.span-8, div.span-9, div.span-10 {float:left;margin-right: 20px;}
+
+div.last { margin-right: 0; }
+
+.thirds { width: 226px;}
+.thirdscol { width: 157px;}
+.span-half { width: 230px;}
+
+.span-1  { width: 56px;}
+.span-2  { width: 132px;}
+.span-3  { width: 208px;}
+.span-4  { width: 284px;}
+.span-5  { width: 360px;}
+.span-6  { width: 436px;}
+.span-7  { width: 512px;}
+.span-8  { width: 588px;}
+.span-9  { width: 664px;}
+.span-10, div.span-10 { width: 740px; margin: 0; }
+
+
+/* Add these to a column to append empty cols. */
+.append-1  { padding-right: 76px;}
+.append-2  { padding-right: 152px;}
+.append-3  { padding-right: 228px;}
+.append-4  { padding-right: 304px;}
+.append-5  { padding-right: 380px;}
+.append-6  { padding-right: 456px;}
+.append-7  { padding-right: 532px;}
+.append-8  { padding-right: 608px;}
+.append-9  { padding-right: 684px;}
+
+
+/* Add these to a column to prepend empty cols. */
+.prepend-1  { padding-left: 76px;}
+.prepend-2  { padding-left: 152px;}
+.prepend-3  { padding-left: 228px;}
+.prepend-4  { padding-left: 304px;}
+.prepend-5  { padding-left: 380px;}
+.prepend-6  { padding-left: 456px;}
+.prepend-7  { padding-left: 532px;}
+.prepend-8  { padding-left: 608px;}
+.prepend-9  { padding-left: 684px;}
+
+
+
+/* Border on right hand side of a column. */
+div.border {
+  padding-right:9px;
+  margin-right:10px;
+  border-right: 1px solid #eee;
+}
+
+/* Border with more whitespace, spans one column. */
+div.colborder {
+  padding-right:49px;
+  margin-right:46px;
+  border-right: 1px solid #eee;
+}
+
+/* Use these classes on an element to push it into the 
+   next column, or to pull it into the previous column.  */
+
+.pull-1 { margin-left: -76px;}
+.pull-2 { margin-left: -152px;}
+.pull-3 { margin-left: -228px;}
+.pull-4 { margin-left: -304px;}
+.pull-5 { margin-left: -380px;}
+.pull-6 { margin-left: -456px;}
+.pull-7 { margin-left: -532px;}
+.pull-8 { margin-left: -608px;}
+.pull-9 { margin-left: -684px;}
+.pull-10 { margin-left: -760px;}
+
+.pull-1, .pull-2, .pull-3, .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10 {float:left;position:relative;}
+
+
+.push-1 { margin: 0 -76px 1.5em 76px;}
+.push-2 { margin: 0 -152px 1.5em 152px;}
+.push-3 { margin: 0 -228px 1.5em 228px;}
+.push-4 { margin: 0 -304px 1.5em 304px;}
+.push-5 { margin: 0 -380px 1.5em 380px;}
+.push-6 { margin: 0 -456px 1.5em 456px;}
+.push-7 { margin: 0 -532px 1.5em 532px;}
+.push-8 { margin: 0 -608px 1.5em 608px;}
+.push-9 { margin: 0 -684px 1.5em 684px;}
+.push-10 { margin: 0 -760px 1.5em 760px;}
+
+.push-1, .push-2, .push-3, .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10 {float:right;position:relative;}
+
+
+.box { 
+  padding: 10px; 
+  margin-bottom: 1.5em; 
+}
+
+hr {
+  background: #ddd; 
+  color: #ddd;
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 1px;
+  margin: 1.45em 0;
+  border: none; 
+}
+
+hr.space {
+  background: #fff;
+  color: #fff;
+}
+
+.clearfix:after, .container:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.clearfix, .container {display: inline-block;}
+* html .clearfix,
+* html .container {height: 1%;}
+.clearfix, .container {display: block;}
+.clear { clear:both; }
+
+/* forms.css */
+label {padding: 6px 2px 0; text-align:left; font-weight: bold; width: 140px; float:left; display: block;}
+.label-push { padding: 0 0 0 143px; }
+fieldset {padding:10px; margin:0 0 20px 0;border:2px solid #dfdfdf;background:#f7f7f7;}
+legend {text-align: left; font-weight: bold; padding: 4px 0; width: 200px; display: block; }
+.form_text { padding: 0 0 6px 0; } 
+input, textarea, select { border-top:1px solid #7c7c7c; border-left:1px solid #c3c3c3;border-right:1px solid #c3c3c3;border-bottom:1px solid #ddd;background:#fff url(/public/icons/fieldbg.gif) repeat-x top; padding:6px; font-size: 11px; margin:0.5em 0; }
+input {width:180px;}
+textarea {width:390px;height:250px;padding:5px;}
+.error, .notice, .success {padding:.8em;margin-bottom:1em;border:2px solid #ddd;}
+.error {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
+.notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
+.invalid { background: #ffe4e1; }
+.error a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+
+/* buttons.css */
+.buttons { margin:0 0 10px 0; }
+.buttons a, .sample a, .buttons button{display:block;float:left;margin:0 14px 0 0;background-color:#fff;border:1px solid #dedede;border-top:1px solid #eee;border-left:1px solid #eee;font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;font-size:11px;line-height:14px;text-decoration:none;font-weight:bold;color:#565656;cursor:pointer;padding:5px 10px 6px 7px;}
+.buttons button{width:auto;overflow:visible;padding:4px 10px 3px 7px;}
+.buttons button[type] { padding:5px 10px 5px 7px;line-height:17px; }
+*:first-child+html button[type]{padding:4px 10px 3px 7px;}
+.buttons button img, .buttons a img{margin:0 3px -3px 0 !important;padding:0;border:none;width:16px;height:16px;}
+button:hover, .buttons a:hover{ background-color:#dff4ff;border:1px solid #c2e1ef;color:#336699;}
+button.positive, .buttons a.positive{color:#529214;}
+.buttons a.positive:hover, button.positive:hover{background-color:#E6EFC2;border:1px solid #C6D880;color:#529214;}
+.buttons a.negative, button.negative{color:#d12f19;}
+.buttons a.negative:hover, button.negative:hover{background:#fbe3e4;border:1px solid #fbc2c4;color:#d12f19;}
+.buttons a.sample, button.content{font-size: 120%; padding: 15px; border:1px solid #d7d7d7; color:#228b22; background: #f7f7f7;}
+.buttons a.sample:hover, button.sample:hover{background:#efefef;border:1px solid #a9a9a9;color:#228b22;}
+.process_order {background:#FFFED1;border:1px solid #dedede;border-top:1px solid #eee;border-left:1px solid #eee;font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;font-size:11px;line-height:14px;text-decoration:none;font-weight:bold;color:#565656;cursor:pointer;padding:10px;}
+.buttons .padd-right { margin: 0 20px 0 0;}
+.buttons .padd-left { margin: 0 0 0 20px;}
+
+/* flash.css */
+#form_error { background: #FFFED1 url(/public/icons/error.png) center no-repeat; background-position: 15px 50%;text-align:left;margin: 15px 0;padding: 10px 20px 10px 45px;border-top: 1px solid #E5E4A0;border-bottom: 1px solid #E5E4A0;}
+#form_error ul { margin: 2px 0 2px 20px; }
+#form_error h4 { font-weight:bold;font-size: 100%;line-height:14px;padding:0;margin:0;}
+
+#warnBox { background:#FFFED1 url(/public/icons/error.png) center no-repeat;background-position: 15px 50%;text-align:left;margin:15px 0; padding:10px 20px 10px 45px;border-top:1px solid #E5E4A0;border-bottom:1px solid #E5E4A0;}
+#errorBox {background:#ffe4e1 url(/public/icons/exclamation.png) center no-repeat;background-position: 15px 50%;text-align:left;margin:15px 0; padding:10px 20px 10px 45px;border-top:1px solid #ffa07a;border-bottom:1px solid #ffa07a;}
+#infoBox {background:#f0f8ff url(/public/icons/information.png) center no-repeat;background-position:15px 50%;text-align:left;margin:15px 0; padding:10px 20px 10px 45px;border-top:1px solid #add8e6;border-bottom:1px solid #add8e6;}

@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>Table Designer</title>
+<style>
+TD {
+	font-family:verdana,arial;
+	font-size:11px;
+}
+</style>
+<script>
+	var obj = {}
+
+	obj.setColor = function(c){
+		var f = document.forms['frmtable'];
+		f[this.name].value = c||'';
+	}
+
+	function showColorDialog(name){
+		var w=245,h=220;
+		var l = (screen.width-w)/2;
+		var t = (screen.height-h)/2;
+		var url = 'color.html';
+		var win = window.open(url,'color_win','top='+ t +',left='+l+',width='+w+',height='+h+',status=yes,resizable=no,dependent=yes,alwaysRaised=yes');
+		win.focus();
+		obj.name = name
+		window.WebControl = {all:{'TableObject':obj}}; // simulate webcontrol collection
+		win.CallBackObjectID = 'TableObject';
+		win.opener = window;
+	};
+
+	function insertTable(){
+		var arg = {};
+		var f = document.forms['frmtable'];
+
+		arg.width= (f.txtwidth.value||100)+f.cbowidth.options[f.cbowidth.selectedIndex].value;
+		arg.cols	= (f.txtcols.value||1);
+		arg.rows	= (f.txtrows.value||1);
+		arg.border 	= (f.txtborder.value||0);
+		arg.align	= f.cboalign.options[f.cboalign.selectedIndex].value;
+		arg.padding	= (f.txtpadding.value||2);
+		arg.spacing	= (f.txtspacing.value||2);
+		arg.autosize= f.cboautosize.options[f.cboautosize.selectedIndex].value;
+		arg.tablecolor= (f.txttablecolor.value||'');
+		arg.cellcolor= (f.txtcellcolor.value||'');
+
+		var CallBackObjectID = window.CallBackObjectID;
+		var obj = window.opener.WebControl.all[CallBackObjectID];
+		if (obj) {
+			obj.createTable(arg);
+			window.close();
+		}
+	}
+</script>
+</head>
+<body topmargin="0" leftmargin="0" bgcolor="#ECE9D8">
+<form name="frmtable">
+<div align="center">
+  <center>
+<table border="0" cellpadding="2">
+  <tr>
+    <td valign="top">
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td width="8%"><b>Layout</b></td>
+    <td width="92%">
+    <hr color="#000000" size="1" align="left" width="98%">
+    </td>
+  </tr>
+</table>
+    </td>
+    <td valign="top">
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td width="8%"><b>Style</b></td>
+    <td width="92%">
+    <hr color="#000000" size="1" align="left" width="98%">
+    </td>
+  </tr>
+</table>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1px solid #C0C0C0; border-right: 1px solid #C0C0C0">
+    <table border="0" cellpadding="0" cellspacing="1" height="138">
+      <tr>
+        <td height="22">Columns: </td>
+        <td height="22">
+      <input size="2" value="1" style="width: 100%" name="txtcols"></td>
+      </tr>
+      <tr>
+        <td height="22">Rows: </td>
+        <td height="22">
+      <input size="2" value="1" style="width: 100%" name="txtrows"></td>
+      </tr>
+      <tr>
+        <td height="22">Table Width: </td>
+        <td height="22">
+      <input size="3" value="100" name="txtwidth"><select size="1" name="cbowidth">
+	        <option value="%" selected>Percentage</option>
+            <option>Pixel</option>
+      </select></td>
+      </tr>
+      <tr>
+        <td height="22">Table Alignment: </td>
+        <td height="22">
+      <select size="1" name="cboalign" style="width: 100%">
+        <option value="left">Left</option>
+        <option value="center" selected>Center</option>
+        <option value="right">Right</option>
+      </select></td>
+      </tr>
+      <tr>
+        <td height="22">Cell Padding<span lang="en-us">:</span></td>
+        <td height="22">
+      <input size="2" value="2" name="txtpadding" style="width: 100%"></td>
+      </tr>
+      <tr>
+        <td height="22">Cell Spacing<span lang="en-us">:</span></td>
+        <td height="22">
+      <input size="2" value="1" name="txtspacing" style="width: 100%"></td>
+      </tr>
+      <tr>
+        <td height="22"><span lang="en-us">AutoSize Columns:</span></td>
+        <td height="22">
+      <select size="1" name="cboautosize" style="width: 100%">
+	        <option value="yes" selected>Yes</option>
+            <option>No</option>
+      </select></td>
+      </tr>
+    </table>
+    </td>
+    <td valign="top" style="border-left: 1px solid #FFFFFF; border-right: 1px solid #C0C0C0">
+    <table border="0" cellpadding="0" cellspacing="1">
+      <tr>
+        <td>Table Back Color:</td>
+        <td>
+      <input size="7" name="txttablecolor"><input value="..." type="button" onclick="showColorDialog('txttablecolor');" name="cmdtablecolor"></td>
+      </tr>
+      <tr>
+        <td>Table Style<span lang="en-us">:</span></td>
+        <td><input size="7" style="width: 100%" name="txttablestyle"></td>
+      </tr>
+      <tr>
+        <td>Cell Back Color:</td>
+        <td>
+      <input size="7" name="txtcellcolor"><input value="..." type="button" onclick="showColorDialog('txtcellcolor');" name="cmdcellcolor"></td>
+      </tr>
+      <tr>
+        <td>Cell Fore Color:</td>
+        <td>
+      <input size="7" name="txtcellforecolor"><input value="..." type="button" onclick="showColorDialog('txtcellforecolor');" name="cmdforcolor"></td>
+      </tr>
+      <tr>
+        <td>Cell Style:</td>
+        <td>
+      <input size="7" style="width: 100%" name="txtcellstyle"></td>
+      </tr>
+      <tr>
+        <td>Border Size:</td>
+        <td>
+      <input size="2" value="0" name="txtborder" style="width: 100%"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" colspan="2" align="right" style="border-top: 1px solid #C0C0C0">
+    <input value="Ok" type="button" onclick="insertTable();" style="width: 80px">
+    <input value="Cancel" type="button" onclick="window.close();" style="width: 80px">
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+</form>
+</body>
+</html>

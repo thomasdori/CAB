@@ -1,0 +1,20 @@
+body { font-family:tahoma; font-size:12px; }
+td { font-size:12px; }
+table { font-size:12px;}
+.header_1 { color:white;font-weight:bold}
+.top_menu {font-weight:bold;color:black;text-decoration:none}
+a {color:Black;text-decoration:none}
+a:hover {color:Red;text-decoration:underline}
+.download_section
+{
+	border-right: #006699 1px dotted;
+	border-top: #006699 1px dotted;
+	font-weight: bold;
+	border-left: #006699 1px dotted;
+	width: 100%;
+	color: #006699;
+	border-bottom: #006699 1px dotted;
+	font-family: tahoma;
+	height: 25px;
+	background-color: #ccffcc;
+}

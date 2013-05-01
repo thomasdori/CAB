@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Color Picker</title>
+<script>
+
+	function saveColor(){
+		var c = document.forms['frmcolor'].txtcolor.value;
+		var CallBackObjectID = window.CallBackObjectID;
+		var obj = window.opener.WebControl.all[CallBackObjectID];
+		if (obj) {
+			obj.setColor(c);
+			window.close();
+		}
+	};
+	function setColor(c){
+		document.forms['frmcolor'].txtcolor.value = c;
+	};
+
+	function getColorTable(){
+		var color;
+		var red,reds=['00','22','33','66','77','88','99','BB','CC','DD','EE','FF'];
+		var green,greens=['00','66','CC','FF'];
+		var blue,blues=['00','66','CC','FF'];
+		var table=['<table border="0" bgcolor="#000000" cellspacing="1" cellpadding="1">\n'];
+		// Loop through reds
+		for (var red=0;red<reds.length;red++){
+			table[table.length]='<tr>\n';
+			// Loop through greens
+			for(green=0;green<greens.length;green++){
+				// Loop through blues
+				for(blue=0;blue<blues.length;blue++){
+					color = "#" + reds[red] + greens[green] + blues[blue]
+					table[table.length]='<td bgcolor="' + color + '"><a href="javascript:;" onclick="return setColor(\''+color+'\');" title="'+color+'"><font face="arial" size="1" color="'+color+'">##</font></a></td>\n';
+				}
+			}
+			table[table.length]='</tr>\n';
+		}
+		table[table.length]='</table>\n';
+		table = table.join('');
+		return table
+	};
+</script>
+</head>
+<body topmargin="0" leftmargin="0" bgcolor="#ECE9D8">
+<form name="frmcolor">
+<div align="center">
+  <center>
+<table border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td>
+<script> document.write(getColorTable());</script>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" style="border-top: 1px solid #C0C0C0">
+    <table border="0" cellpadding="0" cellspacing="1" width="100%" id="AutoNumber1">
+      <tr>
+        <td width="50%">
+      <input size="7" style="width: 100%" name="txtcolor"></td>
+        <td width="50%" align="right">
+    <input value="Ok" type="button" onclick="saveColor();" style="width: 50px" name="cmdok"><span lang="en-us">
+    </span>
+    <input value="Close" type="button" onclick="window.close();" style="width: 50px" name="cmdclose"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,995 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:o xmlns:st1>
+	<head>
+		<title>Page</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>Page</td>
+				<td align="right">
+					V2.0</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;WebControl.asp<br>
+		<b>Class Name:</b>&nbsp;cPage
+		<br>
+		<span Class="ClassSection">Overview:</span><br>
+		The page object is used to represent a CLASP Page. The page object offers a 
+		rich set of functions to facilitate the development of a page. It is also used 
+		as a container for all WebControls, ViewState, Script functions,&nbsp;Trace 
+		functions, Libraries,&nbsp;Debugging, etc. It is also the responsible for the 
+		managment the life cicle of the page (event capturing and notification).
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New cPage</td>
+				<td Class="PropertyDesc">
+					<P>This is part of the CLASP Framework and should not be directly used. The CLASP 
+						Framework automatically creates an global instance of this class named Page. 
+						You should always use the Page instance.</P>
+				</td>
+			</tr>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<TR>
+				<td width="32" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Control</TD>
+				<TD class="PropertyDesc" width="50"><A href="WebControl.html">WebControl</A></TD>
+				<TD class="PropertyDesc">
+					<P>Inherits attributes from the WebControl class. For more information go to the <a href="WebControl.html">
+							WebControl</a> help. This is part of the CLASP Framework and should not be 
+						directly used.
+					</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Controls</TD>
+				<TD class="PropertyDesc" width="50"><A href="WebControls.html">ControlsCollection</A></TD>
+				<TD class="PropertyDesc">Wrapper to Control.Controls. This collection maintains the 
+					hierarchy of controls in the page. This is part of the CLASP Framework and 
+					should not be directly used (unless you are a control developer and know what 
+					you are doing)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CompressFactor</TD>
+				<TD class="PropertyDesc" width="50">Integer</TD>
+				<TD class="PropertyDesc">Number of bytes to exeed if you want the viewstate to be 
+					compressed. Requires the use of ASPFramework.dll and the zlib.dll.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsCompressed</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Read-Only. True if the Viewstate is compressed.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsRedirectedPostBack</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">True if the Page is being loaded as the result of a 
+					posback <U>from another page</U> . This value can only be examined <EM>before</EM>
+					any subsequent postback.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsPostBack</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">True if the page is being loaded for the first time is is 
+					being loaded as the result of a postback.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Action</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Translated to the EventName. (Try to use GetPostBackEvent 
+					to return a ClientEvent object is possible)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ActionSource</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The CLASP object target of the event. (Try to use 
+					GetPostBackEvent to return a ClientEvent object is possible)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ActionSourceInstance</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Multiple-interpretation. The purpose of this value is 
+					determined by the target of the event.(Try to use GetPostBackEvent to return a 
+					ClientEvent object is possible)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ActionXMessage</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Multiple-interpretation. The purpose of this value is 
+					determined by the target of the event.(Try to use GetPostBackEvent to return a 
+					ClientEvent object is possible)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32" height="24"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200" height="24">DebugEnabled</TD>
+				<TD class="PropertyDesc" width="50" height="24">Boolean</TD>
+				<TD class="PropertyDesc" height="24">If true, then Trace methods will record data 
+					and at the end of the page debug information will be displayed.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">DebugLevel</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">1-3. 1 Captures the less information whereas 3 captures 
+					all debug information.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ViewStateMode</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">
+					<P>[0]&nbsp;, &nbsp;[1] , [3]. 0 Stores the viewstate in a hidden form field named 
+						"__VIEWSTATE" , 1 stores the viewstate in the session object. Mode 3 uses SQL 
+						Server. (VIEW_STATE_MODE_SQL_SERVER ). There are more modes. CLASP uses 1 and 2 
+						natively&nbsp; unless another one is plugged.</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ViewState</TD>
+				<TD class="PropertyDesc" width="50"><A href="ViewState.htm">ViewState</A></TD>
+				<TD class="PropertyDesc">Access of an object that supports the viewstate interface. 
+					There are currently two objects implemeting this inteface: 
+					ASPFramework.ViewState (in ASPFramework.dll) and cASPViewState found in 
+					Server_ASPViewState.asp. The former uses a custom code to encode/decode base64 
+					string where as the ASP implementation relies on CAPICOM.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PageFormAction</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Can be used to override the default form target page. This 
+					will cause the page to be posted to another page.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AutoResetFocus</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">If true, then the page will render Javascript code to 
+					reset the focus to the control that caused the page to be submited, if 
+					possible.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AutoResetScrollPosition</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">If true, then the vertical possition of the browser will 
+					be retained in between postbacks.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">OnSubmitStatement</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Used to specify the name of a Javascript function that 
+					will be called before the page is posted back to the server. If the function 
+					returns false, then the page will not be posted.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ShowRenderTime</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">If true then the framework will render the time in ms it 
+					took to process the time (from Page.Execute until the page is being destroyed 
+					by IIS)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsTemplatePresent</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">True if a page template/skin object is present. The 
+					developer must set this property to true if control skin functions are present.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsViewStateLoaded</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">True if the viewstate was loaded. Used internally or by 
+					webcontrols.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="32"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsViewStateSaved</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">True if the viewstate was already calculated and saved. 
+					Used internally or by webcontrols.</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200">GetNextTabIndex</TD>
+				<TD class="PropertyDesc">Gets the next tab inded. The page object keeps a tabindex 
+					counter. Everytime a control asks for the next tab index, the counter 
+					increments. This is normally used by control developers, but it can be used 
+					directly as well.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetEventScript(ClientTrigger, ObjectName, 
+					EventName, ByVal Instance, ExtraMessage)</TD>
+				<TD class="PropertyDesc">
+					<P>Returns&nbsp; JavaScript code to call the doPostBack javascript function. This 
+						is part of the core of CLASP and is how events are sent down to the server. 
+						CLASP only understands PostBacks generated by the doPostBack function.</P>
+					<P>This version of GetEventScript will postback to the same page.</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetEventScriptRedirect(ClientTrigger, 
+					ObjectName, EventName, ByVal Instance, ExtraMessage,Action)</TD>
+				<TD class="PropertyDesc">Same as above but it post back the page the page specified 
+					in the &lt;action&gt; parameter. In addition, the IsRedirectedPostback hidden 
+					field will be set to 1. The called page can then inspect the 
+					Page.IsRedirectedPostback property (only when the page is first rendered) to 
+					determined if it was called as a result of a postback from another CLASP page. 
+					If so, then the developer can get the event information by checking the 
+					ActionXXX properties or by getting a reference to the event object using 
+					Page.GetPostBackEvent</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetEventScriptNewWindow(ClientTrigger, 
+					ObjectName, EventName, ByVal Instance, ExtraMessage,Action,TargetWindow)</TD>
+				<TD class="PropertyDesc">Same as above but the page will be oppened in a separate 
+					window.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">TraceRender(FromStart,ToEnd,varControl)</TD>
+				<TD class="PropertyDesc">Adds a trace line to the trace reporting the time it took 
+					a control to render. The control itself is responsible for capturing the times. 
+					If DebugEnabled is set to True then the line will be added and at the end of 
+					the page a trace will be rendered.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">TraceCall(obj,msg)</TD>
+				<TD class="PropertyDesc">Same as above, but the purpose is to trace a method call.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25" height="24"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200" height="24">TraceMsg(method,msg)</TD>
+				<TD class="PropertyDesc" height="24">Same as above but the purpose is to add a 
+					simple message.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">TraceImportantCall(obj,msg)</TD>
+				<TD class="PropertyDesc">Same as above but the message is red-colored.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">TraceError(Control,Message,Severity)
+				</TD>
+				<TD class="PropertyDesc">Adds a line to the Error trace only if Err.Number &lt;&gt; 
+					0. In addition, the developer can specify more information using the Message 
+					and Severity parameters.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RegisterClientScript(ScriptName,ScriptText)</TD>
+				<TD class="PropertyDesc">Adds code (javascript, vbscript, html, etc) to the Scripts 
+					collection. Right before the page is rendered everything is rendered. Each 
+					script has an unique id (ScriptName). If you call this function more than once 
+					with the same script name the latest wich overwrite the previous.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">DataBind(DataSource, WebControl)</TD>
+				<TD class="PropertyDesc">Navigates through the Controls hierarchy and invokes 
+					the&nbsp; SetValueFromDataSource event for those WebControls with a value in 
+					the DataTextField property.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetPostBackEvent</TD>
+				<TD class="PropertyDesc">Gets an ClientEvent object with the data from the 
+					PostBack. For more info see the <a href="ClientEvent.htm">ClientEvent</a> object</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ShowMessageShowMessage(strTitle,strMessage,x,y,w,h)</TD>
+				<TD class="PropertyDesc">Shows a dhtml div in the page as soon as its rendered.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetDefaultFocus(WebControl)</TD>
+				<TD class="PropertyDesc">Renders some JavaScript code to set the focus to the 
+					control specified in the parameter.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetDefaultObject(TheControl,JSEvent)</TD>
+				<TD class="PropertyDesc">Renders some JavaScript code to execute the function 
+					JSEvent for the control TheControl when the "Enter" key is pressed.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Execute</TD>
+				<TD class="PropertyDesc">Executes the page. (Same as calling Main() )</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RegisterEventListener(object,eventName,fncName)
+				</TD>
+				<TD class="PropertyDesc">
+					<P>Reisgters a Script that will execute the function &lt;fncName&gt; on JS Event 
+						&nbsp;&lt;EventName&gt; for object &lt;object&gt;. i.e.
+					</P>
+					<P>If function in "fncName"&nbsp;&nbsp;returns true then the original event handler 
+						(if any) will be invoked. The events are "linked" so you can have multiple 
+						event listeners for the same object for the same event. They will be called 
+						from last to first (LIFO)</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RegisterPostBackEventHandler(Control,EventHandlerName,Parameters)</TD>
+				<TD class="PropertyDesc">
+					<P>Registers the Event for the control which will be raised during a PostBack right 
+						after the Page_Load and before handling the postback event. This is mainly used 
+						by webcontrols. For instance, the checkbox control uses it to enlisten the 
+						OnChange event (i.e. on the process postback)</P>
+					<code>Checked = (Request.Form(Control.ControlID)&lt;&gt;"")<br>
+						If RaiseOnChanged Then
+						<br>
+						If Checked &lt;&gt; CBool( Control.ViewState.Read("S")) Then<br>
+						&nbsp;&nbsp; Call Page.RegisterPostBackEventHandler (Me,"OnChanged","")<br>
+						End If<br>
+						End If </code>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RegisterLibrary(LibName)</TD>
+				<TD class="PropertyDesc">Registers a library with the framework. This is mainly 
+					used by control developers. Every control should make use of this function. 
+					i.e. Page.RegisterLibrary("ServerTextBox")</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">IsLibraryLoaded(LibName)</TD>
+				<TD class="PropertyDesc">Returns true if a library was registered/is present.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">CheckLibDependency(LibName,RequiredBy)</TD>
+				<TD class="PropertyDesc">
+					<P>Used to assert if a library is present. For instance, suppose a custom controls 
+						needs to use the checkbox and textboxe controls it can do something like this:</P>
+					<P>Page.CheckLibDependency("ServerTextBox","LoginControl")</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ApplySkin</TD>
+				<TD class="PropertyDesc">Uses internally to apply a theme/skin if present.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 24px" width="200">OpenForm</TD>
+				<TD class="PropertyDesc">Opens the CLASP form. VERY IMPORTANT. Always do it before 
+					rendering any control that renders input controls or any html iput control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">CloseForm</TD>
+				<TD class="PropertyDesc">IMPORTANT.This closes the form tag and adds any extra 
+					hidden field,as needed.</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_Authenticate_Request</TD>
+				<TD class="PropertyDesc">Can override. You can place your authentication code in 
+					here, if any. You can look at the PageControler class for an implementation 
+					example.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_Authorize_Request</TD>
+				<TD class="PropertyDesc">Can override. You can place your authorization code in 
+					here, if any. You can look at the PageControler class for an implementation 
+					example.</TD>
+			</TR>
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp" id="IMG1"></td>
+				<td width="200" Class="PropertyName">Page_Init</td>
+				<td Class="PropertyDesc">Can override. Here is where you instanciate all your 
+					WebControl objects (Set txtfirstName&nbsp;= New_ServerTextBox("txtFirstName"), 
+					etc). <STRONG>Note: </STRONG>You should not set control properties here (other 
+					than the name) on WebControls that support viewstate because these values will 
+					be overwriten when the Page is restoring the viewstate.&nbsp; VIEWSTATE is not 
+					available yet.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_Controls_Init</TD>
+				<TD class="PropertyDesc">
+					<P>Can override. This event is called only when the page is load for the first 
+						time. This an is ideal place to put the code to set the default properties of 
+						your WebControls. You can alson execute code here that you want to run only 
+						when the page is loaded for the first time (IsPostBack = False). VIEWSTATE is 
+						not available yet.</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_LoadViewState</TD>
+				<TD class="PropertyDesc">
+					<P>Can override. This event occurs right after the viewstate is restored by all the 
+						WebControls with EnableViewState = True. This event only occurs on PostBacks. 
+						This is the perfect event to restore any variables added to the viewstate.</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_Load</TD>
+				<TD class="PropertyDesc">Can override. This event occurs when all 
+					the&nbsp;WebControls&nbsp;have been initialized and viewstate fully restored. 
+					Posted data was also applied to all controls, as appropriate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"></TD>
+				<TD class="PropertyName" width="200"></TD>
+				<TD class="PropertyDesc"></TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_PreRender</TD>
+				<TD class="PropertyDesc">Can override. This&nbsp;event occurs when the Page is 
+					about to be ready to be rendered. You can use it to</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_SaveViewState</TD>
+				<TD class="PropertyDesc">Can override. This event is invoked right after the 
+					viewstate is saved by all WebControls with EnableViewState = True. This event 
+					is also very useful to persist variables: Page.ViewState.Add "variableName", 
+					value . The variable can be modified during the page execution and then here 
+					you just save the last value.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_Terminate</TD>
+				<TD class="PropertyDesc">This happens LITERALLY when the page is about to be 
+					destroyed. It will execute even if the page execution ends abruptly due to an 
+					error.&nbsp;</TD>
+			</TR>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_property.bmp"></td>
+				<td width="200" Class="PropertyName">
+					Many used to store the traces, validations, scripts, etc.</td>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg" height="36"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName" height="36">WriteProperties(bag)</td>
+				<td Class="PropertyDesc" height="36">
+					Not used by the Page object.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">
+					Not used by the Page object.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_WriteViewState(obj,node)</TD>
+				<TD class="PropertyDesc">Used by the CLASP to notifiy each WebControl in the 
+					hierarchy of controls that the viewstate is to be persisted. It will pass to 
+					each webcontrol its corresponding "node" in the viewstate were to write to. 
+					This method also prepares the PropertyBag object and passes it to the 
+					implementing control so it can write control-specific data to the viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_ReadViewState(obj,node)</TD>
+				<TD class="PropertyDesc">Used by the CLASP to notifiy each WebControl in the 
+					hierarchy of controls that the viewstate is to be restored. It will pass to 
+					each webcontrol its corresponding "node" in the viewstate were to read from 
+					This method also prepares the PropertyBag object and passes it to the 
+					implementing control so it can read control-specific data from the viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">LoadViewState</TD>
+				<TD class="PropertyDesc">Used internally. This method is used to load the viewstate 
+					and determines whether or not a custom handler is present 
+					(Page_LoadPageStateFromPersistenceMedium). If true then it will delegate to 
+					that function, otherwise it will use Session or Client side viewstate, 
+					depending on the ViewstateMode setting.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SaveViewState</TD>
+				<TD class="PropertyDesc">Used internally. This method is used to persist the 
+					viewstate and also determines whether or not a custom handler is present 
+					(Page_LoadPageStateFromPersistenceMedium). If true then it will delegate to 
+					that function, otherwise it will use Session or Client side viewstate, 
+					depending on the ViewstateMode setting</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1" height="23"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200" height="23">PropagateEvent(WebControl,Event)</TD>
+				<TD class="PropertyDesc" height="23">Propagates the event &lt;Event&gt; starting at 
+					&lt;WebControl&gt;.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">PropagateOnInit</TD>
+				<TD class="PropertyDesc">
+					<P>Propagates the OnInit event to WebControls with the ImplementsOnInit flag set to 
+						true. This event is executed after the Page_Init.</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">PropagateOnLoad</TD>
+				<TD class="PropertyDesc">Propagates the OnLoad event to WebControls with the 
+					ImplementsOnLoad flag set to true. This event ocurrs right after the Page_Load</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderClientScripts</TD>
+				<TD class="PropertyDesc">Renders all the registered client scripts.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">HandleServerEvent(Event)</TD>
+				<TD class="PropertyDesc">This&nbsp;methodis used by the CLASP to raise a server 
+					event. This function should not be manually executed.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">HandleClientEvent(ClientEvent)</TD>
+				<TD class="PropertyDesc">This method is invoked by the CLASP so the Page 
+					object&nbsp;can identify the target of the event and make sure it handles it.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">HandlePostBackHandlers</TD>
+				<TD class="PropertyDesc">Raises any event registered with the 
+					RegisterPostBackEventHandler.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetControlSkin(ctrl,cache)</TD>
+				<TD class="PropertyDesc">Used internally by CLASP. This method is used by the 
+					ApplySkin method and its purpose is to determine wheter or not there is a 
+					fuction available to modify the appereance of a type of webcontrol 
+					(TypeName(ctrl.Owner) ). It will cache the pointers to these functions to speed 
+					up the process.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<P><SPAN class="ClassSection">Sequence of Events in CLASP</SPAN></P>
+		<P>Looking at the Main() routine in WebControl.asp will give you a very good idea 
+			of how CLASP process a request. A high level look at the life cycle of a CLASP 
+			page looks like this:<BR>
+		</P>
+		<UL>
+			<LI>
+				<SPAN Class="CodeBody">Page_Authenticate_Request</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">Page_Authorize_Request</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">Page_Init</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">If Not Page.IsPostBack Then Page_Controls_Init</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">If Page.IsPostBack&nbsp;Then&nbsp;&nbsp;Page_LoadViewState</SPAN>
+			<LI>
+				<SPAN class="CodeBody">If Page.IsPostBack&nbsp;Then&nbsp;&nbsp;ProcessPostBackData</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">Page_Load</SPAN>
+			<LI>
+				<SPAN class="CodeBody">If Page.IstPostBack Then Page.HandleServerEvent 
+					"RaiseChangedEvents"</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">If Page.IsPostBack Then Page.HandleClientEvent (Handles the 
+					PostBack by executing the handler of the event)</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">Page_PreRender</SPAN>
+			<LI>
+				<SPAN Class="CodeBody">Page_SaveViewState</SPAN>
+			<LI>
+				<SPAN class="CodeBody">If Page.TemplateIsPresent Then Page.ApplySkin</SPAN>
+			<li>
+				<SPAN Class="CodeBody">Page_Terminate</SPAN></li>
+		</UL>
+		<P>
+			<br>
+			<SPAN class="ClassSection">Structure of a Page</SPAN>
+		</P>
+		<P>Every CLASP page has to have a predefined structure. The use of&nbsp;the 
+			PageControler class simplifies the generation of CLASP pages a great deal. 
+			However it is important to understand how to structure a page.</P>
+		<OL>
+			<LI>
+			Include the WebControl.asp page
+			<LI>
+			Include any WebControl file to be used by the page (i.e. Server_TextBox.asp)
+			<LI>
+			Include any extra&nbsp;file that your page will make use of (such as data 
+			access, skins, etc)
+			<LI>
+			Execute the following ASP Code: Page.Execute.
+			<LI>
+				Put all your HTML code in here. You <STRONG>MUST </STRONG>start the section 
+				where you will be rendering your HTML Form and where WebControls that translate 
+				to HTML input controls by callin : <STRONG>Page.OpenForm </STRONG>and end it 
+				with <STRONG>Page.CloseForm</STRONG>. This is critical as these two 
+			functions will wrap the form and include all the hidden fields that CLASP make 
+			use of.
+			<LI>
+			Your Code-Behind&nbsp;or Server Code is next and should be in a separate file 
+			or at the bottom of the page.
+			<LI>
+			Include your WebControl variable declarations (i.e. Dim txtFirstName, 
+			txtLastName)
+			<LI>
+			Add Public Function Page_Init() and initialize all the WebControls there (I.e. 
+			Set txtFirstName&nbsp;= New_ServerTextBox("txtFirstName"),&nbsp; you can also 
+			register postback events and the such at this stage.
+			<LI>
+			Add any other Page event that you want override such as Page_Controls_Init , 
+			Page_Load, etc.
+			<LI>
+			Write your event handlers such as cmdSave_OnClick, txtFirstName_OnTextChange.
+			<LI>
+			Write your supporting functions.
+			<LI>
+				That is it!, you are done!.
+				<BR>
+			</LI>
+		</OL>
+		<P Class="ClassSection">And what about te doPostBack JavaScript function?</P>
+		This Client-Side JavasSript function is a critical part of the CLASP Framework 
+		and is used by all the controls to post events back to the server. This 
+		function centralized the way postbacks are handled. The prototype of this 
+		function is (which is part of clasp.form)
+		<BR>
+		<b>function doPostBack(action,object,instance,xmsg,frmaction,frameName)</b><br>
+		<li>
+			<b>Action:</b>
+		this is the Event Name (i.e. OnClick)
+		<li>
+			<b>Object:</b>
+		is the object name/id (i.e. txtName, cmdButton)
+		<li>
+			<b>Instance:</b>
+		is any value that you want to pass along with the message.
+		<li>
+			<b>Xmsg:</b>
+		same as above
+		<li>
+			<b>FrmAction:</b>
+		if supplied, then the form action will be replaced with this value
+		<li>
+			<b>FrameName:</b> if supplied, then the form target will be replaced with this 
+			value
+			<br>
+			<P><SPAN class="ClassSection">Page Configuration Options</SPAN></P>
+			You have a few configuration alternatives when working with CLASP.
+			<ul>
+				<LI>
+					ViewStateMode:&nbsp; 0) Will send the viewstate data in a hidden field 
+					encrypted in Base64 along with the response. 1) Will store the viewstate in a 
+					unencrypted Session variable. If&nbsp;CompressFactor &gt; 0 then the viewstate 
+					will be compressed (using zlib.dll) <U>before</U>
+				it is encryped in Base64 and only if ViewStateMode = 0. NOTE: You can also use 
+				SQL Server Viewstate (SQLServerViewState.asp)
+				<LI>
+				In addition to the above, you can control the implementation of the ViewState 
+				and encryption. At the top of the WebControl.asp you have an include: 
+				Server_CoreObjects_UseCOM.asp OR Server_CoreObjects_UseASP.asp. The 1st option 
+				(UseCOM) will make use of ASPFramework.dll and will use a custom class for 
+				Base64 encoding. If you use the 2nd option CLASP will use their corresponding 
+				VBScript implementations (pretty much the same thing) with the exception of: a) 
+				Compression capabilities are taken out AND CAPICOM is used for Base64 encoding.
+				<LI>
+				Furthermore, if you use the UseASP option, then because you are using CAPICOM 
+				you can have two options: In the Server_ASPViewState.asp file you can change 
+				the include to use Server_ASPCrypto.asp (Base64) OR Server_ASPCrypto2.asp 
+				(Base64 Encrypted).
+				<LI>
+					<STRONG><U>NOTE:</U></STRONG>&nbsp;CAPICOM for some reason produces a 
+				EXTEMELY large viewstate, so don't use it if you can avoid it...
+				<LI>
+					The WebControl.asp has two important constants WEB_CONTROLS_PATH 
+					(default="/ASPFramework/Controls/") and SCRIPT_LIBRARY_PATH 
+					(default="/ASPFramework/Controls/ScriptLibrary/"). Make&nbsp;sure that their 
+					values are correct.</LI>
+			</ul>
+			<br>
+			<br>
+			<P class="ClassSection">Too much talking and explanation .... It is time for an 
+				Example!:</P>
+			<br>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;!</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">--#Include 
+				File = "Controls\WebControl.asp"<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>
+				--</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;!</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">--#Include 
+				File = "Controls\Server_Button.asp" --</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;!</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">--#Include 
+				File = "Controls\Server_Label.asp"<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+				</SPAN>--</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; BACKGROUND: yellow; FONT-FAMILY: 'Courier New'; mso-highlight: yellow">
+				&lt;%</SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">Page.Execute<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">%&gt;</SPAN><SPAN style="mso-tab-count: 1">&nbsp;
+				</SPAN></SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">HTML</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">HEAD</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN>
+			<st1:place>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">META</SPAN>
+			</st1:place><SPAN style="FONT-SIZE: 10pt; COLOR: fuchsia; FONT-FAMILY: 'Courier New'"></SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: red; FONT-FAMILY: 'Courier New'">NAME</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">="GENERATOR"</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: fuchsia; FONT-FAMILY: 'Courier New'"></SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: red; FONT-FAMILY: 'Courier New'">Content</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">="Microsoft 
+				Visual Studio 6.0"&gt; </SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">TITLE</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;</SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">Server 
+				Buttons Example<SPAN style="COLOR: blue">&lt;/</SPAN><SPAN style="COLOR: maroon">TITLE</SPAN><SPAN style="COLOR: blue">&gt;
+				</SPAN></SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">LINK</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: fuchsia; FONT-FAMILY: 'Courier New'"></SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: red; FONT-FAMILY: 'Courier New'">rel</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">="stylesheet"</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: fuchsia; FONT-FAMILY: 'Courier New'"></SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: red; FONT-FAMILY: 'Courier New'">type</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">="text/css"</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: fuchsia; FONT-FAMILY: 'Courier New'"></SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: red; FONT-FAMILY: 'Courier New'">href</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">="/PageFrameworkV2/Samples.css"&gt;&nbsp;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;/</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">HEAD</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">BODY</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;&nbsp;
+			</SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">Span</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: fuchsia; FONT-FAMILY: 'Courier New'"></SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: red; FONT-FAMILY: 'Courier New'">Class</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">="Caption"&gt;</SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">BUTTONS 
+				EXAMPLE<SPAN style="COLOR: blue">&lt;/</SPAN><SPAN style="COLOR: maroon">Span</SPAN><SPAN style="COLOR: blue">&gt;
+				</SPAN></SPAN>
+			<BR>
+			<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">HR</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;</SPAN>
+			<P><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'"></SPAN><SPAN style="FONT-SIZE: 10pt; BACKGROUND: yellow; FONT-FAMILY: 'Courier New'; mso-highlight: yellow">&lt;%</SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">lblMessage<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">%&gt;</SPAN><SPAN style="COLOR: blue">&lt;</SPAN><SPAN style="COLOR: maroon">HR</SPAN><SPAN style="COLOR: blue">&gt;</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'"><SPAN style="BACKGROUND: yellow; mso-highlight: yellow">
+						&lt;%<FONT style="BACKGROUND-COLOR: #ffffff">&nbsp;Page.OpenForm()&nbsp;<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">%&gt;</SPAN></FONT></SPAN></SPAN></P>
+			<P><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'"><SPAN style="BACKGROUND: yellow; mso-highlight: yellow"><FONT style="BACKGROUND-COLOR: #ffffff"><SPAN style="BACKGROUND: yellow; mso-highlight: yellow"></SPAN></FONT></SPAN></SPAN>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="BACKGROUND: yellow; mso-highlight: yellow">
+						&lt;%</SPAN>cmdLinkButton<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">%&gt;</SPAN>
+					| <SPAN style="BACKGROUND: yellow; mso-highlight: yellow">&lt;%</SPAN>cmdButton<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">%&gt;</SPAN>
+					| <SPAN style="BACKGROUND: yellow; mso-highlight: yellow">&lt;%</SPAN>cmdImageButton<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">%&gt;
+					</SPAN></SPAN>
+			</P>
+			<P>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'"><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">
+						<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">&lt;%<FONT style="BACKGROUND-COLOR: #ffffff">&nbsp;Page.CloseForm()&nbsp;<SPAN style="BACKGROUND: yellow; mso-highlight: yellow">%&gt;</SPAN></FONT></SPAN></SPAN></SPAN></P>
+			<P><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'"><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'"><SPAN style="BACKGROUND: yellow; mso-highlight: yellow"><FONT style="BACKGROUND-COLOR: #ffffff"><SPAN style="BACKGROUND: yellow; mso-highlight: yellow"></SPAN></FONT></SPAN></SPAN>&lt;/</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">BODY</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+				</SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&lt;/</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: maroon; FONT-FAMILY: 'Courier New'">HTML</SPAN><SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&gt;
+				</SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; BACKGROUND: yellow; FONT-FAMILY: 'Courier New'; mso-highlight: yellow">
+					&lt;%</SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-spacerun: yes">&nbsp;
+					</SPAN><SPAN style="COLOR: green">'############ SERVER CODE </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">'VARIABLE 
+					DECLARATIONS </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Dim</SPAN> lblMessage </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Dim</SPAN> cmdLinkButton </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Dim</SPAN> cmdButton </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Dim</SPAN> cmdImageButton<SPAN style="mso-tab-count: 1">&nbsp;
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">'PAGE EVENT 
+					HANDLERS<SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Public</SPAN> <SPAN style="COLOR: blue">Function</SPAN>
+					Page_Init()<SPAN style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="COLOR: green">'Page.DebugEnabled 
+						= True ' Want to see the trace and session objects and app.&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="COLOR: blue">Set</SPAN>
+					lblMessage = New_ServerLabel("lblMessage") </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="COLOR: blue">Set</SPAN>
+					cmdLinkButton = New_ServerLinkButton("cmdLinkButton")<SPAN style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="COLOR: blue">Set</SPAN>
+					cmdButton = New_ServerButton("cmdButton")<SPAN style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="COLOR: blue">Set</SPAN>
+					cmdImageButton = New_ServerImageButton("cmdImageButton") </SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">
+					<SPAN style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>
+				</SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN> <SPAN style="COLOR: blue">End</SPAN> <SPAN style="COLOR: blue">Function
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Public</SPAN> <SPAN style="COLOR: blue">Function</SPAN>
+					Page_Controls_Init()<SPAN style="mso-tab-count: 6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>cmdButton.Text = "Normal 
+					Button" </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>cmdLinkButton.Text = 
+					"Link Button" </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>cmdImageButton.Image = 
+					"images/book.gif" </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>cmdImageButton.RollOverImage 
+					= "images/clear_all.gif" </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>lblMessage.Control.Style 
+					= "border:1px solid blue;background-color:#AAAAAA" </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN> <SPAN style="COLOR: blue">End</SPAN> <SPAN style="COLOR: blue">Function
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Public</SPAN> <SPAN style="COLOR: blue">Function</SPAN>
+					Page_Load()&nbsp; </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN> <SPAN style="COLOR: blue">End</SPAN> <SPAN style="COLOR: blue">Function
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">'WEBCONTROLS 
+					POSTBACK EVENT HANDLERS<SPAN style="mso-tab-count: 1">&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Public</SPAN> <SPAN style="COLOR: blue">Function</SPAN>
+					cmdButton_OnClick() </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>lblMessage.Text = "You 
+					Clicked a normal button"<SPAN style="mso-tab-count: 2">&nbsp;&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN> <SPAN style="COLOR: blue">End</SPAN> <SPAN style="COLOR: blue">Function
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Public</SPAN> <SPAN style="COLOR: blue">Function</SPAN>
+					cmdLinkButton_OnClick() </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>lblMessage.Text = "You 
+					Clicked<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Link Button" </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN> <SPAN style="COLOR: blue">End</SPAN> <SPAN style="COLOR: blue">Function
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp; </SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN><SPAN style="COLOR: blue">Public</SPAN> <SPAN style="COLOR: blue">Function</SPAN>
+					cmdImageButton_OnClick() </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 2">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>lblMessage.Text = "You 
+					Clicked on a Image Button" </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"><SPAN style="mso-tab-count: 1">
+						&nbsp;</SPAN> <SPAN style="COLOR: blue">End</SPAN> <SPAN style="COLOR: blue">Function
+					</SPAN></SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: 'Courier New'">&nbsp;</SPAN><BR>
+				<SPAN style="FONT-SIZE: 10pt; COLOR: green; FONT-FAMILY: 'Courier New'">'SUPPORTING 
+					FUNCTIONS (IF ANY) </SPAN>
+				<BR>
+				<SPAN style="FONT-SIZE: 10pt; BACKGROUND: yellow; FONT-FAMILY: 'Courier New'; mso-highlight: yellow">
+					%&gt;</SPAN>
+				<BR>
+			</P>
+		</li>
+	</body>
+</html>

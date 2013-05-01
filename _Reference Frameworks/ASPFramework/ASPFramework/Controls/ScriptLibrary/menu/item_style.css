@@ -1,0 +1,70 @@
+.m0l0iout {
+	font-family: Tahoma;
+	font-size: 12px;
+	text-decoration: none;
+	padding: 4px;
+	color: black;
+}
+.m0l0iover {
+	font: 12px Tahoma;
+	text-decoration: underline;
+	padding: 4px;
+	color: black;
+}
+
+/* level 0 outer */
+.m0l0oout {
+	text-decoration : none;
+	background:#EFEBD7;
+}
+.m0l0oover {
+	border: 1px solid #aca899;
+	text-decoration : none;
+	background: #abbee8;
+}
+
+/* level 1 inner */
+.m0l1iout {
+	font: 12px Tahoma;
+	text-decoration: none;
+	padding: 4px;
+	color: #000000;
+}
+.m0l1iover {
+	font: bold 12px Tahoma;
+	text-decoration : none;
+	padding: 4px;
+	color: #000000;
+}
+
+/* level 1 outer */
+.m0l1oout {
+	text-decoration : none;
+	border: 1px solid #aca899;
+	background: #EFEBD7;
+}
+.m0l1oover {
+	text-decoration : none;
+	border: 1px solid #aca899;
+	background: #abbee8;
+}
+
+/* level 2 inner */
+.m0l2iover {
+	font: 12px Tahoma;
+	text-decoration : none;
+	padding: 4px;
+	color: #000000;
+}
+
+/* level 2 outer */
+.m0l2oout {
+	text-decoration : none;
+	border: 1px solid #aca899;
+	background: #EFEBD7;
+}
+.m0l2oover {
+	text-decoration : none;
+	border: 1px solid #aca899;
+	background: #abbee8;
+}

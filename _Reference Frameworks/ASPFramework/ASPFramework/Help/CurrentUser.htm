@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>CurrentUser</title>
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<LINK href="help.css" type="text/css" rel="stylesheet">
+	</head>
+	<body topMargin="1">
+		<table class="ControlName" id="Table1" cellPadding="5" width="100%">
+			<tr>
+				<td noWrap width="1%">CurrentUser</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview--><br>
+		<b>File Name:</b>&nbsp;PageController.asp<br>
+		<b>Class Name:</b>&nbsp;cCurrentUser.asp<br>
+		<br>
+		<span class="ClassSection">Overview</span><br>
+		This class is part of the PageControler.asp and is normally used to implement 
+		Templated solutions with Role based authorization.
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors--><span class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" id="Table2" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></td>
+				<td class="PropertyName" width="200">--</td>
+				<td class="PropertyDesc">You should use the global object CurrentUser which is 
+					already instanciated and available.</td>
+			</tr>
+		</table>
+		<!--Public Properties--><br>
+		<span class="ClassSection">Public Properties</span>
+		<table class="TableStyle" id="Table3" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></td>
+				<td class="PropertyName" width="200">IsAuthenticated</td>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<td class="PropertyDesc">Indicates wether or not the page is public (allows 
+					anonynous access).</td>
+			</tr>
+		</table>
+		<!--Public Methods--><br>
+		<span class="ClassSection">Public Methods</span>
+		<table class="TableStyle" id="Table4" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></td>
+				<td class="PropertyName" width="200">Authenticate(UserName,FirstName,LastName,Email,Roles)</td>
+				<td class="PropertyDesc">Call it when to signal the framework that the user was 
+					authenticated. It will persist the information supplied in the parameters in 
+					session variables. Roles can be an array or a comma delimited string.
+				</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 25px" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 25px" width="200">RedirectFromLoginPage(UserName,FirstName,LastName,Email,Roles)</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 25px">Same as Authenticate but it redirects 
+					to the page that caused the login event, if inside the application.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 25px" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 25px" width="200">IsInRole(RoleName)</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 25px">Returns true if RoleName is in any of 
+					the roles assigned to the user.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">IsInRoles(Roles)</TD>
+				<TD class="PropertyDesc">Return true if any of the User's roles is in Roles.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 25px" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 25px" width="200">LogOut</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 25px">Logs out the user (Session.Abandon) 
+					and clears used information.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GoToLoginPage()</TD>
+				<TD class="PropertyDesc">Redirects to the login page.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Authorize()</TD>
+				<TD class="PropertyDesc">Authorize the use using PageController.AuthorizedRoles. If 
+					the user is not in any of the roles in PageController.AuthorizedRoles&nbsp;then 
+					the response is redirected to "NoAccess.asp"</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 17px" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 17px" width="200">LoginURL</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 17px">If an application variable named 
+					CLASP_LOGIN_URL exists it will be used as the path of the login page, else it 
+					will default to login.asp. It can be overrided by changing this property.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">NoAccessURL</TD>
+				<TD class="PropertyDesc">If an application variable name 
+					CLASP_NOACCESS_URL&nbsp;exists it will be used as the path of the noaccess 
+					page, else it will default to NoAccess.asp. It can be overrided by changing 
+					this property.</TD>
+			</TR>
+		</table>
+		<!--Public Events--><br>
+		<span class="ClassSection">Public Events</span>
+		<table class="TableStyle" id="Table5" cellPadding="4">
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Properties--><br>
+		<span class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" id="Table6" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></td>
+				<td class="PropertyName" style="HEIGHT: 24px" width="200">mAuthToken</td>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50">String</TD>
+				<td class="PropertyDesc" style="HEIGHT: 24px">The Name of the Session variable 
+					where to store a value indicating wether or not</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 24px" width="200">serSessionPrefix</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50">String</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">String used to prefix any 
+					Authentication variable.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 24px" width="200">mUserSecLocation</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50">Int</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">User Credentials Location (0) 
+					Session, (1) Cookies. Not yet in use.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 24px" width="200">mUserID</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50">String</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">UserID of the current user.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 24px" width="200">mFirstName</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50">String</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">FirstName of the current user.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 24px" width="200">mLastName</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50">String</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">LastName of the current user.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 24px" width="200">mRoles</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50">String</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">Array of Roles of the current user.</TD>
+			</TR>
+		</table>
+		<!--Protected Methods--><br>
+		<span class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" id="Table7" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" style="HEIGHT: 44px" width="25"><IMG src="images/s_method.bmp"></td>
+				<td class="PropertyName" style="HEIGHT: 44px" width="200">LoadUser</td>
+				<td class="PropertyDesc" style="HEIGHT: 44px">Loads the user from the Session or 
+					Cookie, depending on the location.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 44px" width="25"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 44px" width="200">SaveUser</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 44px">Saves the user into the Session or 
+					Cookie, depending on the location.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 44px" width="25"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 44px" width="200">ClearUser</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 44px">Clears the user data from the 
+					Session.</TD>
+			</TR>
+		</table>
+		<!--Protected Events--><br>
+		<span class="ClassSection">Protected Events</span>
+		<table class="TableStyle" id="Table8" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></td>
+				<td class="PropertyName" width="200">Class_Initialize</td>
+				<td class="PropertyDesc">If the contents of mAuthToken (in the session or cookie) = 
+					"YES" then load the user from the location (session or cookie)</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_Logout</TD>
+				<TD class="PropertyDesc">Calls CurrentUser.LogOut</TD>
+			</TR>
+		</table>
+		<P><SPAN class="ClassSection"></SPAN>&nbsp;</P>
+		<P><SPAN class="ClassSection">The Security Works as follows:</SPAN></P>
+		<P><SPAN style="COLOR: blue">Public Function Page_Authenticate_Request()</SPAN>&nbsp;
+			<br>
+			<SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+				PageController.RequiresAuthentication Then
+				<br>
+			</SPAN><SPAN style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+				Not CurrentUser.IsAuthenticated Then<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CurrentUser.GoToLoginPage<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If
+				<br>
+			</SPAN><SPAN style="COLOR: blue">End Function</SPAN><br>
+			<br>
+			<SPAN style="COLOR: blue">Public Function Page_Authorize_Request()</SPAN><br>
+			<SPAN style="FONT-SIZE: 10pt;FONT-FAMILY: 'Courier New'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+				PageController.RequiresAuthentication And PageController.RequiresAuthorization 
+				Then<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+				CurrentUser.Authorize()<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+			</SPAN><SPAN style="COLOR: blue">End Function</SPAN><br>
+		</P>
+	</body>
+</html>

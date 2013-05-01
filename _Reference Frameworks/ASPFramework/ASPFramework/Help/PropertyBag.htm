@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>PropertyBag</title>
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>PropertyBag</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;WebControl.asp<br>
+		<b>Class Name:</b>&nbsp;PropertyBag<br>
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		This class is internally used by the CLASP Framework and should not be used 
+		directly. Only control developers should use instances of this class passed by 
+		CLASP as a parameter to the WriteProperties and ReadProperties 
+		methods/events.&nbsp;A property bag object is used to wrap a node in the 
+		viewstate.
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New PropertyBag</td>
+				<td Class="PropertyDesc">
+					Default constructor.</td>
+			</tr>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">Node</td>
+				<TD class="PropertyDesc" width="50">DOMNode</TD>
+				<td Class="PropertyDesc">Represents a node in the ViewState controls hierarchy 
+					where the User Control is supposed to write to.</td>
+			</tr>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Read(Name)</TD>
+				<TD class="PropertyDesc">Reads a property with name &lt;Name&gt; from the 
+					viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadEx(Name,Def)</TD>
+				<TD class="PropertyDesc">Reads a property with name &lt;Name&gt; from the 
+					viewstate. If none found then it will create it and return the default 
+					&lt;def&gt;</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadBoolean(Name)</TD>
+				<TD class="PropertyDesc">Reads a property with name &lt;Name&gt; from the viewstate 
+					and converts it to a boolean.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadInt(Name)</TD>
+				<TD class="PropertyDesc">Reads a property with name &lt;Name&gt; from the viewstate 
+					and converts it to a integer.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadDouble(Name)</TD>
+				<TD class="PropertyDesc">Reads a property with name &lt;Name&gt; from the viewstate 
+					and converts it to a double.</TD>
+			</TR>
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">Write(Name,Value)</td>
+				<td Class="PropertyDesc">Writes a &lt;Value&gt; into the property &lt;Name&gt; into 
+					the viewstate.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200">Item(x)</TD>
+				<TD class="PropertyDesc">Gets an attribute by index.</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">--</td>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">--</td>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+	</body>
+</html>

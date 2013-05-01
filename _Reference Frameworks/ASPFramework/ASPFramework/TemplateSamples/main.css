@@ -1,0 +1,156 @@
+BODY
+{
+}
+.C1
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 25pt;
+    COLOR: white;
+    FONT-FAMILY: 'Times New Roman', Arial;
+    BACKGROUND-COLOR: #003366
+}
+.C3
+{
+    BORDER-TOP: navy thin;
+    FONT-SIZE: 12pt;
+    TEXT-TRANSFORM: none;
+    COLOR: #003366;
+    BORDER-BOTTOM: navy thin;
+    BACKGROUND-COLOR: aliceblue;
+    FONT-VARIANT: normal
+}
+.C4
+{
+    BACKGROUND-COLOR: #6699cc
+}
+.C5
+{
+    BACKGROUND-COLOR: #99ccff
+}
+.C6
+{
+    BORDER-RIGHT: black thin solid;
+    BORDER-TOP: black thin solid;
+    BORDER-LEFT: black thin solid;
+    BORDER-BOTTOM: black thin solid;
+    BACKGROUND-COLOR: #ffffff
+}
+A.l2:hover
+{
+    FONT-SIZE: 10pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-DECORATION: none
+}
+A.l2
+{
+    FONT-SIZE: 10pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial;
+    TEXT-DECORATION: none
+}
+.H3
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 20pt;
+    COLOR: black;
+    FONT-FAMILY: Arial, 'Verdana Ref', Verdana
+}
+A.l3:hover
+{
+    FONT-SIZE: 10pt;
+    COLOR: #3399ff;
+    FONT-FAMILY: Arial, Verdana
+}
+A.l3
+{
+    FONT-SIZE: 10pt;
+    COLOR: blue;
+    FONT-FAMILY: Arial, Verdana
+}
+.normal
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    COLOR: gray;
+    FONT-FAMILY: 'Verdana Ref', Verdana
+}
+.H4
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    COLOR: black;
+    FONT-FAMILY: 'Times New Roman', Arial, Verdana
+}
+A.l4:hover
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    COLOR: black;
+    FONT-FAMILY: 'Times New Roman';
+    TEXT-DECORATION: none
+}
+A.l4
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    TEXT-TRANSFORM: none;
+    COLOR: #003366;
+    FONT-FAMILY: 'Times New Roman';
+    TEXT-DECORATION: none
+}
+.C2
+{
+    BACKGROUND-COLOR: #6699cc
+}
+A.l5:hover
+{
+    FONT-SIZE: 10pt;
+    COLOR: white;
+    FONT-FAMILY: 'Verdana Ref', Verdana;
+    FONT-VARIANT: small-caps;
+    TEXT-DECORATION: none
+}
+A.l5
+{
+    FONT-SIZE: 10pt;
+    COLOR: #cccccc;
+    FONT-FAMILY: 'Verdana Ref', Verdana;
+    FONT-VARIANT: small-caps;
+    TEXT-DECORATION: none
+}
+.C7
+{
+    BORDER-TOP: medium none;
+    BORDER-BOTTOM: #6666cc 1px solid
+}
+A.l1:hover
+{
+    BORDER-RIGHT: #ffffff 1px;
+    BORDER-TOP: #ffffff 1px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    BORDER-LEFT: #ffffff 1px;
+    COLOR: black;
+    BORDER-BOTTOM: #ffffff 1px;
+    FONT-FAMILY: 'Verdana Ref', Verdana;
+    TEXT-ALIGN: left;
+    TEXT-DECORATION: none
+}
+A.l1
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10pt;
+    COLOR: #666666;
+    FONT-FAMILY: 'Verdana Ref', Verdana;
+    TEXT-DECORATION: none
+}
+.C8
+{
+    BORDER-LEFT: #333333 1px solid
+}
+
+
+body, td, p {font-family: geneva,verdana,sans-serif; font-size: 10px; color: #555555}
+select {font-family:geneva,verdana; font-size:10px;}
+input {font-family:geneva,verdana; font-size:10px}

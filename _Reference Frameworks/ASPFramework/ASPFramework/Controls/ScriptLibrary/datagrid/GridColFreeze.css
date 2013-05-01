@@ -1,0 +1,27 @@
+/* Div container to wrap the datagrid */
+div#div-datagrid 
+{
+	width: 400px;
+/*height: 600px;*/
+overflow: auto;
+}
+
+/* Locks the left column */
+td.locked, th.locked {
+position:relative;
+cursor: default; 
+left: expression(document.getElementById("div-datagrid").scrollLeft-2);
+/*left:expression(this.parentNode.parentNode.parentNode.scrollLeft-2);*/
+}	
+
+/* Locks table header */
+th {
+position:relative;
+cursor: default; 
+top: expression(document.getElementById("div-datagrid").scrollTop-2);
+/*top:expression(this.parentNode.parentNode.parentNode.scrollTop-2);*/
+z-index: 10;
+}
+
+/* Keeps the header as the top most item. Important for top left item*/
+th.locked {z-index: 99;}

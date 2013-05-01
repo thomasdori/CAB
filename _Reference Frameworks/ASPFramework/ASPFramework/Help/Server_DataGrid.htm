@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ServerDataGrid</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ServerDataGrid</td>
+				<td align="right">V1.1 F2.0</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;Server_DataGrid.asp<br>
+		<b>Class Name:</b>&nbsp;ServerDataGrid.asp<br>
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		Renders the contents of a DataSource (ADODB.Recordset) as a Grid/Table.
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ServerDataGrid(name)</td>
+				<td Class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_constructor.bmp"></td>
+				<TD class="PropertyName" width="200">New ServerDataGrid</TD>
+				<TD class="PropertyDesc">This is the default constructor and it will create an 
+					instance of the control <STRONG>without</STRONG> a name. Controls instanciated 
+					this way must assign the name of the control manually by doing this: 
+					&lt;controlVariable&gt;.Control.Name = "&lt;ControlName&gt;"</TD>
+			</TR>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Control</TD>
+				<TD class="PropertyDesc" width="50"><A href="WebControl.html">WebControl</A></TD>
+				<TD class="PropertyDesc">Inherits attributes from the WebControl class.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Columns</TD>
+				<TD class="PropertyDesc" width="50"><A href="DataGridColumn.htm">DataGridColumn</A></TD>
+				<TD class="PropertyDesc">Array of of type DataGridColumn</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">DataSource</TD>
+				<TD class="PropertyDesc" width="50">ADODB.RecordSet</TD>
+				<TD class="PropertyDesc">The datasource used to render the control contents.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ShowHeader</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Sets/Gets a value to indicate wether or not the column 
+					headers should be displayed.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 27px" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 27px" width="200">HorizonalAlign</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 27px" width="50">String</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 27px">Sets/Gets the horizontal alignment 
+					forthe table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CellPadding</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Sets/Gets the cellpading for the tabke.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CellSpacing</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Sets/Gets the cellpacing for the table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">BorderWidth</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Sets/Gets the border width&nbsp;for the table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">BorderColor</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the border color for the table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">BackImageURL</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the background image for the table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">TableStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the style of the table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">TableCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the CLASS of the table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">TableWidth</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the width of the table.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AllowCustomPaging</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Sets/Gets a value to indicate wether or not the grid will 
+					work in custom paging mode. When on this mode the user must set the 
+					VirtualItemCount property manually.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AllowPaging</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Sets/Gets a value to indicate wether or not a Pager should 
+					be displayed to navigate through the records.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AutoGenerateColumns</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Sets/Gets a value to indicate wether or not the DataGrid 
+					will automatically generate the columns before rendering the grid.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">HeaderStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the style of the table header.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">FooterStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the style of the table footer.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ItemStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the default style used to render a row.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AlternatingItemStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the style to be used to render alternating rows.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">EditItemStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the style to be used to render the row that is 
+					on EditMode.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">SelectedItemStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the style to be used to render the row that is 
+					selected.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">SortStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the style to be used to render a sort column.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">HeaderCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the class of the header.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">FooterCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the class of the footer.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ItemCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the default class to be used to render a row.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AlternatingItemCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the class to be used to render alternating rows.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">EditItemCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the class to be used to render the row that is 
+					on EditMode.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">SelectedItemCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the class to be used to render the seleted row.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"></TD>
+				<TD class="PropertyName" width="200">SortCssClass
+				</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the class to be used to render a sortable 
+					column.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">EditItemIndex</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the index of the row being edited (-1 none)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">SelectedItemIndex</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the index of the selected row. (-1 none)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">HeaderFunctionName</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the name of&nbsp;the function (if any) used to 
+					render the table header.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">FooterFunctionName</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets the name of&nbsp;the function (if any) used to 
+					render the table footer.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Pager</TD>
+				<TD class="PropertyDesc" width="50">Server_DataPager</TD>
+				<TD class="PropertyDesc">Gets the pager used by the DataGrid. You can control Pager 
+					specific settings using this property.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PagerHorizontalAlign</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Sets the horizonal alignment of the pager 
+					(left/right/center)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PagerShowOnTop</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Gets/Sets a value indicating wether or not you want the 
+					pager to also be displayed on top of the grid.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CurrentRow</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Gets the current row being rendered.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CurrentColumn</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Gets the current column being rendered.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ColumnsCount</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Gets the number of columns.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">RowDataBound</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The name of the function to be called before rendering a 
+					row. The function has to have the following prototype TheFunction(RowContext) 
+					where RowContext is of type DataGridRowContext</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200">SetGridColumns(value)</TD>
+				<TD class="PropertyDesc">
+					Sets the datagrid coumns. You can also do it directly using the Columns 
+					property. The difference is that this method sets the OrdinalPosition right 
+					away.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 22px" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 22px" width="200">GenerateColumns</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 22px">Generates the DataGridColumn out of 
+					the DataSource.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetColumnByName(DataTextField)</TD>
+				<TD class="PropertyDesc">Gets a column by field name.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">CreateColumns( Array(FieldNames), 
+					Array(HeaderNames)</TD>
+				<TD class="PropertyDesc">Creates the grid columns&nbsp; using the field names and 
+					header texts supplied in the parameters.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Render</TD>
+				<TD class="PropertyDesc">Renders the DataGrid.</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">PageIndexChange(ClientEvent)</td>
+				<td Class="PropertyDesc">Triggered when the user navigates the pager.</td>
+			</tr>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">WriteProperties(bag)</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					restore its state after a postback. Bag is of type PropertyBag and can be used 
+					to read (or write) to the control viewstate.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">Invoked by the CLASP Framework to allow the control 
+					to&nbsp;persist its state before the page is destroyed. Bag is of type 
+					PropertyBag and can be used to read (or write) to the control viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderPager</TD>
+				<TD class="PropertyDesc">Renders the pager.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">HandleClientEvent</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					handle the postback event. From here the control can determine what is the 
+					course of action. In this case, if OnClick &lt;&gt; "" then it will invoke the 
+					function specified in the property, else it will invoke the default handler, if 
+					any.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">OnInit</TD>
+				<TD class="PropertyDesc">Used to initialize the internal pager object. Inherited 
+					from WebControl and invoked by telling CLASP that ImplementsOnLoad = True</TD>
+			</TR>
+		</table>
+	</body>
+</html>

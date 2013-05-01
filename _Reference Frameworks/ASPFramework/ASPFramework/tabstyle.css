@@ -1,0 +1,30 @@
+.dropcontent{
+display:block;
+}
+
+.tabstyle{
+cursor: pointer;
+cursor: hand;
+width:80px;
+font: normal 12px Tahoma;
+background-color: lightyellow;
+border-top: 1px solid gray;
+border-right: 1px outset white;
+}
+
+.tabstyle b{
+color: black;
+margin-left: 3px;
+margin-right: 23px;
+}
+
+#cyclelinks2{
+margin-right:15px;
+}
+
+#cyclelinks2 .tabsfootstyle{
+font-weight:bold;
+text-decoration:none;
+background-color:white;
+margin-right:3px;
+}

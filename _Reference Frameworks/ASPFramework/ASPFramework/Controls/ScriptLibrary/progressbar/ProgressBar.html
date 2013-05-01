@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Progress Bar</title>
+<script language="javascript">	
+	var mInitialized = false;
+	var mID1;
+	var mID2;
+	function UpdateProgress(v) 
+	{	if(!mInitialized) {
+			setTimeout("UpdateProgress(" + v + ")",1000);
+			return;			
+		}
+		if(v>100) v=100;
+		if(v<=0)v=1;
+		window.status = v + "%";
+		mID1.width = v + "%";
+		//mID2.width = (100-v)  + "%"	
+	}
+	
+	function Initialize() {
+		if(mInitialized) return;
+			mInitialized = true;
+		
+		mID1 = document.all["PG01"];
+		mID2 = document.all["PG02"];
+		window.opener.CLASP_Progress_Ready();
+	}	
+	
+</script>
+</head>
+<body onload="Initialize()">
+<Span style="font-weight:bold">Progress Bar Title</Span>
+<table width="100%" border=1 cellpadding=0 cellspacing=0 style="border:1px solid black" ID="Table1">
+<tr height=20px >
+	<td id="PG01" width=0%   bgcolor=#6699cc></td>
+	<td id="PG02" width=100% bgcolor=white></td>
+</tr>
+</table>
+
+</body>
+</html>

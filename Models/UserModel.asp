@@ -1,6 +1,8 @@
-
+<!-- #include File="../Libraries/adovbs.inc" -->
 <%
-	Class UserModel
+	Dim userModel : Set userModel = New UserModelClass
+
+	Class UserModelClass
 		Function GetUserList()
 
 		End Function

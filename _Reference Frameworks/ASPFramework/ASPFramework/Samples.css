@@ -1,0 +1,47 @@
+BODY
+{
+    FONT-FAMILY: Verdana
+}
+.Caption
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12pt
+}
+TD
+{
+    FONT-SIZE: 8pt
+}
+A
+{color:Black;
+	font-size: 8pt;
+}
+A:hover 
+{color:Red;
+}
+.InputCaption
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt
+}
+SPAN
+{
+    FONT-SIZE: 8pt
+}
+
+.LinkCss
+{
+    FONT-SIZE: 8pt;
+    COLOR: fuchsia
+}
+.LinkCss:hover
+{
+    FONT-SIZE: 8pt;
+    COLOR: red
+}
+OPTION
+{
+    BORDER-RIGHT: red 1px solid;
+    BORDER-TOP: red 1px solid;
+    BORDER-LEFT: red 1px solid;
+    BORDER-BOTTOM: red 1px solid
+}

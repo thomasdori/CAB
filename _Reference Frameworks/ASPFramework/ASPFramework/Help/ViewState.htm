@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ViewState</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ViewState</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<P>
+			<br>
+			<b>File Name:</b>&nbsp;Server_ASPListItemCollection.asp OR 
+			ASPFramework.ViewState<br>
+			<b>Class Name:</b>&nbsp;Always use New_ViewStateObject() which will wrap the 
+			appropriate implementation (depending on the mode: ASP or COM)<br>
+			<br>
+			<span Class="ClassSection">Overview</span><br>
+			Used to wrap a XML that is used to store the state of the WebControls in 
+			between request. The Page object makes use of this class and also some helper 
+			functions (see below) to persist state data in a hierarchycal fashion.&nbsp; 
+			This object can also be used to store Key-Value pairs of data.
+		</P>
+		<P>The Page object makes use of an instance of this object to store the viewstate 
+			and also uses another instance to store Client Scripts. The Page object has a 
+			set of helper functions listed below. These functions are used to create a 
+			hierarchy of controls within&nbsp;the ViewState and is and should only be used 
+			by the Page object.</P>
+		<LI>
+		GetSection(SectionName,Node)
+		<LI>
+		GetSectionEx(SectionName,Node,IsNewSection)
+		<LI>
+		WriteProperty(Name,Value,Node)
+		<LI>
+			ReadProperty(Name,Node)
+			<hr>
+			<br>
+			<!--Public Contructors-->
+			<span Class="ClassSection">Public Constructors</span>
+			<table class="TableStyle" ID="Table2" cellpadding="4">
+				<tr>
+					<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+					<td width="200" Class="PropertyName">New_ViewStateObject()</td>
+					<td Class="PropertyDesc">
+						Default constructor and is used to wrap the real implementation.</td>
+				</tr>
+			</table>
+			<!--Public Properties-->
+			<br>
+			<span Class="ClassSection">Public Properties</span>
+			<table class="TableStyle" ID="Table3" cellpadding="4">
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+					<TD class="PropertyName" width="200">Count</TD>
+					<TD class="PropertyDesc" width="50">Int</TD>
+					<TD class="PropertyDesc">Gets the number of Items in the collection.</TD>
+				</TR>
+			</table>
+			<!--Public Methods-->
+			<br>
+			<span Class="ClassSection">Public Methods</span>
+			<table class="TableStyle" ID="Table4" cellpadding="4">
+				<tr>
+					<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+					<td width="200" Class="PropertyName">
+						LoadViewState(xml)</td>
+					<td Class="PropertyDesc">Loads an XML with viewstate data.</td>
+				</tr>
+				<TR>
+					<td width="25" Class="PropertyImg" style="HEIGHT: 24px"><IMG src="images/p_method.bmp"></td>
+					<TD class="PropertyName" width="200" style="HEIGHT: 24px">LoadViewStateBase64(xmlBase64,bolIsCompressed)</TD>
+					<TD class="PropertyDesc" style="HEIGHT: 24px">Loads an XML with viewstate that is 
+						Base64 encoded. bolIsCompressed returns true if the viewstate was compressed.</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">GetViewState</TD>
+					<TD class="PropertyDesc">Gets the XML of the viewstate.</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">GetViewStateBase64(lngCompressFactor, ByRef 
+						bolIsCompressed)</TD>
+					<TD class="PropertyDesc">Gets the XML of the viewstate encoded in Base64.</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">Add(Name,value)</TD>
+					<TD class="PropertyDesc">Adds a node to the ViewState with name &lt;name&gt; and 
+						value &lt;value&gt;. If the node already exists it will overwrite the value.</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">Remove(index)
+					</TD>
+					<TD class="PropertyDesc">Remove the node at position &lt;index&gt;</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">RemoveByName(Name)</TD>
+					<TD class="PropertyDesc">Remove the node with the name &lt;name&gt;</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">
+						GetValueByIndex(index)</TD>
+					<TD class="PropertyDesc">Get the value of the node at position &lt;index&gt;</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">SetValueByIndex(ByVal index, ByVal value)</TD>
+					<TD class="PropertyDesc">Sets the value of the mode at position &lt;index&gt;</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">
+						GetValue(Name)</TD>
+					<TD class="PropertyDesc">Gets the value of the node with name &lt;name&gt;</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">SetValue(Name, value)</TD>
+					<TD class="PropertyDesc">Sets the value of the node with name &lt;name&gt;</TD>
+				</TR>
+				<TR>
+					<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+					<TD class="PropertyName" width="200">
+						HasKey(Name)</TD>
+					<TD class="PropertyDesc">Returns true if the viewstate has a Key &lt;key&gt;</TD>
+				</TR>
+			</table>
+			<!--Public Events-->
+			<br>
+			<span Class="ClassSection">Public Events</span>
+			<table class="TableStyle" ID="Table5" cellpadding="4">
+				<tr>
+					<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+					<td width="200" Class="PropertyName">--</td>
+					<td Class="PropertyDesc">--</td>
+				</tr>
+			</table>
+			<!--Protected Properties-->
+			<br>
+			<span Class="ClassSection">Protected Properties</span>
+			<table class="TableStyle" ID="Table6" cellpadding="4">
+				<TR>
+					<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+					<TD class="PropertyName" width="200">--</TD>
+					<TD class="PropertyDesc" width="50">--</TD>
+					<TD class="PropertyDesc">--</TD>
+				</TR>
+			</table>
+			<!--Protected Methods-->
+			<br>
+			<span Class="ClassSection">Protected Methods</span>
+			<table class="TableStyle" ID="Table7" cellpadding="4">
+				<tr>
+					<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+					<td width="200" Class="PropertyName">GetNodeByName(Name)</td>
+					<td Class="PropertyDesc">Gets a XML DOM node with name &lt;Name&gt;</td>
+				</tr>
+			</table>
+			<!--Protected Events-->
+			<br>
+			<span Class="ClassSection">Protected Events</span>
+			<table class="TableStyle" ID="Table8" cellpadding="4">
+				<tr>
+					<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+					<td width="200" Class="PropertyName">--</td>
+					<td Class="PropertyDesc">--</td>
+				</tr>
+			</table>
+		</LI>
+	</body>
+</html>

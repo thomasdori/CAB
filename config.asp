@@ -1,8 +1,6 @@
 <%
   OPTION EXPLICIT
 
-  'On Error Resume Next
-
   Response.CodePage = 65001
   Response.CharSet = "utf-8"
   Response.Buffer=True
@@ -18,4 +16,10 @@
   Response.AddHeader "X-FRAME-OPTIONS", "DENY"
 
   Server.ScriptTimeOut = 600
+
+  Const LOG_LEVEL = 3
+
+  If LOG_LEVEL > 2 Then
+    On Error Resume Next
+  End If
 %>

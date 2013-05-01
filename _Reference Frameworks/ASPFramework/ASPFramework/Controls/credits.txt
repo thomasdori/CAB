@@ -1,0 +1,18 @@
+'**********************************************************************************************************************
+'CLASSIC ASP FRAMEWORK V2.0
+'BY CHRISTIAN JAVIER CALDERON A.
+'EMAIL: CCALDERON@HOTMAIL.COM
+'WORKSPACE: http://www.gotdotnet.com/Community/Workspaces/workspace.aspx?id=69b08b15-d456-4cf9-8b12-d4642ef0c22e
+'Please forward comments to CCALDERON@HOTMAIL.COM only on MONDAYS AND FRIDAYS, all other days I have every incoming email blocked, this is due the 
+'huge amount of spam I get... it sucks!.  The other way to contact me is through my email address listed in www.asp.net, I'm user ccalderon
+'Now, the rules:
+'1) Use of this software is also done so at your own risk. The code is supplied as is without warranty or guarantee of any kind.
+'2) This header MUST remain intact, you cannot remove it. You may add your credits if you make any modifications.
+'3) It is expressly forbidden to sell this source code. You can use it in your proyects, but you cannot sell it as a framework.
+'4) You are free to use the source code in your own code, but you may not claim that you created the code.
+'
+'THE CREDITS:
+'The ViewState Component (Base64 stuff): Contains cryptography software by David Ireland of "DI Management Services Pty Ltd <www.di-mgt.com.au>."
+'Some files may have their own credits based on the author.
+'This header alplies also to the following source code every file included in this framework.
+'

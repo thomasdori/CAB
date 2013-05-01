@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ServerPanel</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<br>
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ServerPanel</td>
+				<td align="right">V1.1 F2.0</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;Server_Panel.asp<br>
+		<b>Class Name:</b>&nbsp;ServerPanel.asp
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		The ServerPanel can be used to group controls or portions of HTML that you want 
+		to make visible, enabled, etc.
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ServerPanel</td>
+				<td Class="PropertyDesc">
+					This constructor is used to create an instance of the control while at the same 
+					time assiging it a name and id.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_constructor.bmp"></td>
+				<TD class="PropertyName" width="200">New</TD>
+				<TD class="PropertyDesc">This is the default constructor and it will create an 
+					instance of the control <STRONG>without</STRONG> a name. Controls instanciated 
+					this way must assign the name of the control manually by doing this: 
+					&lt;controlVariable&gt;.Control.Name = "&lt;ControlName&gt;".</TD>
+			</TR>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">Control</td>
+				<TD class="PropertyDesc" width="50">WebControl</TD>
+				<td Class="PropertyDesc">Inherits attributes from the WebControl class. For more 
+					information go to the <A href="WebControl.html">WebControl</A> help.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Text</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">
+					If supplied, it will render the contents of Text inside the panel.&nbsp;
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PanelTemplate</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">
+					Name of the function to be used to render the panel contents.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Mode</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">1&nbsp;= Flat, 2 =3D, 3&nbsp;=Round</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Width</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Width</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Height</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Heigth</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">OverFlow</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Overflow</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">BorderColor</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Border Color</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">LightColor</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Border Light Color</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">DarkColor</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">"" Dark Color</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">BackColor</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">"" Background Color</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">--</td>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">WriteProperties(bag)</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					restore its state after a postback. Bag is of type PropertyBag and can be used 
+					to read (or write) to the control viewstate.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">Invoked by the CLASP Framework to allow the control 
+					to&nbsp;persist its state before the page is destroyed. Bag is of type 
+					PropertyBag and can be used to read (or write) to the control viewstate.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">HandleClientEvent</td>
+				<td Class="PropertyDesc">-- Not handled --</td>
+			</tr>
+		</table>
+	</body>
+</html>

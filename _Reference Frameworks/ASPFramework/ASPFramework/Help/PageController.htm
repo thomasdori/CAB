@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>PageController</title>
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<LINK href="help.css" type="text/css" rel="stylesheet">
+	</head>
+	<body topMargin="1">
+		<table class="ControlName" id="Table1" cellPadding="5" width="100%">
+			<tr>
+				<td noWrap width="1%">PageController</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview--><br>
+		<b>File Name:</b>&nbsp;PageController.asp<br>
+		<b>Class Name:</b>&nbsp;cPageController.asp<br>
+		<br>
+		<span class="ClassSection">Overview</span><br>
+		This class is used to implement Templated solutions with Role based 
+		authorization.
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors--><span class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" id="Table2" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></td>
+				<td class="PropertyName" width="200">--</td>
+				<td class="PropertyDesc">You should use the global object PageController which is 
+					already instanciated and available.</td>
+			</tr>
+		</table>
+		<!--Public Properties--><br>
+		<span class="ClassSection">Public Properties</span>
+		<table class="TableStyle" id="Table3" cellPadding="4">
+			<TR>
+				<td class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">AuthorizedRoles</TD>
+				<TD class="PropertyDesc" width="50">Variant</TD>
+				<TD class="PropertyDesc">Can be an array of roles or a string with a role 
+					name.&nbsp;This property is used to define which roles are authorized to access 
+					this page.
+				</TD>
+			</TR>
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></td>
+				<td class="PropertyName" width="200">IsPublicPage</td>
+				<TD class="PropertyDesc" width="50">Boollean</TD>
+				<td class="PropertyDesc">Indicates wether or not the page is public (allows 
+					anonynous access).</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ParanoidLevel</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">:-) Nice name eh!. Well, this property is used to 
+					determine "how paranoid" you are. 0)Not at all, 1) Prevents people from 
+					submiting from other websites into your application, 3)Same as level 2 + 
+					encrypts viewstate if location = Client.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PageTitle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The title of the page. This can be set on any event.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PageCSSFiles</TD>
+				<TD class="PropertyDesc" width="50">Array</TD>
+				<TD class="PropertyDesc">Sets/Getsa an array of CSS file names to be added to the 
+					page.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PageJavaScriptFiles</TD>
+				<TD class="PropertyDesc" width="50">Array</TD>
+				<TD class="PropertyDesc">Sets/Gets an array of JavaScript files to be added to the 
+					page</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">BodyAttributes</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets extra body attribute to be added to the BODY 
+					tag.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsDownLevelBrowser</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Gets a value indicating if the Browser is considered 
+					down-level.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsBrowserCompatible</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Gets a value indicating if the Browser is considered 
+					compatible with the application.</TD>
+			</TR>
+		</table>
+		<!--Public Methods--><br>
+		<span class="ClassSection">Public Methods</span>
+		<table class="TableStyle" id="Table4" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></td>
+				<td class="PropertyName" width="200">OpenPage</td>
+				<td class="PropertyDesc">
+					<P>This function does the following:</P>
+					<OL>
+						<LI>
+						Invokes Page_Configure (if defined)
+						<LI>
+						Invokes Page.Execute
+						<LI>
+						Renders the HTML Tag, Title and Opens the HEAD tag
+						<LI>
+						Invokes Page_RenderHeadTag (if defined)
+						<LI>
+						Adds JavaSctript files and CSS files
+						<LI>
+						Closes the HEAD tag and Opens the BODY tag
+						<LI>
+						Invokes Page_RenderHeader (if defined)
+						<LI>
+						Opens the form
+						<LI>
+						Invokes Page_RenderForm (if defined)
+						<LI>
+						Closes the form
+						<LI>
+							Invokes Page_RenderFooter(if defined)&nbsp;&nbsp;</LI></OL>
+				</td>
+			</tr>
+			<TR>
+				<td class="PropertyImg" style="HEIGHT: 25px" width="25"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" style="HEIGHT: 25px" width="200">ClosePage</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 25px">Closes the BODY and HTML Tags.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderPage</TD>
+				<TD class="PropertyDesc">Executes OpenPage and ClosePage in one step.</TD>
+			</TR>
+		</table>
+		<!--Public Events--><br>
+		<span class="ClassSection">Public Events</span>
+		<table class="TableStyle" id="Table5" cellPadding="4">
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_Configure</TD>
+				<TD class="PropertyDesc">Used to set the Page title, change security settings, etc.</TD>
+			</TR>
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></td>
+				<td class="PropertyName" width="200">Page_RenderHeadTag</td>
+				<td class="PropertyDesc">If defined, it can be used to add JavaScript files, CCS 
+					files,add extra header tags, change the page title, etc.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_RenderHeader</TD>
+				<TD class="PropertyDesc">If defined, it can be used to add the contents of the page 
+					that will go before the form (i.e. logo with menu and left menu, etc). This is 
+					normally just an include to another asp or html page.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_RenderForm</TD>
+				<TD class="PropertyDesc">If defined, it is used to render the form controls. It is 
+					what normally would go in between the FormStart and FormEnd.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">Page_RenderFooter</TD>
+				<TD class="PropertyDesc">If defined, it can be used to&nbsp; add the contents of 
+					the page that will render after the form.</TD>
+			</TR>
+		</table>
+		<!--Protected Properties--><br>
+		<span class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" id="Table6" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" style="HEIGHT: 24px" width="25"><IMG src="images/s_property.bmp"></td>
+				<td class="PropertyName" style="HEIGHT: 24px" width="200">--</td>
+				<TD class="PropertyDesc" style="HEIGHT: 24px" width="50"></TD>
+				<td class="PropertyDesc" style="HEIGHT: 24px"></td>
+			</tr>
+		</table>
+		<!--Protected Methods--><br>
+		<span class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" id="Table7" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" style="HEIGHT: 44px" width="25"><IMG src="images/s_method.bmp"></td>
+				<td class="PropertyName" style="HEIGHT: 44px" width="200">RenderCollectionByTemplate(Template,Values)</td>
+				<td class="PropertyDesc" style="HEIGHT: 44px">Internally used to render the 
+					JavaScript and CSS collections, if any.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 44px" width="25"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 44px" width="200">HandleParanoidLevel</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 44px">Makes sure that your paranoid level 
+					is handled (&amp;-O)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 44px" width="25"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 44px" width="200">Miscelaneous:---&gt;</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 44px">You can add miscellaneous functions 
+					to for instance open an area, close an area, etc.</TD>
+			</TR>
+		</table>
+		<!--Protected Events--><br>
+		<span class="ClassSection">Protected Events</span>
+		<table class="TableStyle" id="Table8" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></td>
+				<td class="PropertyName" width="200">--</td>
+				<td class="PropertyDesc">--</td>
+			</tr>
+		</table>
+		<P><span class="ClassSection"></span>&nbsp;</P>
+		<P><SPAN class="ClassSection">Example:</SPAN></P>
+		<P>Since the PageController is mostly a template it will require that you make use 
+			of an ASP to customize it for each application. For instance, in a a page that 
+			implements the PageController you may include a reference to the 
+			PageController.asp and a reference to another ASP file with handlers for some 
+			of the events that apply to all the pages. In the "TemplateSamples" directory 
+			you will find an example.&nbsp; The page "CustomTemplate.asp" has only two 
+			lines of code: one to incluce the page controller and another to include the 
+			common handlers (header, footer, etc). If you change the reference to point to 
+			other common handlers, the whole application will use the new settings</P>
+		<br>
+		<br>
+		For instance:
+		<code>
+			<br>&lt;!--#Include File = "PageController.asp" --&gt;
+			<br>&lt;!--#Include File = "CommonTemplate.asp" -&gt;
+			</code>
+		<br><br>You can easily change the look & feel by doing this:<br>
+		<code>
+			<br>&lt;!--#Include File = "PageController.asp" --&gt;
+			<br>&lt;!--#Include File = "CommonTemplate2.asp" -&gt;
+			</code>		
+		<br><br><br>You could have a template for each season, or by event... nice!
+	</body>
+</html>

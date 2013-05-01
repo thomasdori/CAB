@@ -1,0 +1,212 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!-- 
+toSign="250a19b6ad059b424afd8eb48f715e7a4c9e4aa9";
+reasonCode="login";
+digestAlg="SHA";
+// -->
+</script>
+<HTML>
+<HEAD>
+<!-- 
+/*--------------------------------------------------------------------
+| Copyright (C) VeriSign, Inc. created 1996. All rights reserved. |
+| This is an unpublished work protected as such under copyright law. |
+| This work contains proprietary, confidential, and trade secret |
+| information of VeriSign, Inc. Use, disclosure or reproduction |
+| without the expressed written authorization of VeriSign, Inc. |
+| is prohibited. |
+--------------------------------------------------------------------*/
+** VSSKTEMPLATEVERSION#1.0.0.3 **
+-->
+<TITLE>
+Health Alert Network Login
+</TITLE>
+<!-- VSSKBEGIN Enrollment/CharEncoding#3#absent#1.0.0.0#1025 -->
+<!-- VSSKEND Enrollment/CharEncoding#3 -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+//-- VSSKBEGIN Global/Mode#30#manualauth#1.0.0.0#65263 --
+var hostName = "https://www.server.com";
+//-- VSSKEND Global/Mode#30 --
+
+//-- VSSKBEGIN Apps/KeyManager#16#no#1.0.0.0#1025 --
+var KeyManagerIntegration = 0;
+//-- VSSKEND Apps/KeyManager#16 --
+
+//-- VSSKBEGIN Apps/GSE#36#no#1.0.0.0#1025 --
+var ExchangeIntegration = 0;
+//-- VSSKEND Apps/GSE#36 --
+
+
+function CheckReasonCode()
+{
+// The script variable "reasonCode" gets assigned a value through the 
+// Java Script prepended by NSAPI Filter when the Login Page
+// is sent to the browser.
+
+if ( reasonCode.search(/expired/i) == 0 )
+{
+// This could be because either Inactivity or Absolute timeout.
+document.write("<br><FONT SIZE=4 COLOR=RED><CENTER>Timeout ...</CENTER></FONT><br>") ;
+}
+else if ( reasonCode.search(/login/i) == -1 )
+{
+document.write("<br><FONT SIZE=4 COLOR=RED><CENTER>Unknown Error Occured ...</CENTER></FONT><br>") ;
+}
+}
+
+function SignIt()
+{
+document.theform.Challenge.value = toSign;
+var thisHost = window.location.host;
+alert("https://" + thisHost + "/vsadmin/post")
+document.theform.ChallengePostURL.value = "https://" + thisHost + "/vsadmin/post";
+alert( "https://" + thisHost + "/vsadmin/post") 
+if (digestAlg == "MD5") 
+document.theform.SignHashAlg.value="MD5";
+else
+document.theform.SignHashAlg.value="SHA";
+
+if ( ExchangeIntegration == 0 && KeyManagerIntegration == 0)
+document.theform.CheckForRenew.value="true";
+else 
+document.theform.CheckForRenew.value="false";
+
+document.theform.submit(); 
+}
+
+function SignUp()
+{
+var EnrollUrl;
+EnrollPage = "userEnrollPTS.htm";
+EnrollUrl = hostName + "/VSApps/client/" + EnrollPage;
+self.location = EnrollUrl;
+}
+//-->
+</SCRIPT>
+</HEAD>
+<onLoad="SignIt()">
+<BODY>
+<P><B><FONT FACE="Verdana"><FONT SIZE=-1>
+Loading HAN Login page...
+</FONT></FONT></B>
+<P>
+
+<SCRIPT LANGUAGE="JavaScript">
+CheckReasonCode() ;
+</SCRIPT>
+
+<!-- Note to PTA Administrators -->
+<!-- You can customize the HTML below this point to have your own look and feel -->
+<!-- However you need to maintain the FORM tags and various form variable tags as they are -->
+
+<!-- VSSKBEGIN Apps/PersonalTrustService#2#yes#1.0.0.3#3842 -->
+<FORM name=theform action="https://pilotpts.verisign.com/vspts/pts" method=post>
+<INPUT type="hidden" name="AppContextName" value="Secure Logon">
+<INPUT type="hidden" name="RoamingClientInfo" value="AAAAAAsACQByb2FtMV91cmwiAAAAaHR0cDovL3BpbG90c3Rvci52ZXJpc2lnbi5jb20vdnNybQkAcm9hbTJfdXJsIgAAAGh0dHA6Ly9waWxvdHJvYW0udmVyaXNpZ24uY29tL3Zzcm0JAHN0b3JlX3VybCIAAABodHRwOi8vcGlsb3RzdG9yLnZlcmlzaWduLmNvbS92c3JtDAByb2FtMV9wdWJrZXm8AAAAQUFBQWdQVXdRMVM0OWMzOVI1d0h0RnlRQVBva1pVVFdibHhGdGxIQkROb1V5L1ZWcjh1MWJCdVZ2TmFlb0VuZGt3U2ZDajBRaWZ2QVRyRFVDYlNoOU9yUHNuV2hUUCtoUEx1cDJMb0dpajVZL056WXpLTStDaGxtMU5OeEdtSEI4NDBKVXE5ZGNsNkJpQVNYMUwvK3dQc20wTWJyTGtmVXUvNXlKNDkzL0tBWXBaUXZBQUFBQXdFQUFRPT0MAHJvYW0yX3B1YmtlebwAAABBQUFBZ0t0eUVUOGhTaGpRTzVVRktIY2tGYk1MeW1VdWMycnZRVUZpTG1kcjRacEpjaFhMQzdXNVFoOExZdVZRNTY4bXVJbWxFd3cyWUVvTFZZNXdRNUtRRTFNRlRZUlJpd1pERmpPTkVwcDdBL3JpTm1tZWdWWFhUZzAvWUgzNGZxd3hnV0dWZmo3YXpiVU5WL040UEZpSGlvWG4rYnF5Y1lMZTl6cGV5aC8zbWZQTkFBQUFBd0VBQVE9PQcAY29tcGFueQgAAABWZXJpU2lnbgQAZGVwdAoAAABQZXJyeSBEZW1vEQBqdXJpc2RpY3Rpb25faGFzaCAAAABhYTdmODE2Y2Q2ZGQ5YWJkMWU2MjEyMGM4OTU2ODAyNQwAc2lnbmluZ19jZXJ09AIAAE1JSUNNVENDQVpxZ0F3SUJBZ0lRV0U1Zkk4SHBzVU9XVVVMM05TU1JKVEFOQmdrcWhraUc5dzBCQVFVRkFEQThNUmN3RlFZRFZRUUtFdzVXWlhKcFUybG5iaXdnU1c1akxqRWhNQjhHQTFVRUF4TVlWbVZ5YVZOcFoyNGdVbTloYldsdVp5QlNiMjkwSUVOQk1CNFhEVEF3TURVeU5UQXdNREF3TUZvWERURXdNRFV5TlRJek5UazFPVm93TnpFWE1CVUdBMVVFQ2hNT1ZtVnlhVk5wWjI0c0lFbHVZeTR4SERBYUJnTlZCQU1URTFabGNtbFRhV2R1SUZKdllXMXBibWNnUTBFd2daOHdEUVlKS29aSWh2Y05BUUVCQlFBRGdZMEFNSUdKQW9HQkFKZTVCcVV2b0VrQmc3REk3OEZydHlNRDI4bDJNcnhvemJVd0srMkF6K0c2enZhd2MvQ0g2Y0J0ZFUvUDNsNnpHVFdsSVRJVnNsM1RoanRoR0dIZmw4NzdxbUk3OEU5R3JrdENQbWRLRDZxdHhDN2llUUIvY08xOXdyRS9ndm5mZVpwL1F6T2dvN3p1Q29uZFBDbWZjb29XOUtqWFRud2l2OGZ5bERWRFN0MkhBZ01CQUFHak9UQTNNQkVHQ1dDR1NBR0crRUlCQVFRRUF3SUJCakFTQmdOVkhSTUJBZjhFQ0RBR0FRSC9BZ0VBTUE0R0ExVWREd0VCL3dRRUF3SUJCakFOQmdrcWhraUc5dzBCQVFVRkFBT0JnUUFBN0RWSzlzd0JHZkpZYVJrTzBuazQwUEJyYmx6M1dXT1BZcmZIdmFPeUlqcWt2UE5FamovRGFQV01GRGFteGhCK2FGUzFYOG93Z1kyV2JEWHdYdTdoamJKWDROL2VzT211UGtxS2JIYkVoMHpBcGZRcVF3YXdWVFpPQ0MrbUg1am9wWndqcHNQSC9Ka3ZhZllJYTJMcnV2N1o3cnYrWHE2bVRsVjcrS1pvL3c9PRIAY2hhcmFjdGVyX2VuY29kaW5nAAAAAA0AY2hhcmFjdGVyX3NldAAAAAA=">
+<INPUT type="hidden" name="RoamingClientInfoSig" value="jp4C7r9enVxMFG5A2gadnRycXB3FMORbreosOG0goqpLQ+KTXhxY2tA+Z/MBd5+H8zYrizLhbL0zffXwvszAY7TXv1NWvgLZA3zjbDM/dcoMaiEapzOiJ7yikZ2SSuEV9Oap9bP7A688VxxWb5Z8+3z08qfV4B5482oml/XDmhk=">
+<INPUT type="hidden" name="SrchCritIssuerDN" value="O=VeriSign; OU=VeriSign Class 2 OnSite Individual CA; OU=For Test Purposes Only; CN=VeriSign Class 2 OnSite Individual TEST CA">
+
+<!-- VSSKBEGIN Apps/PersonalTrustService#28#yes#1.0.0.0#52390 -->
+<INPUT type="hidden" name="CharacterEncoding" value="Need default value">
+<INPUT type="hidden" name="CharacterSet" value="Need default value">
+<!-- VSSKEND Apps/PersonalTrustService#28 -->
+
+<!-- VSSKEND Apps/PersonalTrustService#2 -->
+
+<!-- VSSKBEGIN Apps/PersonalTrustService#9#yes#1.0.0.0#38338 -->
+<!-- PTS UI settings -->
+<INPUT TYPE="hidden" name="AppHeaderLogoURL" value="http://www.verisign.com/header.gif">
+<INPUT TYPE="hidden" name="AppFooterLogoURL" value="-">
+
+<!-- PTS Language/style settings -->
+<INPUT TYPE="hidden" name="Language" value="usenglish">
+<INPUT TYPE="hidden" name="deviceLanguage" value="html">
+
+<INPUT TYPE="hidden" NAME="CertJurHash" VALUE="aa7f816cd6dd9abd1e62120c89568025">
+
+<!-- PTS Cancel URL -->
+<!-- VSSKBEGIN Global/Mode#113#manualauth#1.0.0.0#65263 -->
+<input type="hidden" name="CancelURL" value="https://www.server.com/VSApps/client/ptsCancel.htm">
+<!-- VSSKEND Global/Mode#113 -->
+<!-- VSSKEND Apps/PersonalTrustService#9 -->
+
+<!-- VSSKBEGIN Apps/PersonalTrustService#10#yes#1.0.0.0#37999 -->
+<INPUT TYPE="hidden" NAME="SignChallenge.WizardTitle" VALUE="">
+
+<INPUT TYPE="hidden" NAME="SignChallenge.OpenProfile.Title" VALUE="">
+<INPUT TYPE="hidden" NAME="SignChallenge.OpenProfile.Text" VALUE="">
+<INPUT TYPE="hidden" NAME="SignChallenge.OpenProfile.HelpUrl" VALUE="">
+
+<INPUT TYPE="hidden" NAME="SignChallenge.SelectID.Title" VALUE="">
+<INPUT TYPE="hidden" NAME="SignChallenge.SelectID.Text" VALUE="">
+<INPUT TYPE="hidden" NAME="SignChallenge.SelectID.HelpUrl" VALUE="">
+
+<INPUT TYPE="hidden" NAME="SignChallenge.PostMessage" VALUE="Please wait while we submit your authentication information to the web-site...">
+
+<!-- VSSKEND Apps/PersonalTrustService#10 -->
+
+<!-- VSSKBEGIN Apps/PersonalTrustService#21#yes#1.0.0.0#16391 -->
+<!-- VSSKBEGIN Global/Mode#118#manualauth#1.0.0.0#58904 -->
+<input type="hidden" name="CertRenewPostURL" value="https://pilotonsite.verisign.com/services/VeriSignPerryDemo/cgi-bin/sophia.exe">
+<input type="hidden" name="Renew_remote_host" value="https://www.server.com/cgi-bin/haydn.exe">
+<!-- VSSKEND Global/Mode#118 -->
+<input type="hidden" name="SignHashAlg" value="MD5">
+<INPUT TYPE="hidden" NAME="Renew_form_file" VALUE="../fdf/VSApps/client/userRenewalPTS.fdf">
+<INPUT TYPE="hidden" NAME="Renew_getMethod" VALUE="pkcs7">
+<INPUT TYPE="hidden" NAME="Renew_detachedMesg" VALUE="Renew Digital ID">
+<INPUT TYPE="hidden" NAME="DaysToRenew" VALUE="31">
+<!-- VSSKEND Apps/PersonalTrustService#21 -->
+
+<!-- VSSKBEGIN Apps/PersonalTrustService#22#yes#1.0.0.0#25437 -->
+<INPUT TYPE="hidden" NAME="RenewConfirmation.Title" VALUE="">
+<INPUT TYPE="hidden" NAME="RenewConfirmation.HelpUrl" VALUE="">
+<INPUT TYPE="hidden" NAME="RenewCertificate.PostMessage" VALUE="Please wait while we submit your renewal information to the web-site...">
+
+<INPUT type="hidden" name="ErrorPage.ReturnTxt" value="Home">
+<INPUT type="hidden" name="ErrorPage.ReturnUrl" value="https://www.verisign.com">
+<!-- VSSKEND Apps/PersonalTrustService#22 -->
+
+<INPUT type="hidden" name="Action" value="SignChallenge"> 
+<INPUT type="hidden" name="Challenge"> 
+<INPUT type="hidden" name="ChallengePostURL" value=""> 
+<INPUT TYPE="hidden" NAME="CheckForRenew" VALUE="true">
+
+<INPUT TYPE="hidden" name="SignUpText" value="Sign Up">
+<INPUT TYPE="hidden" name="SignUpUrl" value="">
+<!-- Hidden BY MAG -->
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="590" >
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD WIDTH="328">
+<BR>&nbsp;
+<P><B><FONT FACE="Verdana"><FONT SIZE=-1>
+To Access the protected pages, click Login.
+</FONT></FONT></B>
+<P>
+<INPUT TYPE=BUTTON NAME=Login VALUE="LOGIN" onClick="SignIt()" LANGUAGE="JavaScript">
+<!--
+<INPUT TYPE=checkbox NAME=ResetPref> Check this box to ignore your preferences.
+
+<P><B><FONT FACE="Verdana"><FONT SIZE=-1>
+If you do not have a Digital ID you can Sign Up Now!</FONT></FONT></B>
+<P>
+<INPUT TYPE=BUTTON NAME="Sign Up" VALUE="Sign Up" onClick="SignUp()">
+</TD>
+</TR>
+</TABLE>
+
+<!--END MAG Hidden-->
+
+</FORM>
+
+<HR WIDTH=100%>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JavaScript">
+alert(hostName)
+//MAG document.theform.SignUpUrl.value= hostName + "/VSApps/client/userEnrollPTS.htm" ; 
+</SCRIPT>
+
+

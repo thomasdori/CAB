@@ -1,0 +1,434 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>WebControl</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK href="help.css" type="text/css" rel="stylesheet">
+	</head>
+	<body topMargin="1">
+		<table class="ControlName" id="Table1" cellPadding="5" width="100%">
+			<tr>
+				<td noWrap width="1%">WebControl.asp</td>
+				<td align="right">V 2.0</td>
+			</tr>
+		</table>
+		<!--Overview--><br>
+		<b>File Name:</b>&nbsp;WebControl.asp<br>
+		<b>Class Name:</b>&nbsp;WebControl<br>
+		<br>
+		<span class="ClassSection">Overview</span><br>
+		Defines the methods, properties and events that are common to all server 
+		controls. The CLASP Framework iteracts with the server controls at the 
+		WebControl level.
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors--><span class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" id="Table2" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></td>
+				<td class="PropertyName" width="200">WebControl</td>
+				<td class="PropertyDesc">The constructor registers the control in the CLASP 
+					Framework by adding it to the Page's controls colleaction. The constructor also 
+					sets the detaults.</td>
+			</tr>
+		</table>
+		<!--Public Properties--><br>
+		<span class="ClassSection">Public Properties</span>
+		<table class="TableStyle" id="Table3" cellPadding="4">
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Name</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The name of the control is required and has to be set on 
+					the Page_Init event. Normally you use the same name as the variable (i.e. 
+					txtFirstName)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ControlID</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">This property should be used when the control developer or 
+					the devoper wants to access the id of the control (** don't use the control 
+					name property!!!, you could, but is slower&nbsp;**)</TD>
+			</TR>
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></td>
+				<td class="PropertyName" width="200">EnableViewState</td>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<td class="PropertyDesc">Determines whether or not the underlying/implementing 
+					control supports viewstate. This is used by CLASP to determine if it will 
+					invoke the ReadProperties and WriteProperties so the control can 
+					restore/persist the state.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Enabled</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">The use/interpretation of this property is delegated to 
+					the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Visible</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">The use/interpretation of this property is delegated to 
+					the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Style</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The use/interpretation of this property is delegated to 
+					the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Attributes</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The use/interpretation of this property is delegated to 
+					the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The use/interpretation of this property is delegated to 
+					the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">TabIndex</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">The use/interpretation of this property is delegated to 
+					the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ToolTip</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">The use/interpretation of this property is delegated to 
+					the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">DataTextField</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">If set to a value, then if Page.DataBind is executed it 
+					will invoke the SetValueFromDataSource method of the implementing control.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsViewStateRestored</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Determines whether or not the viewstate for this control 
+					has been already restored.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ImplementsOnInit</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Determines whether or not the implementing control 
+					implements the OnInit event. If true, the CLASP will invoke this event right 
+					after Page_Init() completes.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ImplementsOnLoad</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Determines whether or not the implementing control 
+					implements the&nbsp;OnLoad event. If true, the CLASP will invoke this event 
+					right after Page_Load() completes.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ImplementsProcessPostBack</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">
+					Determines whether or not the implementing control implements 
+					the&nbsp;ProcessPostBack event. If true, the CLASP will invoke this event right 
+					after Page_LoadViewState() completes. This is normally&nbsp;used by controls 
+					that render html input controls so they can restore their postback values.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">IsVisible</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Used to determine if the Control is visible by inspecting 
+					the visibility flag bin the hierarchy of controls, if any.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Parent</TD>
+				<TD class="PropertyDesc" width="50">WebControl</TD>
+				<TD class="PropertyDesc">Used to Get/Set the control immediate parent in the 
+					control hierarchy.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ViewState</TD>
+				<TD class="PropertyDesc" width="50"><A href="PropertyBag.htm">PropertyBag</A>
+				</TD>
+				<TD class="PropertyDesc">Reference to the internal property bag (which reports to 
+					the page viewstate).</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">OverrideTemplate</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">If true then when applying a template/skin to the page the 
+					control will be by-passed. This allows the developer to use a different style 
+					than the one defined in the template.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ToolTipText</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Use is determined by the implementing control.</TD>
+			</TR>
+		</table>
+		<!--Public Methods--><br>
+		<span class="ClassSection">Public Methods</span>
+		<table class="TableStyle" id="Table4" cellPadding="4">
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Public Events--><br>
+		<span class="ClassSection">Public Events</span>
+		<table class="TableStyle" id="Table5" cellPadding="4">
+			<tr>
+				<td class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></td>
+				<td class="PropertyName" width="200">--</td>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_property.bmp"></td>
+				<td width="200" Class="PropertyName">Owner</td>
+				<TD class="PropertyDesc" width="50">Object</TD>
+				<td Class="PropertyDesc">Hold a reference to the implementing control. Every User 
+					Control has to have a WebControl inside (sort of the way of implementing 
+					"inheritance" in Classic ASP). This is important and has to be set by the 
+					implemeting control in order for the WebControl to comunicate and raise 
+					internal events.</td>
+			</tr>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">ReadProperties(vs)</td>
+				<td Class="PropertyDesc">Implemented by the WebControl and used to restore the 
+					WebControl state. Accepts a viewstate object. This is part of the CLASP 
+					Framework and should not be directly used</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200"><EM>ReadProperties(bag)</EM></TD>
+				<TD class="PropertyDesc">Implemented by the Implementing control and used to 
+					restore the control-specific state. Accepts a <a href="PropertyBag.htm">PropertyBag</a>
+					object.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25" height="22"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200" height="22">WriteProperties(vs)</TD>
+				<TD class="PropertyDesc" height="22">Implemented by the WebControl and used to 
+					persist/save the WebControl state. Accepts a viewstate object. This is part of 
+					the CLASP Framework and should not be directly used</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25" height="22"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200" height="22"><EM>WriteProperties(bag)</EM></TD>
+				<TD class="PropertyDesc" height="22">Implemented by the Implementing control and 
+					used to persist/save the control-specific state. Accepts a <a href="PropertyBag.htm">
+						PropertyBag</a> object.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25" height="22"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200" height="22">RestoreViewState</TD>
+				<TD class="PropertyDesc" height="22">Implemented by the WebControl and used to 
+					restore the WebControl state. This is used by Web Controls created dynamically 
+					AFTER the Page_Init event. This is part of the CLASP Framework and should not 
+					be directly used</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25" height="22"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200" height="22"><EM>ProcessPostBack</EM></TD>
+				<TD class="PropertyDesc" height="22">Implemented by the implementing control and is 
+					used to restore the values posted back. Controls also make use of this event to 
+					register OnChanged events.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName"><EM>HandleServerEvent(EventName)</EM></td>
+				<td Class="PropertyDesc">If implemented by the Implementing control then the CLASP 
+					uses it nofity the object that it has been target of a&nbsp;server-side 
+					event.This is part of the CLASP Framework and should not be directly used</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200"><EM>HandleClientvent(EventName)</EM></TD>
+				<TD class="PropertyDesc">If implemented by the Implementing control then the CLASP 
+					uses it nofity the object that it has been target of a&nbsp;client-side event. 
+					This is part of the CLASP Framework and should not be directly used</TD>
+			</TR>
+		</table>
+		<P>
+			<hr>
+		<P></P>
+		<P>
+			<br>
+			<span Class="ClassSection">Example of a control implementing the WebControl</span>
+			<br>
+			<pre>	Public Function New_ServerControlTemplate(name) 
+		Set New_ServerControlTemplate =
+	  New 
+		ServerControlTemplate New_ServerControlTemplate.Control.Name =  name
+			End  Function
+	Page.RegisterLibrary "your
+	
+	library name<your lib name>"
+	
+	Class ServerControlTemplate
+		Dim Control
+		Dim YourVariable		
+		
+		Private Sub Class_Initialize()
+			
+			Set Control =
+	
+	New WebControl
+			'Set Controls
+		= new		
+		
+		ControlsCollection 'Only if
+			
+			control is a container... Set	
+			Control.Owner = Me 'Only if control is a container... if not
+			don't expose it! (they 			can get to it anyway) 'Initialize your internal variables YourVariable = "" Control.ImplementsOnInit = True '? If
+			
+			you want the OnInit
+			to be called
+			Control.ImplementsOnLoad = True '?  If you want the Onload to be called
+			Control.ImplementsProcessPostBack = True '?  If you want to receive a ProcessPostBack notification
+			on postbacks for form inputs End Sub Public Sub OnInit() 'At this stage of the game,
+	   the viewstate
+	   
+	   	is not yet			
+	   		loaded but all the controls 'are initialized. This can be used to add dynamic controls to
+	   		this control (for more complex controls) End Sub Public Sub OnLoad() 'View state is ready and controls
+		are ready.
+
+	   	In here you			
+			can make decisions or update calulated fields. 'After this, the page load will be called 'If you need
+			to register any client script (js code) you
+			
+			can do it using 'Page.RegisterClientScript(scriptname,scriptcode) 'I don't have one to register a script using the
+			source=...
+			put it can be easily done. End Sub Public Function SetValueFromDataSource(value) 'If you support Data Binding (Page.DataBind)
+		then use
+		
+	   this method to
+		capture the binded value. 'i.e. YourValue = value 'The WebControl has a property called DataTextField
+		(Control.DataTextField) that can be
+		
+		used to specify 'the name of the field to be used during the bind
+		procedure. 'In the page the developer has to invoke Page.DataBind(DataSourceRecordSet,Nothing) (to bind
+		at the page level) 'Check the code in WebControl.asp. Right now is a flat databind
+		and is not navigating the hierarchy. Just comment out 'a line in the WebControl.asp Page.DataBind to support hierarchical databind. End
+		Function Public Function ReadProperties(bag) 'If the control supports viewstate (you
+				
+	   want to
+	   
+	   read persisted data
+			in between requests) 'The bag variable is a property bag object. To see its 
+			methods go to the WebControl.asp 'For boolean values you can use ReadBoolean, for Integers ReadInt and
+			so on. YourVariable = bag.Read("YV") End Function Public Function WriteProperties(bag) 'If the control
+			
+			supports viewstate (you
+	   want to
+		
+	   persist data in
+			between requests) bag.Write "YV",YourVariable End Function Public Function ProcessPostBack() 'Use Control.ViewState if you 
+			want to
+	   gain access
+
+	   to the viewstate.
+			'It will  be = Nothing EnableViewState = False OR if the 
+			control was created AFTER or during page page_loadviewstate
+	   End Function	    
+	   Public Function HandleClientEvent(e)
+			'e is of type  ClientEvent (see WebControl.asp for methods and properties)
+			
+			HandleClientEvent = True 'To signal callee the receipt ak.
+			'You can just call the "
+			HandleClientEvent = ExecuteEventFunctionEX(e)
+			
+			'Check the ExecuteEvent functions in WebControl.asp for more ways to handle events
+			
+			'or you could determine the event name (e.EventName) and handle it internally.
+			
+	   End Function					
+		
+	   Private Function RenderMe()
+			Response.Write "I'm rendering myself! and by the way, YourValue is " &amp; YourValue
+			'To aquire a postback event code you must use the following series of functions:
+			'Page.GetEventScript(ClientTrigger, ObjectName, EventName, ByVal Instance, ExtraMessage)
+			'(and all its variations  ... check them in webcontrol.asp)
+			'The ClientTrigger is the javascript event, ObjectName is the ID of the object target of the event, EventName is self explanatory
+			'Instance is anything you want to pass back to the page (used normally when there is more than one control or in a link so can pass the id of something)
+			'The ExtraMessage is anything EXTRA that you can to pass... :-P
+			
+	   End Function
+	   
+	   Public Default Function Render()			
+			 Dim varStart	 
+			 			 
+			 'You are responsible to handle the meaning of "visibility". It could be as simple as exiting the function
+			 
+			 If Control.IsVisible = False Then
+				Exit Function
+			 End If
+			 
+			 varStart = Now
+			 
+			 'You may want to handle the rendering process in another private function, to keep this one small
+			 Call RenderMe()
+			 
+			 'Be a nice boy and tell us how long did it take this control to render. This is used for debugging purposes...
+		 	 Page.TraceRender varStart,Now,Control.Name
+		 	
+		 	 'You can always add to the trace
+		 	 'If you want to relate the message to the object: Page.TraceCall(Control,Message)
+		 	 'Or just to add a message Page.TraceCall(Method,Message)
+		 	 'To highlite the message Page.TraceImportantCall(Control,Message)
+		 	 'Or to the error:Page.TraceError
+		
+			 'The Control object (WebControl) has a tab index that you can use to specify the tab index.
+			 'If you want the framework to assign it based on the render order use 
+			 'Control.TabIndex = Page.GetNextTabIndex()
+		 	 
+		 	 'Need to keep the vertical scroll position? then Page.AutoResetScrollPosition = True
+	   End Function
+			   	
+
+	End Class
+				
+				</pre>
+			<br>
+	</body>
+</html>

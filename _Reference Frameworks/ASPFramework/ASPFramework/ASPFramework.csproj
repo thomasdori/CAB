@@ -1,0 +1,1575 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Web"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{D79BC9DC-BADA-4ECF-869B-7859652812C4}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "ASPFramework"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "ASPFramework"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AjaxActions.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AjaxTest.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "AutoFocus.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "BarCode.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Browser.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Button_test.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Buttons.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CheckBox.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ClaspAdmin.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "contentdivider.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGridHighlighting.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGridRowSpan.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataList.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataRepeater.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DBWrapper.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DrillDown.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DropDown.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Dynamic.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EmployeeEdit.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EmployeeList.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EmployeeListv2.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Events.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "FileUploader.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Frame.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "GenericHTMLControl.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asa"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax"
+                    SubType = "Component"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax.cs"
+                    DependentUpon = "Global.asax"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax.resx"
+                    DependentUpon = "Global.asax.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Graph.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "HiddenField.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Home.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "HTMLPage2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "HyperLink.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Image.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ImageGallery.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ImageList.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Label.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Layer.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "LayerNest.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Login.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Marquee.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Menu.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Menutest.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MessageBox.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MiscPerformanceTests.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OpenInFrame.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OpenInFrame1.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OpenInFrame2.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PageCache.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PageDataBind.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Panel.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PanelList.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PerformanceTest.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Placeholder.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PopWin.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ProgressBar.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "RadioButton.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "RichTextBox.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Sample_TemplateController.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Samples.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Sandbox.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ServerForm.asp"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ServerValidation.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Tabs.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "tabstyle.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "template.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Test.asp"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TEST.XML"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TEST22.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TextBox.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TextBoxAdvance.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Timer.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ToolBar.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Tree.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Tree1.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControl.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ViewPort.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "_derived\search.htm0.htx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "_private\ProgrammingModel\Translations.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "_ScriptLibrary\ADOUTILS.ASP"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "bin\" />
+                <File
+                    RelPath = "calendar\cal.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\calendar.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\calendar2.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\logo.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\next.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\next_year.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\pixel.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\prev.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\prev_year.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "calendar\tc.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\CallTrace.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\CLASP_Setup.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Common.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\credits.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\DatabaseImage.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\FileViewState.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\license.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Page_Template.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\PageCache.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\PageController.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\SampleSkin.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_AjaxProcessor.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ASPCrypto.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ASPCrypto2.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ASPCrypto3.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ASPListItemCollection.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ASPViewState.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_BarCode.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_BrowserAgent.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_BrowserCapture.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Button.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_CheckBox.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_CheckBoxList.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ControlTemplate.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_CoreObjects_UseASP.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_CoreObjects_UseCOM.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_DataGrid.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_DataList.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_DataPager.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_DataRepeater.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_DropDown.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_FieldValidator.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_FileUploader.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Form.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Frame.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Graph.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_HiddenField.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_HTMLGenericControl.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_HyperLink.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Image.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ImageList.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Label.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Layer.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Marquee.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Menu.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_MessageBox.asp"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Panel.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Placeholder.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ProgressBar.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_RadioButton.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_RichTextBox.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Tab.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_TextBox.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Timer.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ToolBar.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Treeview.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_Validation.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Server_ViewPort.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\SessionViewState.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\SQLServerViewState.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\StringBuilder.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ViewStatePersistenceTemplate.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\WebControl.asp"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "Controls\Deprecated\" />
+                <File
+                    RelPath = "Controls\ScriptLibrary\claspX.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\dhtml.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\events.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\formatNumber.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\validation.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\barcode\images\shim.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\barcode\images\shim_black.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\calendar.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\calendar.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\cal.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\logo.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\next.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\next_year.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\pixel.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\prev.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\prev_year.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\calendar\images\tc.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\datagrid\GridColFreeze.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\datagrid\images\dn.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\datagrid\images\up.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\dragdrop\dragdrop.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\dragdrop\fileuploader\fileform.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\dragdrop\fileuploader\images\disk.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\dragdrop\fileuploader\images\pixel.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\fileuploader\upload.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\fileuploader\images\disk.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\fileuploader\images\pixel.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\fileuploader\images\Thumbs.db"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\graph.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\license.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\0.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\1.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\10.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\2.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\3.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\4.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\5.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\6.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\7.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\8.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\9.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\black.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\graph\images\clear.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\menu\item_scope.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\menu\item_style.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\menu\menu.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\menu\menu_abs.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnlb.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnlbl.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnlbr.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnll.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnlr.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnlt.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnltl.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\panel\images\pnltr.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\progressbar\ProgressBar.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\progressbar\ProgressBar.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\progressbar\progressbar2.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\richtextbox.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Bold.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\bullist.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Center.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Copy.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Cut.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\DeIndent.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\empty.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\fgcolor.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\HR.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\image.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\imageLink.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\imageLocal.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\imageUpload.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\inindent.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Italic.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\left.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Link.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\numlist.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\outdent.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Paste.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\right.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Save.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Strikethrough.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Subscript.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Superscript.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\under.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\Undo.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\richtext\images\vertical_line.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\toolbar\images\hsep.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\toolbar\images\vsep.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\default.js"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\help.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\tree.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\base.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\empty.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\folder.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\folderopen.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\join.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\joinbottom.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\line.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\minus.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\minusbottom.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\page.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\plus.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\default\plusbottom.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\empty.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\folder.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\folderopen.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\foldersel.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\minus.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\page.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\pagesel.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\ScriptLibrary\treeview\icons\help\plus.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\CheckBox.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\ClientEvent.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Credits.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\CurrentUser.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\DataGridColumn.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Header.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\help.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Help.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\InProgress.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\ListItemsCollection.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Overview.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Page.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\PageController.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\PropertyBag.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\RoadMap.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_Button.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_CheckBoxList.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_DataGrid.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_DataList.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_DataPager.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_DataRepeater.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_DropDown.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_FieldValidator.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_GenericHTMLControl.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_HiddenField.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_Hyperlink.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_Image.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_Label.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_Panel.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_RadioButton.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Server_TextBox.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\ServerGraph - Quick Reference.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\ServerItemTemplate.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\StringBuilder.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\Template.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\TOC.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\ViewState.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\WebControl.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\WebControls.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\WebForm.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\CLASP_Events.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\CLASP_Framework.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\p_constructor.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\p_event.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\p_method.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\p_property.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\s_method.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Help\images\s_property.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\book.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\book01.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\clasp.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\clear_all.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\paypal_logo.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\background\tn_08.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\Admin.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\Downloads.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\footer.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\header.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\help.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\help.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\help.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\HelpController.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\helppage.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\index.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\index.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\Logout.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\Members.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\Register.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\SendMail.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\template.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\images\clasp.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NewHelp\images\tn_08.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\AdminPage1.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\AdminPage2.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\CommonTemplate.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\CommonTemplate2.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\CustomTemplate.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\Login.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\main.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\ManagerPage.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\NoAccess.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\PublicPage.asp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\TemplateFooter.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\TemplateHeader.asp"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\bg1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\bg2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\bg3.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\button.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\logo blank.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\logo.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\navend.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\rcolumn.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "TemplateSamples\images\x03.jpg"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "Uploads\" />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

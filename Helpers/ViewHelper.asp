@@ -52,7 +52,7 @@
 	                  "    <!--[if lt IE 7]>" &_
 	                  "        <p class=""chromeframe"">You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/"">upgrade your browser</a> or <a href=""http://www.google.com/chromeframe/?redirect=true"">activate Google Chrome Frame</a> to improve your experience.</p>" &_
 	                  "    <![endif]-->" &_
-	                  "    <input type=""hidden"" value=""" & output.write(Session(csrf.getParameter())) & """/>"
+	                  "    <input type=""hidden"" id=""token"" value=""" & output.prepare(csrf.getParameter()) & """/>"
 	    End Function
 
 		Public Function GetFooter

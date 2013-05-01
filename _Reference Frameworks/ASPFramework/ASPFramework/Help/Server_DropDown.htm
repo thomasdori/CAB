@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ServerDropDown</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ServerDropDown</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;Server_DropDown.asp<br>
+		<b>Class Name:</b>&nbsp;ServerDropDown.asp<br>
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		<br>
+		Renders a single-selection (dropdown) or multiple- selection list (list view) 
+		that can be dynamically created by binding the control to a data source or by 
+		adding the items manually.
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ServerDropDown(name)</td>
+				<td Class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_constructor.bmp"></td>
+				<TD class="PropertyName" width="200">New</TD>
+				<TD class="PropertyDesc">This is the default constructor and it will create an 
+					instance of the control <STRONG>without</STRONG> a name. Controls instanciated 
+					this way must assign the name of the control manually by doing this: 
+					&lt;controlVariable&gt;.Control.Name = "&lt;ControlName&gt;"</TD>
+			</TR>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">Control</td>
+				<TD class="PropertyDesc" width="50"><A href="WebControl.html">WebControl</A></TD>
+				<td Class="PropertyDesc">Inherits attributes from WebControl.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">DataTextField</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/sets the field of the data source that provides the 
+					text content of the list items.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">DataValueField</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/sets the field of the data source that provides the 
+					value of each list item.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadOnly</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Set/Sets a value to indicate wether or not the user can 
+					change the selection. (it will be rendered as a label if not).</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Items</TD>
+				<TD class="PropertyDesc" width="50"><A href="ListItemsCollection.htm">ListItemsCollection</A></TD>
+				<TD class="PropertyDesc">List items are stored here.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AutoPostBack</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Gets/Sets a value indicating whether a postback to the 
+					server automatically occurs when the user changes the list selection.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Multiple</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">
+					<P>Gets/Sets a value to indicate wether or not the lsit supports sinle or multiple 
+						selections. Is is just a Wrapper for Items.Mode
+						<BR>
+					</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Rows</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Gets/Sets a value that indicates the number of rows of the 
+					list.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CaptionCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">
+					Gets/Sets the class of the caption</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CaptionStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">
+					Gets/Sets the style of the caption</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25" style="HEIGHT: 37px"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200" style="HEIGHT: 37px">Caption</TD>
+				<TD class="PropertyDesc" width="50" style="HEIGHT: 37px">String</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 37px">
+					Gets/Sets the caption of the dropdown.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Value</TD>
+				<TD class="PropertyDesc" width="50">Variant</TD>
+				<TD class="PropertyDesc">
+					Sets/Gets the selected value of the list. It is a wrapper for 
+					Items.SetSelectedByValue</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Text</TD>
+				<TD class="PropertyDesc" width="50">Variant</TD>
+				<TD class="PropertyDesc">Sets/Gets the selected text of the radio button list. It 
+					is a wrapper for Items.SetSelectedByText</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"></TD>
+				<TD class="PropertyName" width="200">RaiseOnChanged</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">
+					<P>Gets/Sets a value to indicate wether or not the develper wants to be notified if 
+						the dropdown value changed during a postback. The event to be raised is 
+						ControlName_OnChanged(Control,Params)</P>
+					<P>(Implemented obnly for dropdowns/ not for list boxes)</P>
+				</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200">SetFromCache(XMLCache)</TD>
+				<TD class="PropertyDesc">
+					Used to set a cached XML representation of the ListItemsCollection.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetValueFromDataSource(value)</TD>
+				<TD class="PropertyDesc">This method is used by the Page object when binding the 
+					whole page to a DataSource. In order for this to work, you need to se the 
+					DataTextField of the Control property.&nbsp;i.e. cboCity.Control.DataTextField 
+					= "CityID"</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">DataBind()</TD>
+				<TD class="PropertyDesc">Binds the Contents of the DataSource and adds items to the 
+					ListItemsCollection. You must specify a DataSource and the DataTextField. You 
+					can provide the DataValueField which will be used to set the value of each 
+					checkbox, if not supplied then the Ordinal position will be used instead.</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">&lt;Control_Name&gt;_OnChange(ClientEvent)</td>
+				<td Class="PropertyDesc">This event is triggered if the AutoPostBack property is 
+					set to true. This is different from the OnChanged, which does not require the 
+					AutoPostBack to be true.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">OnChanged (Me,oldValue)</TD>
+				<TD class="PropertyDesc">event is triggered if the value of the dropdown was 
+					changed.</TD>
+			</TR>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_property.bmp"></td>
+				<td width="200" Class="PropertyName">mbolWasRendered</td>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<td Class="PropertyDesc">
+					True&nbsp;if the control was already rendered, otherwise false. This is 
+					needed&nbsp;by the&nbsp;ProcessPostBack event and&nbsp;is used to 
+					&nbsp;determine if the value was not posted because the control was not 
+					rendered (visible= false, or other conditon in the page).</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">mPropBag</TD>
+				<TD class="PropertyDesc" width="50"><A href="PropertyBag.htm">PropertyBag</A></TD>
+				<TD class="PropertyDesc">Holds&nbsp;temporarily a reference the control viewstate 
+					(property bag) so it can later store if the control was or not rendered. (see 
+					above)</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">WriteProperties(bag)</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					restore its state after a postback. Bag is of type PropertyBag and can be used 
+					to read (or write) to the control viewstate.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">Invoked by the CLASP Framework to allow the control 
+					to&nbsp;persist its state before the page is destroyed. Bag is of type 
+					PropertyBag and can be used to read (or write) to the control viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderDropDown()</TD>
+				<TD class="PropertyDesc">Renders the the dropdown.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">HandleClientEvent</td>
+				<td Class="PropertyDesc">
+					Invoked by the CLASP Framework to allow the control to handle the postback 
+					event. From here the control can determine what is the course of action.</td>
+			</tr>
+		</table>
+	</body>
+</html>

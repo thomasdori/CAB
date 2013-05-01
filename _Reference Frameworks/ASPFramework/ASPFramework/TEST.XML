@@ -1,0 +1,13 @@
+<SECURITY>
+<FOLDERS>
+   <FOLDER path='' >
+		<allow users='[ChristianCalderon],[yvon]' roles="[Admin]"/>
+		<deny users='*'/>
+		<PAGE name='Login.asp'>
+			<allow users='?'/>
+		</PAGE>		
+	</FOLDER>
+</FOLDERS>
+
+
+</SECURITY>

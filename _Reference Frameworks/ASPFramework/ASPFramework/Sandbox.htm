@@ -1,0 +1,49 @@
+<html>
+
+<head>
+
+<title>Progress Bar</title>
+
+<style type="text/css">
+span { display:inline; }
+.left  { border:1px solid black; border-right:0px none; background:silver; width:0px; height:20px; }
+.right { border:1px solid black; border-left:0px none; background:#eeeeee; width:200px; height:20px; }
+</style>
+
+<script language="JavaScript">
+
+var interval = 10;
+
+function doProg()
+{
+     var p1 = document.getElementById("left");
+     var p2 = document.getElementById("right");
+     var width1 = parseInt(p1.style.width)
+     var width2 = parseInt(p2.style.width)
+     
+     width1 = (isNaN(width1)?0:width1)
+     width2 = (isNaN(width2)?200:width2)
+     if(width1 < 200)
+     {
+          p1.style.width = width1 + interval;
+          p2.style.width = width2 - interval;
+          setTimeout("doProg()",40);
+     }
+
+}
+</script>
+
+</head>
+
+<body>
+
+<span id="left" class="left"></span>
+<span id="right" class="right"></span>
+
+<br><br><br><br>
+
+<input type="button" value="Start" onclick="doProg()">
+
+</body>
+
+</html>

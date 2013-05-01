@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>CLASP Framework - By Christian Calderon</title>
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="VisualStudio.HTML" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<LINK href="help.css" type="text/css" rel="stylesheet"></head>
+	<body>
+		<P>
+			<span style="FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: tahoma"> Classic ASP Framework.</span>
+		</P>
+		<P>
+			<hr>
+		</P>
+		<P>
+			<BR>
+			Check out the new Ajax Scripts for CLASP! <A href="../button_test.asp">click here 
+				for a quick demo</A></P>
+		<P>
+			In short, CLASP is an event driven Framework developed in VBScript for the 
+			development of Classic ASP Web applications.
+			<br>
+			Now, you may ask yourself, why should I consider CLASP when there is ASP.NET 
+			out there?. Well, I started to work on this framework to target people that:<br>
+			<br>
+		</P>
+		<LI>
+		Need to maintain/extend current ASP Applications that will not be migrated over 
+		to .NET in the near future.
+		<LI>
+		Still need to or like to work in Classic ASP.
+		<LI>
+			Want to distribute their web applications as a stand alone executable (using a 
+			Web site compiler such as Intorel Active Site Compiler - <A href="http://www.intorel.com/">
+				http://www.intorel.com/</A>
+		)
+		<LI>
+			All the above while making sure that your code will be easily ported to 
+			ASP.NET.
+			<br>
+			<br>
+			And why should I use CLASP and not do it my own way?
+			<br>
+		<LI>
+		It simplifies your coding and makes it very portable to ASP.NET.
+		<LI>
+		Provides you with a rich event driven environment that resembles ASP.NET and 
+		Visual Basic Windows applications.
+		<LI>
+		Supports ViewState, client side libraries&nbsp;and other features.
+		<LI>
+		It has a large list of web controls.
+		<LI>
+		It is FAST!!!
+		<LI>
+		It is FREE
+		<LI>
+			It is a white box, nothing to hide here!, you can modify the code to suit your 
+			needs.
+			<br>
+			<br>
+			<hr>
+			Below is a high-level diagram of the CLASP Framework. <IMG src="images/CLASP_Framework.jpg" width="720" height="540">
+			<br>
+			<br>
+			The CLASP Framework is very simple and almost everything is handled 
+			automatically. To better explain the Diagram above, I will describe what each 
+			of the "boxes" is for.
+			<P><STRONG>CLASP PostBackHandler:</STRONG> This is a fancy name for a very simple 
+				JavaScript function. The function is included with in a js file references by 
+				WebControl.asp and has the following "signature" <FONT color="#3333cc">clasp.form.doPostBack(action,object,instance,xmsg,frmaction,frameName)</FONT>.&nbsp;All 
+				CLASP WebControls make use of this function one way or another trigger server 
+				side evennts to be consumed by the framework. These (the scripts) "PostBack 
+				Handlers" can be&nbsp;access by&nbsp;using the GetEventScript&nbsp;functions of 
+				the Page object (plural because they are a few versions of this function to 
+				handle different scenarios such as posting to a new window) .&nbsp;</P>
+			<P>
+				For instance, if you want to submit a event&nbsp;from the&nbsp;browser whose 
+				target is the Page and pass the value 1 you could do this <FONT color="#3333cc">clasp.form.doPostBack("TheEvent","Page",1);</FONT>&nbsp;This 
+				will make CLASP to submit the page and invoke Page_TheEvent(e).&nbsp; "e" is 
+				the Event object, which you can examine and get data from, such as the value 
+				"1", which will be one of the parameters.</P>
+			<P>The WebControls normally make use of the Page.GetEventScript functions. For 
+				instance, buttons always get an event scripts this way: 
+				Page.GetEventScript("onclick",Me,"OnClick","",""), this will translate to 
+				(suppose the button name is cmdSave) : onclick = 
+				'doPostBack("OnClick","cmdSave")' . This will cause the CLASP Framework to 
+				submit the page and in the server side look for the target of the event, in 
+				this case a WebControl with name cmdSave and route the event to the instance, 
+				which in turn will evaluate and, in the case of a button, it will simple call 
+				cmdSave_OnClick . This is how, from the Client (WebBrowser) an event gets 
+				routed the appropriate handler in the Server. There are more complex scenarios 
+				such as when you create complex user controls (ones that make use or are 
+				composed of other webcontrols). The Framework supports even bubbling, which is 
+				useful when building complex controls.</P>
+			<P><STRONG>CLASP Response:</STRONG> This simple means that you must 
+				use&nbsp;Page.OpenForm and&nbsp;Page.CloseForm to enclose your form. Why?, 
+				well, these includes will render the html hidden form fields that are used by 
+				the CLASP PostBackHandler, including viewstate, if using client side viewstate.</P>
+			<P><STRONG>CLASP Request:</STRONG> Another fancy name.This simple means that all 
+				postbacks must be done by using the CLASP PostBackHandler and on a page that 
+				was rendered using a CLASP Response, which means that all CLASP hidden fields 
+				must be included.</P>
+			<P><STRONG>CLASP Framework: </STRONG>This is a generic term used to name the 
+				Framework and all&nbsp; corresponding functionality. At a very high level, you 
+				have the Page object, which orchestrates everything. When you submit a CLASP 
+				Request, the framework automatically creates an instance of the cPage object 
+				conveniently named "Page". When this instance is initialized it checks that all 
+				CLASP form fields are included and determines the PostBack mode (IsPostBack = 
+				True/False and/or IsRedirectedPostBack&nbsp;= True/False). Now, depending on 
+				the mode, it will load the viewstate and perform other functions. The Page 
+				object also includes a function named Page.Execute, which will do the magic 
+				(load viewstate, transfer it to the WebControls, route events, etc). Take a 
+				look at the <A href="Page.html">Page</A> object for detailed information.</P>
+			<P><STRONG>CLASP Controler: </STRONG>This is a special and optional part of the 
+				Framework. This class provides the developer with a consistant way of using the 
+				CLASP Framework. The main goal is to allow you to write page templates (with 
+				support for role-based security). How, well, by simply adding more funtionality 
+				on top of CLASP. This Class adds the following events: Page_Configure, 
+				Page_RenderHeaderTag, Page_RenderHeader, Page_RenderForm, Page_RenderFooter. It 
+				also includes global handlers for authentication and authorization to be used 
+				with the CurrentUser object.</P>
+			<P>Form more information go to <A href="PageController.htm">PageContoller</A>.CLASP 
+				provides a template of the PageController, which you should override 
+				(copy/paste and use your own customized version)
+			</P>
+			<P><STRONG>CLASP Server Controls:</STRONG> What is a server control?, it is a Class 
+				that contains and exposes a WebControl object named "Control". By including an 
+				instanciated object of type WebControl your class will register itself with 
+				CLASP (well, the WebControl will do it). By doing this&nbsp;the Server Control 
+				will participate on internal CLASP events, such as WriteProperties and 
+				ReadProperties, used to persist/restore information to/from the viewstate. The 
+				framework has a comprenhensice list of Server Controls, from simple textboxes 
+				and checkbox lists &nbsp;to data grids, data repeaters, etc.&nbsp; To 
+				understand better how a WebControl works click <A href="WebControl.html">here</A>.</P>
+			<P><STRONG>CLASP Page Event Handlers:</STRONG> The framework is 100% event driven, 
+				and a succesfull implementation of CLASP should only have code within events 
+				(the HTML part could have some in-line code just to render the controls). The 
+				"Page Event Handlers" are the core handlers such as Page_Init, 
+				Page_Controls_Init, Page_Load which you tipically&nbsp;would include in your 
+				pages.</P>
+			<P><STRONG>Page-Specific Functions:</STRONG> This are supporting functions specific 
+				to the page, such as functions to load a record, do some validation or 
+				calculations.</P>
+			<BR>
+			<BR>
+			<HR>
+			Below is a diagram with the sequence of events. The CLASP Framework events are 
+			in green. If you are using the PageController, then the sequence the 
+			PageController dictates the new sequence.<BR>
+			<IMG src="images/CLASP_Events.jpg" width="720" height="540"><BR>
+		</LI>
+	</body>
+</html>

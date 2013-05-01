@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>Insert Image</title>
+<script language = "JavaScript">
+	function setImage(){
+		var f = document.forms['frmForm'];
+		var src 	= f.txtsrc.value;
+		var w 		= f.txtw.value;
+		var h 		= f.txth.value;
+		var b 		= f.txtb.value;
+		var vs		= f.txtvs.value;
+		var hs		= f.txths.value;
+		var al 	= f.cboalign.options[f.cboalign.selectedIndex].value;
+		var CallBackObjectID  = window.CallBackObjectID;
+		var obj = window.opener.WebControl.all[CallBackObjectID];
+		if (obj) {
+			obj.setImage(src,w,h,b,vs,hs,al);
+			window.close;
+		}
+	};
+	function showImage(){
+		var f = document.forms['frmForm'];
+		var i = document.images['preview'];
+		var src  = f.txtsrc.value;
+		src = (src.indexOf(":/")>=0||src.indexOf(":\\")>=0||src.substr(0,1)=="/"||src.substr(0,1)=="\\")? src:getRelURL()+src;
+		i.src 		= src;
+		i.width 	= (f.txtw.value && f.txtw.value<198)? f.txtw.value:198;
+		i.height 	= (f.txth.value && f.txth.value<148)? f.txth.value:148;
+	};
+
+	function getRelURL(){
+		var relURL = (window.location.src||window.location.href);
+		relURL = unescape(relURL.split("?url=")[1]);
+		return relURL;
+	}
+
+</script>
+<style>
+TD {
+	font-family:verdana,arial;
+	font-size:11px;
+}
+</style>
+</head>
+<body topmargin="0" leftmargin="0" bgcolor="#ECE9D8">
+<form name="frmForm">
+<div align="center">
+  <center>
+<table border="0" cellpadding="2" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td valign="top" colspan="2">
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+  <tr>
+    <td width="8%" nowrap><span lang="en-us"><b>Image URL</b></span></td>
+    <td width="92%">
+    <hr color="#000000" size="1" align="left" width="98%">
+    </td>
+  </tr>
+</table>
+    </td>
+  </tr>
+  </center>
+  <tr>
+    <td valign="top">
+    <table border="0" width="100%">
+      <tr>
+        <td width="100%">
+    <input type="text" name="txtsrc" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td width="100%" align="right">
+    <input value="Preview" type="button" onclick="showImage();" style="width: 80px" name="cmdPreview" title="Image not previewed at actual size">
+        </td>
+      </tr>
+      <tr>
+        <td width="100%">
+    <table border="0" cellpadding="2" cellspacing="1" style="border-collapse: collapse" id="AutoNumber2">
+      <tr>
+        <td><span lang="en-us">Width</span><br>
+    <input type="text" name="txtw" size="5"></td>
+        <td><span lang="en-us">Height</span><br>
+    <input type="text" name="txth" size="5"></td>
+        <td><span lang="en-us">Border</span><br>
+    <input type="text" name="txtb" size="5" value="0"></td>
+      </tr>
+      <tr>
+        <td><span lang="en-us">VSpace</span><br>
+    <input type="text" name="txtvs" size="5" value="0"></td>
+        <td><span lang="en-us">HSpace</span><br>
+    <input type="text" name="txths" size="5" value="0"></td>
+        <td><span lang="en-us">Align</span><br>
+        <select size="1" name="cboalign">
+        <option selected>none</option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        <option value="top">Top</option>
+        <option value="top">Middle</option>
+        <option value="bottom">Bottom</option>
+        </select></td>
+      </tr>
+    </table>
+        </td>
+      </tr>
+    </table>
+    </td>
+  <center>
+    <td valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="200" height="150">
+      <tr>
+        <td  title="Image not shown to actual size" width="100%" valign="top" style="overflow:hidden; border: 1px solid #C0C0C0"><img id="preview" name="preview" border="0" src="images/empty.gif" title="Image not previewed at actual size" width="1" height="1"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" colspan="2">
+    <hr color="#000000" size="1" align="left" width="98%">
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" colspan="2" align="right">
+    <input value="Ok" type="button" onclick="setImage();" style="width: 80px">
+    <input value="Cancel" type="button" onclick="window.close();" style="width: 80px"><span lang="en-us">
+    </span>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+</form>
+</body>
+</html>

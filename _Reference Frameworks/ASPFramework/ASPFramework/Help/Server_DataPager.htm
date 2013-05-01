@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ServerDataPager</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ServerDataPager</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;Server_DataPager.asp<br>
+		<b>Class Name:</b>&nbsp;ServerDataPager<br>
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		Used to render a data-pager that can be used to navigate multiple data-pages in 
+		a data-bound control. The ServerDataGrid makes use of this control. This 
+		control can work stand-alone or can be used as part of other controls (see 
+		Server_DataGrid.asp for an example)
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ServerDataPager(name)</td>
+				<td Class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_constructor.bmp"></td>
+				<TD class="PropertyName" width="200">New ServerDataPager</TD>
+				<TD class="PropertyDesc">This is the default constructor and it will create an 
+					instance of the control <STRONG>without</STRONG> a name. Controls instanciated 
+					this way must assign the name of the control manually by doing this: 
+					&lt;controlVariable&gt;.Control.Name = "&lt;ControlName&gt;"</TD>
+			</TR>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Control</TD>
+				<TD class="PropertyDesc" width="50"><A href="WebControl.html">WebControl</A></TD>
+				<TD class="PropertyDesc">Inherits attributes from the WebControl class.
+				</TD>
+			</TR>
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">VirtualItemCount</td>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<td Class="PropertyDesc">Sets/Gets the number of items that the pager needs to 
+					page. Since the pager doesn't care about the data itself, this can be any 
+					number.It is the developers work to keep this property on sync witht the real 
+					number of items being paged.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PageIndex</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Sets/Gets the current page index.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PageSize</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Sets/Gets the number of rows per page.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PagerSize</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Sets/Gets the number of pages to make quickly available 
+					when working on PagerType = 1</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PagerType</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">0) Next/Prev&nbsp; 1) Show New/Prev AND &lt;PagerSize&gt; 
+					pages.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PrevText</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the text to be displayed by the "Previous" link</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">NextText</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the text to be displayed by the "Next" link</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PrevNextCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the CSS Class of the Previous and Next links.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PrevNextStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the Style of the Previous and Next links.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PagerStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the Pager style.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PagerCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the Pager CSS Class Name</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ShowProgress</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Not being used.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ProgressStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the "Records x out of n" style.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ProgressCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the "Records x out of n" CSS Class.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CurrentPageStyle</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the Style of the Current Page when using 
+					PagerType = 1</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CurrentPageCssClass</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Gets/Set the CSS Class of the Current Page when using 
+					PagerType = 1</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">PagerOwner</TD>
+				<TD class="PropertyDesc" width="50">WebControl</TD>
+				<TD class="PropertyDesc">Owner of the pager.This is used by other webcontrols that 
+					want to make use of the datapager as part of their implementation. See the 
+					ServerDataGrid for an example in how to implent this.
+				</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">PageIndexChange</td>
+				<td Class="PropertyDesc">Raised when the user nagivates to another page.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">GotoPageIndex</TD>
+				<TD class="PropertyDesc">Raised when the user nagivates/jums to another page.</TD>
+			</TR>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">WriteProperties(bag)</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					restore its state after a postback. Bag is of type PropertyBag and can be used 
+					to read (or write) to the control viewstate.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">Invoked by the CLASP Framework to allow the control 
+					to&nbsp;persist its state before the page is destroyed. Bag is of type 
+					PropertyBag and can be used to read (or write) to the control viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderNextPrev</TD>
+				<TD class="PropertyDesc">Renders pager as Next/Prev.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderAsPager</TD>
+				<TD class="PropertyDesc">Renders pager as a mulltiple page navigation.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderAsSuperPager</TD>
+				<TD class="PropertyDesc">Not implemented.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">HandleClientEvent</td>
+				<td Class="PropertyDesc">
+					Invoked by the CLASP Framework to allow the control to handle the postback 
+					event. From here the control can determine what is the course of action. If 
+					PageOwner is set, then it will delegate the event to the Owner of the control, 
+					otherwise it will handle it.</td>
+			</tr>
+		</table>
+	</body>
+</html>

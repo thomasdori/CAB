@@ -1,3 +1,5 @@
+<!-- #include File="../Models/ErrorModel.asp" -->
+
 <%
 	'Dependencies: OutputHelper.asp
 	Const CSRF_ERROR_CODE = "CSRF_ERROR_CODE"
@@ -47,22 +49,12 @@
 			Dim oError
 			Set oError = Server.GetLastError()
 
-			'todo: lock error to database
-			'output.write("ASPCode: " & oError.ASPCode & "<br />")
-			'output.write("ASPDescription: " & oError.ASPDescription & "<br />")
-			'output.write("Category: " & oError.Category & "<br />")
-			'output.write("Column: " & oError.Column & "<br />")
-			'output.write("Description: " & oError.Description & "<br />")
-			'output.write("File: " & oError.File & "<br />")
-			'output.write("Line: " & oError.Line & "<br />")
-			'output.write("Number: " & oError.Number & "<br />")
-			'output.write("Source: " & oError.Source & "<br />")
+			If (oError.Number <> 0) Then
+				errorModel.write(oError)
+			    oError.Clear
+			End If
 
 			GetAspErrors = ""
-
-			If (Err.Number <> 0) Then
-			     Err.Clear
-			End If
 		End Function
 
 		Public Function GetStingerErrors

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>CheckBox Server Control</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+		<script language="javascript">
+			function OpenSample(url) {
+				window.open(url);
+			}
+		</script>
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5">
+			<tr>
+				<td width="1%" nowrap>CheckBox</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;Server_CheckBox.asp<br>
+		<b>Class Name:</b>&nbsp;ServerCheckBox<br>
+		<B>Sample:</B>&nbsp;<A href="javascript:OpenSample('../CheckBox.asp')">CheckBox.asp</A><BR>
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		This control is used to implement a single &lt;input type="CheckBox" control in 
+		a web form.
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table1" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ServerCheckBox(name)</td>
+				<td Class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_constructor.bmp"></td>
+				<TD class="PropertyName" width="200">ServerCheckBox()</TD>
+				<TD class="PropertyDesc">This is the default constructor and it will create an 
+					instance of the control <STRONG>without</STRONG> a name. Controls instanciated 
+					this way must assign the name of the control manually by doing this: 
+					&lt;controlVariable&gt;.Control.Name = "&lt;ControlName&gt;"</TD>
+			</TR>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">Caption</td>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<td Class="PropertyDesc">Sets/Gets the CheckBox caption</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">ReadOnly</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Sets/Gets the control editable flag (True/False)</TD>
+			</TR>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Checked</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Sets/Gets the control value (True/False)</TD>
+			</TR>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">AutoPostBack</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Sets/Gets a control flag indicating if the page should be 
+					automaticaly posted back if the control change status.</TD>
+			</TR>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">OnClick</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Sets/Gets Overrides the default event handler name 
+					(&lt;ControlName&gt;_Click)</TD>
+			</TR>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Control</TD>
+				<TD class="PropertyDesc" width="50">WebControl</TD>
+				<TD class="PropertyDesc">Inherits attributes from the WebControl class. For more 
+					information go to the <a href="WebControl.html">WebControl</a> help.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">RaiseOnChanged</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Gets/Sets a value to indicate wether or not the 
+					developerwants to be notified if the contents of the control changed during a 
+					postback. The event to be raised is ControlName_OnChanged(Control,Params)</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200">SetValueFromDataSource</TD>
+				<TD class="PropertyDesc">This method is used by the Page object when binding the 
+					whole page to a DataSource. In order for this to work, you need to se the 
+					DataTextField of the Control property.&nbsp;i.e. chkYesNo.Control.DataTextField 
+					= "SelectYN"</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">Click</td>
+				<td Class="PropertyDesc">This events is triggered only if AutoPostBack is set to 
+					true. The event name by default can be trapped by creating a function with the 
+					control name and the event name such as Public Function chkYesNo_Click(). The 
+					name of the event can be overrided by changing the OnClick property.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_event.bmp"></TD>
+				<TD class="PropertyName" width="200">OnChanged (Control,Params)</TD>
+				<TD class="PropertyDesc">This event is triggered if the status of the CheckBox 
+					changed. Control is the CheckBox and Params is not used.</TD>
+			</TR>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_property.bmp"></td>
+				<td width="200" Class="PropertyName">mbolWasRendered</td>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<td Class="PropertyDesc">True&nbsp;if the control was already rendered, otherwise 
+					false. This is needed&nbsp;by the ProcessPostBack when restoring from the 
+					viewstate as this type of input <U>only</U> post data in the form&nbsp;<U>if 
+						checked</U>. This makes difficult to determine if the value was not posted 
+					because the control was not rendered (visible=false, or other conditon in the 
+					page) or it was not checked. This value is stored in the viewstate of the 
+					control to support this determination.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">mPropBag</TD>
+				<TD class="PropertyDesc" width="50">PropertyBag</TD>
+				<TD class="PropertyDesc">Holds&nbsp;temporarily a reference the control viewstate 
+					(property bag) so it can later store if the control was or not rendered. (see 
+					above)</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">WriteProperties(bag)</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					restore its state after a postback. Bag is of type PropertyBag and can be used 
+					to read (or write) to the control viewstate.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">Invoked by the CLASP Framework to allow the control 
+					to&nbsp;persist its state before the page is destroyed. Bag is of type 
+					PropertyBag and can be used to read (or write) to the control viewstate.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">HandleClientEvent</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					handle the postback event. From here the control can determine what is the 
+					course of action. In this case, if OnClick &lt;&gt; "" then it will invoke the 
+					function specified in the property, else it will invoke the default handler, if 
+					any.</td>
+			</tr>
+		</table>
+		<BR>
+	</body>
+</html>

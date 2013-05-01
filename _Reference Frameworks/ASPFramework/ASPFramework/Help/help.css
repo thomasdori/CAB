@@ -1,0 +1,97 @@
+
+body
+{
+	font-family:Tahoma,Vedana,Arial;
+	font-size:12px;
+	color:Black;
+}
+A 
+{
+	color:navy;
+}
+
+A:hover
+{
+	color:red;
+}
+
+.ClassSection 
+{
+	font-weight:bold;
+	font-size:14px;
+}
+
+.PropertyName 
+{
+	font-size:12px;
+	border-bottom: solid 1px black;
+}
+
+.PropertyImg
+{
+	font-size:12px;
+	border-bottom: solid 1px black;
+}
+
+.PropertyDesc
+{   border-left: solid 1px black;
+	border-bottom: solid 1px black;
+	font-size:12px;	
+}
+
+.TableStyle 
+{
+	border-collapse:collapse;
+	border:solid 1px black;
+	margin-left:10px;
+	margin-right:10px;
+	width:90%;
+}
+
+.ControlName
+{
+	border-right: #006699 1px dotted;
+	border-top: #006699 1px dotted;
+	font-weight: bold;
+	border-left: #006699 1px dotted;
+	width: 100%;
+	color: black;
+	border-bottom: #006699 1px dotted;
+	font-family: tahoma;
+	height: 25px;
+	background-color: #ccffcc;
+	margin:5px;
+}
+
+.FooterSection
+{
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	font-size: 12px;
+	border-left: black 1px solid;
+	border-bottom: black 1px solid;
+	border-collapse: collapse;
+}
+
+.CodeBody  
+{
+	FONT-SIZE: 10pt; 
+	FONT-FAMILY: 'Courier New';
+	
+}
+
+
+.HelpLevel1
+{
+	width:100%;
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	font-weight: bold;
+	font-size: 14px;
+	border-left: black 1px solid;
+	color: white;
+	border-bottom: black 1px solid;
+	border-collapse: collapse;
+	background-color: #336699;
+	vertical-align:middle;
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ServerButton</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<br>
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ServerButton</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;Server_Button.asp<br>
+		<b>Class Name:</b>&nbsp;ServerButton.asp
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		The ServerButton class handles Push Buttons, LinkButtons and ImageButtons. They 
+		all behave the same way and trigger the same events in the server side. The 
+		type of button is controlled by the Mode property. Each mode can have extra 
+		properties used to render the control.&nbsp;&nbsp;
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ServerButton</td>
+				<td Class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id. It uses the default 
+					Mode (1).</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></TD>
+				<TD class="PropertyName" width="200">New_ServerLinkButton</TD>
+				<TD class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id. It uses the Mode = 2 
+					to create a link button.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></TD>
+				<TD class="PropertyName" width="200">New_ServerImageButton</TD>
+				<TD class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id. It uses the Mode 
+					=&nbsp;3 to create a Image Button</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" style="HEIGHT: 23px" width="25"><IMG src="images/p_constructor.bmp"></TD>
+				<TD class="PropertyName" style="HEIGHT: 23px" width="200">New_ServerAdvanceButton</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 23px">This constructor is used to create an 
+					instance of the the control, assing the name and use mode = 4 (use the Button 
+					tag)</TD>
+			</TR>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_constructor.bmp"></td>
+				<TD class="PropertyName" width="200">New</TD>
+				<TD class="PropertyDesc">This is the default constructor and it will create an 
+					instance of the control <STRONG>without</STRONG> a name. Controls instanciated 
+					this way must assign the name of the control manually by doing this: 
+					&lt;controlVariable&gt;.Control.Name = "&lt;ControlName&gt;".</TD>
+			</TR>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">Control</td>
+				<TD class="PropertyDesc" width="50">WebControl</TD>
+				<td Class="PropertyDesc">Inherits attributes from the WebControl class. For more 
+					information go to the <A href="WebControl.html">WebControl</A> help.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">CommandSource</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">
+					Any string that you want to pass to the OnClick event during a postback.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">OnClick</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">If set, it will override the default event handler for the 
+					button (which is the ControlName followed by "_OnClick()". This can be useful 
+					to have different buttons use the same handler.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Text</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Applies to PushButtons and LinkButtons and is used to 
+					Get/Set the text to be displayed.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Mode</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">1 = PushButton, 2 = LinkButton, 3 = ImageButton, 4 = 
+					Advance Button</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Image</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Used by LinkButtons and ImageButtons and is used to 
+					Get/Set the image/appereance of the button.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">RollOverImage</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Used by the ImageButton and is used to Get/Set the image 
+					url for when the mouse hovers over the button.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Target</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">Used to set the Target Frame for ImageButtons and 
+					LinkButtons.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">CausesValidation</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">
+					<P>Used to determine if this button will trigger a form validation event (default 
+						true). This is used in conjunction with the Server Validation controls. At this 
+						point it only supports CLIENT SIDE vaidation. We are working on a summary 
+						validation and on the ability to test on the server.</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ValidationGroup</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">CLASP supports validations by group. This allows you to 
+					specify which validation group the control belongs to and will fail only if 
+					controls within that group fail validation.</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200">SetValueFromDataSource</TD>
+				<TD class="PropertyDesc">This method is used by the Page object when binding the 
+					whole page to a DataSource. In order for this to work, you need to se the 
+					DataTextField of the Control property.&nbsp;i.e. chkYesNo.Control.DataTextField 
+					= "SelectYN"</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">--</td>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">WriteProperties(bag)</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					restore its state after a postback. Bag is of type PropertyBag and can be used 
+					to read (or write) to the control viewstate.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">Invoked by the CLASP Framework to allow the control 
+					to&nbsp;persist its state before the page is destroyed. Bag is of type 
+					PropertyBag and can be used to read (or write) to the control viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderButton</TD>
+				<TD class="PropertyDesc">Renders the control as a PushButton</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderLinkButton</TD>
+				<TD class="PropertyDesc">Renders the control as a LinkButton</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderImageButton</TD>
+				<TD class="PropertyDesc">Renders the control as a ImageButton</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderAdvanceButton</TD>
+				<TD class="PropertyDesc">Renders the control using the Button tag.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">HandleClientEvent</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					handle the postback event. From here the control can determine what is the 
+					course of action. In this case, if OnClick &lt;&gt; "" then it will invoke the 
+					function specified in the property, else it will invoke the default handler, if 
+					any.</td>
+			</tr>
+		</table>
+	</body>
+</html>

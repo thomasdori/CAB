@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0075)http://developer.netscape.com/docs/technote/javascript/graph/reference.html -->
+<HTML><HEAD><TITLE>JavaScript Graph Builder - Quick Reference</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="Microsoft FrontPage 4.0" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<CENTER><B><font size="+2" face="Arial,Helvetica">ServerGraph&nbsp;</font></B><FONT face=Arial,Helvetica size=-1><BR><FONT size=+1>Quick Reference Sheet</FONT><BR>
+<HR noShade SIZE=1 width=200>
+
+<TABLE border=0 cellSpacing=1 width="80%">
+  <TBODY>
+  <TR>
+    <TH bgColor=#ffffcc width=100><FONT face=Arial,Helvetica 
+      size=-1>method</FONT></TH>
+    <TH bgColor=#ffffcc><FONT face=Arial,Helvetica 
+    size=-1>Explanation</FONT></TH>
+    <TH bgColor=#ffffcc width=100><FONT face=Arial,Helvetica 
+      size=-1>arguments</FONT></TH></TR>
+  <TR>
+    <TD vAlign=top><TT>AddRow()</TT></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>Used to add data 
+      y-values to the graph. </FONT></TD>
+    <TD vAlign=top><TT>RowValues (Array)<BR></TT></TD></TR>
+  <TR>
+    <TD vAlign=top><TT>setTimeScale()</TT></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>Used to create a 
+      time-type X-axis scale. </FONT></TD>
+    <TD vAlign=top><TT>hour,<BR>min</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><TT>setDateScale()</TT></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>Used to create a 
+      date-type X-axis scale. </FONT></TD>
+    <TD vAlign=top><TT>month,<BR>day,<BR>year,<br>
+      londDate (Boolean)</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><TT>setLegend()</TT></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>Used to add a legend to 
+      the Graph. </FONT></TD>
+    <TD 
+vAlign=top><tt>legValues (Array)</tt></TD></TR></TBODY></TABLE>
+<P>
+<TABLE border=0 cellSpacing=1 width="80%">
+  <TBODY>
+  <TR>
+    <TH bgColor=#ffffcc width=100><FONT face=Arial,Helvetica 
+      size=-1>property</FONT></TH>
+    <TH bgColor=#ffffcc><FONT face=Arial,Helvetica 
+    size=-1>Explanation</FONT></TH>
+    <TH bgColor=#ffffcc width=100><FONT face=Arial,Helvetica 
+      size=-1>type</FONT></TH></TR>
+  <TR>
+    <TD vAlign=top><tt>Mode</tt></TD>
+    <TD><FONT face=Arial,Helvetica size=-1>Sets the mode of the Graph: 1- Bar, 2
+      - Stacked, 3 - Stacked Area</FONT></TD>
+    <TD vAlign=top><TT>integer</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>ShowYear</tt></TD>
+    <TD><FONT face=Arial,Helvetica size=-1>True means show the year along with 
+      the date. </FONT></TD>
+    <TD vAlign=top><TT>boolean</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>ShowDay</tt></TD>
+    <TD><FONT face=Arial,Helvetica size=-1>True means show the day of the week 
+      along with the date. </FONT></TD>
+    <TD vAlign=top><TT>boolean</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>XScale</tt></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>X-axis scale increment 
+      (could be days or minutes depending on the scale type) </FONT></TD>
+    <TD vAlign=top><TT>integer</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>YScale</tt></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>Y-axis scale increment 
+      </FONT></TD>
+    <TD vAlign=top><TT>integer</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>XScaleTick</tt></TD>
+    <TD><FONT face=Arial,Helvetica size=-1>Indicates the number of ticks 
+      between ticks with labels. (E.g., 2 would put labels on every other tick.) 
+      This should be used if the X-axis tick label won't fit because the ticks 
+      are too close together. </FONT></TD>
+    <TD vAlign=top><TT>integer</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>YOffset</tt></TD>
+    <TD><FONT face=Arial,Helvetica size=-1>Indicates the Y-offset of the 
+      X-axis (the "X-intercept"). Only use on graphs with only positive (or only 
+      negative) values. </FONT></TD>
+    <TD vAlign=top><TT>integer</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><TT>Title</TT></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>Title of the graph 
+      </FONT></TD>
+    <TD vAlign=top><TT>string</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>YLabel</tt></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>Y-Label of the graph 
+      </FONT></TD>
+    <TD vAlign=top><TT>string</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>XLabel</tt></TD>
+    <TD vAlign=top><FONT face=Arial,Helvetica size=-1>X-Label of the graph 
+      </FONT></TD>
+    <TD vAlign=top><TT>string</TT></TD></TR>
+  <TR>
+    <TD vAlign=top><tt>ImageStyle</tt></TD>
+    <TD><FONT face=Arial,Helvetica size=-1>Css Style for Bar images.</FONT></TD>
+    <TD vAlign=top><tt>string</tt></TD></TR></TBODY></TABLE></CENTER>
+</FONT></BODY></HTML>

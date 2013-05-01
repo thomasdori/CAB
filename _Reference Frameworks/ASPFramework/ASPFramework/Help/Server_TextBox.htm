@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ServerTextBox</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+		<script id="clientEventHandlersJS" language="javascript">
+<!--
+
+function IMG1_onclick() {
+
+}
+
+//-->
+		</script>
+	</head>
+	<body topMargin="1">
+		<br>
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ServerTextBox</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<br>
+		<b>File Name:</b>&nbsp;Server_TextBox.asp<br>
+		<b>Class Name:</b>&nbsp;ServerTextBox.asp
+		<br>
+		<span Class="ClassSection">Overview</span><br>
+		The ServerTextBox class is used&nbsp;display a text box to capture user input. 
+		This class supports various types of textboxes (see Mode property).
+		<br>
+		<br>
+		<hr>
+		<br>
+		<!--Public Contructors-->
+		<span Class="ClassSection">Public Constructors</span>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ServerTextBox(id)</td>
+				<td Class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id. It uses the default 
+					Mode (1).</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></TD>
+				<TD class="PropertyName" width="200">New_ServerDateTextBox(id)</TD>
+				<TD class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id. It uses the Mode = 
+					&nbsp;8 to create a date textbox.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></TD>
+				<TD class="PropertyName" width="200">New_ServerTextArea(name,cols,rows)</TD>
+				<TD class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id. It uses the Mode 
+					=&nbsp;&nbsp;3 to create a text area.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_constructor.bmp"></TD>
+				<TD class="PropertyName" width="200">New_ServerTextBoxEX(id,size,width)</TD>
+				<TD class="PropertyDesc">This constructor is used to create an instance of the 
+					control while at the same time assiging it a name and id. It allows to set the 
+					size and width at the same time.</TD>
+			</TR>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_constructor.bmp"></td>
+				<TD class="PropertyName" width="200">New</TD>
+				<TD class="PropertyDesc">This is the default constructor and it will create an 
+					instance of the control <STRONG>without</STRONG> a name. Controls instanciated 
+					this way must assign the name of the control manually by doing this: 
+					&lt;controlVariable&gt;.Control.Name = "&lt;ControlName&gt;".</TD>
+			</TR>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">Control</td>
+				<TD class="PropertyDesc" width="50"><A href="WebControl.html">WebControl</A></TD>
+				<td Class="PropertyDesc">Inherits attributes from the WebControl class.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Text</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">
+					Sets/Gets the contents of the texbox.
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Caption</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">
+					Sets/Gets the caption of the textbox. It renders to the left of the textbox.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Mode</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">1 Text, 2 Password, 3 TextArea, 4 Label, 5 Upper, 6 Lower, 
+					7 Numeric, 8 Date</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">FormatString</TD>
+				<TD class="PropertyDesc" width="50">String</TD>
+				<TD class="PropertyDesc">RegEx used on the client side used to format the contents 
+					of the textbox.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Size</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">
+					Sets/Gets the width of the text box in characters.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">MaxLength</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">
+					Sets/Gets the maximum number of characters that can be entered into the 
+					textbox.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadOnly</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Set/Sets a value to indicate wether or not the user can 
+					enter data in the texbox.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Rows</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Set/Sets a value to indicate the number of rows of the 
+					text area.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Cols</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Set/Sets a value to indicate the number of columns of the 
+					text area.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">TextChanged</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Gets a value that indicates wether or not the contents of 
+					the texbox changed after a postback.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">RaiseOnChanged</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">Gets/Sets a value to indicate wether or not the user wants 
+					to be notified if the contents of the textbox changed during a postback. The 
+					event to be raised is ControlName_OnChanged(Control,Params)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">AutoPostBack</TD>
+				<TD class="PropertyDesc" width="50">Boolean</TD>
+				<TD class="PropertyDesc">If true, then a postback will ocurr if the user changes 
+					the contents of the textbox in the browser.</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">(default) Render</td>
+				<td Class="PropertyDesc">Renders the control to the page.</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200">SetValueFromDataSource</TD>
+				<TD class="PropertyDesc">This method is used by the Page object when binding the 
+					whole page to a DataSource. In order for this to work, you need to se the 
+					DataTextField of the Control property.&nbsp;i.e. chkYesNo.Control.DataTextField 
+					= "SelectYN"</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">OnChanged (Control,Params)</td>
+				<td Class="PropertyDesc">This event is triggered if the contents of the TextBox 
+					changed. Control is the textbox and Params is not being used.</td>
+			</tr>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">WriteProperties(bag)</td>
+				<td Class="PropertyDesc">Invoked by the CLASP Framework to allow the control to 
+					restore its state after a postback. Bag is of type PropertyBag and can be used 
+					to read (or write) to the control viewstate.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">ReadPropertied(bag)</TD>
+				<TD class="PropertyDesc">Invoked by the CLASP Framework to allow the control 
+					to&nbsp;persist its state before the page is destroyed. Bag is of type 
+					PropertyBag and can be used to read (or write) to the control viewstate.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1" style="HEIGHT: 24px"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200" style="HEIGHT: 24px">RenderTextBox</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">Renders the control as a TextBox 
+					(normal, numeric, lowercase and uppercase)</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderLabel</TD>
+				<TD class="PropertyDesc">Renders the control as a Label</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">RenderTextArea</TD>
+				<TD class="PropertyDesc">Renders the control as a TextArea</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG id="IMG1" src="images/s_method.bmp" language="javascript" onclick="return IMG1_onclick()"></TD>
+				<TD class="PropertyName" width="200">RenderDateTextBox</TD>
+				<TD class="PropertyDesc">Renders the control as a Date TextBox.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">HandleClientEvent</td>
+				<td Class="PropertyDesc">
+					Invoked by the CLASP Framework to allow the control to handle the postback 
+					event. From here the control can determine what is the course of action.</td>
+			</tr>
+		</table>
+	</body>
+</html>

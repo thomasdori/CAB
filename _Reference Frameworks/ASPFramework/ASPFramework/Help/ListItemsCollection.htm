@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ListItemsCollection</title>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK rel="stylesheet" type="text/css" href="help.css">
+	</head>
+	<body topMargin="1">
+		<table width="100%" Class="ControlName" cellpadding="5" ID="Table1">
+			<tr>
+				<td width="1%" nowrap>ListItemsCollection</td>
+				<td align="right">V1.0 F1.7</td>
+			</tr>
+		</table>
+		<!--Overview-->
+		<P>
+			<br>
+			<b>File Name:</b>&nbsp;Server_ASPListItemCollection.asp OR 
+			ASPFramework.ListItemsCollection<br>
+			<b>Class Name:</b>&nbsp;Always use New_ListItemsCollectionObject() which will 
+			wrap the appropriate implementation (depending on the mode: ASP or COM)<br>
+			<br>
+			<span Class="ClassSection">Overview</span><br>
+			Used to wrap a XML representation of collection of ListItems, each having with 
+			a Text, Value and Selected properties. The collection supportes single and 
+			multiple selections. This class is currenly used by the Server_DropDown, 
+			Server_CheckBoxList and Server_RadioButton
+		</P>
+		<P>
+			<hr>
+		<P></P>
+		<P>
+			<br>
+			<!--Public Contructors-->
+			<span Class="ClassSection">Public Constructors</span>
+		</P>
+		<table class="TableStyle" ID="Table2" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_constructor.bmp"></td>
+				<td width="200" Class="PropertyName">New_ListItemsCollectionObject()</td>
+				<td Class="PropertyDesc">
+					Default constructor and is used to wrap the real implementation.</td>
+			</tr>
+		</table>
+		<!--Public Properties-->
+		<br>
+		<span Class="ClassSection">Public Properties</span>
+		<table class="TableStyle" ID="Table3" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_property.bmp"></td>
+				<td width="200" Class="PropertyName">GetSelectedValue</td>
+				<TD class="PropertyDesc" width="50">Variant</TD>
+				<td Class="PropertyDesc">Returns the value of the selected item.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">GetSelectedText</TD>
+				<TD class="PropertyDesc" width="50">Variant</TD>
+				<TD class="PropertyDesc">Returns the text of the selected item.</TD>
+			</TR>
+			<TR>
+				<td width="25" Class="PropertyImg"><IMG src="images/p_property.bmp"></td>
+				<TD class="PropertyName" width="200">Mode</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">0&nbsp;= Single Selection (Default) 1 = Multiple Selection
+				</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_property.bmp"></TD>
+				<TD class="PropertyName" width="200">Count</TD>
+				<TD class="PropertyDesc" width="50">Int</TD>
+				<TD class="PropertyDesc">Gets the number of Items in the collection</TD>
+			</TR>
+		</table>
+		<!--Public Methods-->
+		<br>
+		<span Class="ClassSection">Public Methods</span>
+		<table class="TableStyle" ID="Table4" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_method.bmp"></td>
+				<td width="200" Class="PropertyName">
+					SetState(xml)</td>
+				<td Class="PropertyDesc">Sets the xml for the collection. This is used by the Sever 
+					Controls to restore the collection in from the viewstate (or any other source).</td>
+			</tr>
+			<TR>
+				<td width="25" Class="PropertyImg" style="HEIGHT: 24px"><IMG src="images/p_method.bmp"></td>
+				<TD class="PropertyName" width="200" style="HEIGHT: 24px">GetState</TD>
+				<TD class="PropertyDesc" style="HEIGHT: 24px">Gets the xml from collection. This is 
+					used by the Sever Controls to persist the collection to the viewstate</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetValue(index)</TD>
+				<TD class="PropertyDesc">Gets the value of the item at position &lt;index&gt;.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetText(index)</TD>
+				<TD class="PropertyDesc">Gets the text of the item at position &lt;index&gt;.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">IsSelected(index)</TD>
+				<TD class="PropertyDesc">Returns true if the selected flag of the item at the 
+					position &lt;index&gt; is = -1 (true).</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">IsSelectedByText(Text)
+				</TD>
+				<TD class="PropertyDesc">Returns true if the selected flag of the item&nbsp;with 
+					text &lt;text&gt; &nbsp;is = -1 (true).</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">IsSelectedByValue(value)</TD>
+				<TD class="PropertyDesc">Returns true if the selected flag of the item&nbsp;with 
+					value &lt;value&gt; &nbsp;is = -1 (true).</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetItemData(ByVal index , ByRef Text , ByRef 
+					value , ByRef selected )</TD>
+				<TD class="PropertyDesc">Gets all the properties of the item specified at position 
+					&lt;index&gt;.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetValue(index,value )</TD>
+				<TD class="PropertyDesc">Sets the value of the item at position &lt;index&gt;</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetText(index,value )</TD>
+				<TD class="PropertyDesc">Sets the text of the item at position &lt;index&gt;</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetSelected(index,bolSelected )</TD>
+				<TD class="PropertyDesc">Sets the selected attribute of the item with value 
+					&lt;value&gt;</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetSelectedByText(Text, bolSelected )</TD>
+				<TD class="PropertyDesc">Sets the selected attribute of the item with text 
+					&lt;text&gt;</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetSelectedByValue(Value,bolSelected )</TD>
+				<TD class="PropertyDesc">Sets the selected attribute of the item with value 
+					&lt;value&gt;</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">SetAllSelected(bolSelected )</TD>
+				<TD class="PropertyDesc">Sets selected attribute of all the items.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Clear</TD>
+				<TD class="PropertyDesc">Removes all the items.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Add(ByVal Text , ByVal value , ByVal selected 
+					, ByVal index)</TD>
+				<TD class="PropertyDesc">Adds a new item. If index &gt;0 then&nbsp; item will be 
+					inserted after position at &lt;index&gt;.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Append(ByVal Text , ByVal value , ByVal 
+					selected)</TD>
+				<TD class="PropertyDesc">Appends a new item to the collection.</TD>
+			</TR>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/p_method.bmp"></TD>
+				<TD class="PropertyName" width="200">Remove(index)</TD>
+				<TD class="PropertyDesc">Removes item at position &lt;index&gt;</TD>
+			</TR>
+		</table>
+		<!--Public Events-->
+		<br>
+		<span Class="ClassSection">Public Events</span>
+		<table class="TableStyle" ID="Table5" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">--</td>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+		<!--Protected Properties-->
+		<br>
+		<span Class="ClassSection">Protected Properties</span>
+		<table class="TableStyle" ID="Table6" cellpadding="4">
+			<TR>
+				<TD class="PropertyImg" width="1"><IMG src="images/s_property.bmp"></TD>
+				<TD class="PropertyName" width="200">--</TD>
+				<TD class="PropertyDesc" width="50">--</TD>
+				<TD class="PropertyDesc">--</TD>
+			</TR>
+		</table>
+		<!--Protected Methods-->
+		<br>
+		<span Class="ClassSection">Protected Methods</span>
+		<table class="TableStyle" ID="Table7" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/s_method.bmp"></td>
+				<td width="200" Class="PropertyName">GetItemByValue(value)</td>
+				<td Class="PropertyDesc">Gets the xml node with value = &lt;value&gt;, if any.</td>
+			</tr>
+			<TR>
+				<TD class="PropertyImg" width="25"><IMG src="images/s_method.bmp"></TD>
+				<TD class="PropertyName" width="200">GetItemByText(text)</TD>
+				<TD class="PropertyDesc">Gets the xml node with text = &lt;text&gt;, if any.</TD>
+			</TR>
+		</table>
+		<!--Protected Events-->
+		<br>
+		<span Class="ClassSection">Protected Events</span>
+		<table class="TableStyle" ID="Table8" cellpadding="4">
+			<tr>
+				<td width="25" Class="PropertyImg"><IMG SRC="images/p_event.bmp"></td>
+				<td width="200" Class="PropertyName">--</td>
+				<td Class="PropertyDesc">--</td>
+			</tr>
+		</table>
+	</body>
+</html>
