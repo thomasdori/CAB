@@ -2,9 +2,9 @@
 <ruleset>
 	<name>User controller</name>
 	<path></path>
-	<extraHeaderAction>continue</extraHeaderAction>
-	<extraCookieAction>continue</extraCookieAction>
-	<extraParameterAction>continue</extraParameterAction>
+	<extraHeaderAction>ignore</extraHeaderAction>
+	<extraCookieAction>ignore</extraCookieAction>
+	<extraParameterAction>ignore</extraParameterAction>
 
  	<rule>
 		<name>JSESSIONID</name>

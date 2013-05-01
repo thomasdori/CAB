@@ -119,7 +119,7 @@ class Stinger
      '/
     Public Function format(errors)
         Dim sb, i
-        sb = sb + vbcrlf + vbcrlf + "<!-- Validation errors detected by OWASP Stinger (www.owasp.org) -->" + + vbcrlf
+        sb = sb + vbcrlf
         For i = 1 To errors.Count
             sb = sb + "<DIV> - " + errors(i) + "</DIV>" + vbcrlf
         Next

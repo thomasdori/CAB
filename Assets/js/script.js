@@ -5,7 +5,6 @@ function CommunicationHandler() {
 		$.post(url, data)
 		.done(function(data, textStatus, jqXHR) {
 			if(data.token){
-				alert("received new token:" + data.token);
 				$("#token").val(data.token);
 			} else {
 				//todo: handle error

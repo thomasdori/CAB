@@ -28,8 +28,11 @@
 
 	Class ValidationHelperClass
 		Public Function Validate()
-			'Set is neccesary here
 			Set Validate = stingerObj.Validate()
+		End Function
+
+		Public Function Format(errors)
+			Set Format = stingerObj.Format(errors)
 		End Function
 	End Class
 %>

@@ -107,8 +107,13 @@ Open Issues
 * Test: Validation in ValidationHelper.asp
 * Test: Database Access in _Model.asp
 * Define: Error Responses in Error.asp
+* Implement: Error Hanlding on client
 
 ### Would be Nice
+* Implement output generators (instead of building output in controllers) that take objects and meta information
+	* JSON
+	* XML
+	* HTML
 * Implement and use further Get methods in the InputHelper class
 * Implement a javascript UI frameworks like dhtmlx + ActivityIndicator
 * Inline code documentation could be more extensive

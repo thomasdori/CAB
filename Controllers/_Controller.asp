@@ -12,9 +12,11 @@
 
 	Class ControllerClass
 		Public controllerResponse
+		Public errorResponse
 
 		Private Sub Class_Initialize()
  			controllerResponse = ""
+ 			errorResponse = ""
 		End Sub
 
 		Public Sub AcceptRequest(childController)
@@ -31,7 +33,7 @@
  				Dim errors : Set errors = validator.Validate()
 
 				If Not errors Is nothing And errors.count > 0 Then
-					'todo: return validator.format(errors)
+					errorResponse = stingerObj.Format(errors)
 		      	End if
 			Else
 				error.Handle(UNALLOWED_HTTP_METHOD_ERROR_CODE)
@@ -43,8 +45,19 @@
 		End Sub
 
 		Private Sub WriteResponse()
+			If(errorResponse = "") Then
+				controllerResponse = "{" &_
+										"""token"": 	""" & csrf.GetToken() 	& """, " &_
+				  						"""response"": 	  " & controllerResponse &_
+				  					"}"
+			Else
+				controllerResponse = "{" &_
+				  						"""errors"":	""" & errorResponse	& """" &_
+				  					"}"
+			End If
+
 			Response.ContentType = "application/json"
-			Response.Write("{""token"": """ & csrf.GetToken() & """, ""response"": " & controllerResponse & "}")
+			Response.Write(controllerResponse)
 		End Sub
 	End Class
 %>
