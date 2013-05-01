@@ -8,8 +8,6 @@
 <!-- #include File="../Models/_Model.asp" -->
 
 <%
-	' todo: csrf + validation'
-
 	Dim controller : Set controller = New ControllerClass
 
 	Class ControllerClass

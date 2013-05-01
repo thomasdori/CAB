@@ -104,10 +104,11 @@ Security Issues Not Addressed in CAB
 Open Issues
 -----------
 ### Important
-* Tests: stinger
+* Test: Validation in ValidationHelper.asp
+* Test: Database Access in _Model.asp
+* Define: Error Responses in Error.asp
 
 ### Would be Nice
-* Cast parameter in GetParameter
-* javascript frameworks like dhtmlx + ActivityIndicator
-* Error handling - no asp/server/sql messages
+* Implement and use further Get methods in the InputHelper class
+* Implement a javascript UI frameworks like dhtmlx + ActivityIndicator
 * Inline code documentation could be more extensive
