@@ -104,7 +104,6 @@ Security Issues Not Addressed in CAB
 Open Issues
 -----------
 ### Important
-* Test: Validation in ValidationHelper.asp
 * Test: Database Access in _Model.asp
 * Define: Error Responses in Error.asp
 * Implement: Error Hanlding on client

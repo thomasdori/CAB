@@ -7,26 +7,9 @@
 	<extraParameterAction>ignore</extraParameterAction>
 
  	<rule>
-		<name>JSESSIONID</name>
-		<paramType>cookie</paramType>
-		<regex>^[A-F0-9]{32}$</regex>
-		<malformedAction>continue</malformedAction>
-		<missingAction>continue</missingAction>
-	</rule>
-
-	<rule>
-		<name>referer</name>
-		<paramType>header</paramType>
-		<regex>^http.*$</regex>
-		<malformedAction>continue</malformedAction>
-		<malformedMessage>Session cookie tampering deteted</malformedMessage>
-		<missingAction>continue</missingAction>
-	</rule>
-
- 	<rule>
 		<name>firstName</name>
 		<paramType>PARAMETER</paramType>
-		<regex>^[a-zA-Z]{32}$</regex>
+		<regex>^[a-zA-Z0-9\s.\-]+$</regex>
 		<malformedAction>continue</malformedAction>
 		<missingAction>continue</missingAction>
 	</rule>
@@ -34,7 +17,7 @@
  	<rule>
 		<name>lastName</name>
 		<paramType>PARAMETER</paramType>
-		<regex>^[a-zA-Z]{32}$</regex>
+		<regex>^[a-zA-Z0-9\s.\-]+$</regex>
 		<malformedAction>continue</malformedAction>
 		<missingAction>continue</missingAction>
 	</rule>
@@ -47,17 +30,24 @@
 		<missingAction>continue</missingAction>
 	</rule>
 
-
+<!-- For Views -->
 <!--
 	<rule>
-		<name>password</name>
-		<paramType>parameter</paramType>
-		<regex>^[0-9]{6}$</regex>
+		<name>referer</name>
+		<paramType>header</paramType>
+		<regex>^http.*$</regex>
 		<malformedAction>continue</malformedAction>
-		<malformedMessage>Please correct your password</malformedMessage>
+		<malformedMessage>Session cookie tampering deteted</malformedMessage>
 		<missingAction>continue</missingAction>
-		<missingMessage>You must enter a password</missingMessage>
-		<hidden>true</hidden>
 	</rule>
- 	-->
+ -->
+
+<!-- Not working since asp session id key contains a random string at the end -->
+<!--   	<rule>
+		<name>ASPSESSIONID</name>
+		<paramType>cookie</paramType>
+		<regex>^[A-F0-9]{32}$</regex>
+		<malformedAction>continue</malformedAction>
+		<missingAction>continue</missingAction>
+	</rule> -->
 </ruleset>
