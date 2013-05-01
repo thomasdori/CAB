@@ -27,7 +27,7 @@
     	var userComm = new CommunicationHandler();
 
     	//send a NOT successfull request
-    	userComm.post("../Controllers/UserController.asp", {data1:'', data2:''});
+    	userComm.post("../Controllers/UserController.asp", {'firstName:':'thomas', 'lastName':'dori'});
 
     	//send a successfull request
     </script>

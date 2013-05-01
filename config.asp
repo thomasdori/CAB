@@ -1,7 +1,7 @@
 <%
   OPTION EXPLICIT
 
-  On Error Resume Next
+  'On Error Resume Next
 
   Response.CodePage = 65001
   Response.CharSet = "utf-8"

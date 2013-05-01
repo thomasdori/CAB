@@ -1,16 +1,15 @@
-<!-- #include File="ConfigurationHelper.asp" -->
+<!-- #include File="../config.asp" -->
 <!-- #include File="CsrfHelper.asp" -->
-<!-- #include File="OutputHelper.asp" -->
 <!-- #include File="CookieHelper.asp" -->
 <!-- #include File="EncodingHelper.asp" -->
+<!-- #include File="ErrorHelper.asp" -->
+<!-- #include File="OutputHelper.asp" -->
 <!-- #include File="UrlHelper.asp" -->
 <!-- #include File="../Libraries/stingerASP/Stinger.asp" -->
 
 <%
-	'Dependencies: ErrorHelper.asp,
 
-	Dim view
-	Set view = new ViewHelperClass
+	Dim view : Set view = new ViewHelperClass
 
 	Class ViewHelperClass
 		Public Function GetHeader()

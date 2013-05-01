@@ -1,8 +1,7 @@
 <%
 	'Dependencies: EncodingHelper.asp
 
-	Dim cookie
-	Set cookie = New CookieHelperClass
+	Dim cookie : Set cookie = New CookieHelperClass
 
 	'Dim safeCookies
 	'Set safeCookies = Server.CreateObject("Scripting.Dictionary")

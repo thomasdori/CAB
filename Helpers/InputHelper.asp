@@ -1,8 +1,6 @@
+<!-- #include File="../Helpers/EncodingHelper.asp" -->
 <%
-	'Dependcies: EncodingHelper.asp
-
-	Dim input
-	set input = New InputHelperClass
+	Dim input : Set input = New InputHelperClass
 
 	Class InputHelperClass
 		Public Function GetParameter(name)

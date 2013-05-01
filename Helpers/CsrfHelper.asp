@@ -4,8 +4,7 @@
 <%
 	'Dependencies: Md5Helper.asp, ErrorHandler.asp, GuidHelper.asp
 
-	Dim csrf
-	Set csrf = New CsrfHelperClass
+	Dim csrf : Set csrf = New CsrfHelperClass
 
 	' Calling the procedure to check if the
 	Call csrf.CheckParameter

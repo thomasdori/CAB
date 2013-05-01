@@ -1,11 +1,11 @@
 <%
 	'Dependencies: OutputHelper.asp
 
-	Dim error
-	Set error = New ErrorHelperClass
+	Dim error : Set error = New ErrorHelperClass
 
 	Class ErrorHelperClass
 		Public Function Handle(errorCode)
+			' Check if the request is an ajax request
 			If (Request.ServerVariables("HTTP_X-Requested-With") = "XMLHttpRequest") Then
 				Select Case errorCode
 					Case CSRF_ERROR_CODE

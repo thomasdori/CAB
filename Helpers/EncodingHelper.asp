@@ -1,8 +1,7 @@
 <%
 	'Dependencies: SanitationHelper.asp
 
-	Dim encoder
-	Set encoder = New EncodingHelperClass
+	Dim encoder : Set encoder = New EncodingHelperClass
 
 	Class EncodingHelperClass
 		Public Function Decode(sText)
