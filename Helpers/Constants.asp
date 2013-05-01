@@ -1,3 +1,0 @@
-<%
-	Const CSRF_ERROR_CODE = "CSRF_ERROR_CODE"
-%>

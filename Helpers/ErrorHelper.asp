@@ -1,5 +1,6 @@
 <%
 	'Dependencies: OutputHelper.asp
+	Const CSRF_ERROR_CODE = "CSRF_ERROR_CODE"
 
 	Dim error : Set error = New ErrorHelperClass
 

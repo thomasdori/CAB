@@ -2,7 +2,7 @@
 <!-- #include File="GuidHelper.asp" -->
 
 <%
-	'Dependencies: Md5Helper.asp, ErrorHandler.asp, GuidHelper.asp
+	'Dependencies: ErrorHandler.asp
 
 	Dim csrf : Set csrf = New CsrfHelperClass
 
