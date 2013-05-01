@@ -1,13 +1,14 @@
 <%
+	'Dependencies: EncodingHelper.asp
 	Dim output : Set output = New OutputHelperClass
 
 	Class OutputHelperClass
 		Public Function Prepare(value)
-			Prepare = value 'encoder.encode(value)
+			Prepare = encoder.Encode(value)
 		End Function
 
 		Public Function PrepareUrl(value)
-			PrepareUlr = encoder.encodeUrl(value)
+			PrepareUlr = encoder.EncodeUrl(value)
 		End Function
 
 		Public Sub Write(value)

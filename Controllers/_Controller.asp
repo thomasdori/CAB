@@ -1,9 +1,11 @@
 <!-- #include File="../config.asp" -->
+<!-- #include File="../Helpers/EncodingHelper.asp" -->
 <!-- #include File="../Helpers/ErrorHelper.asp" -->
 <!-- #include File="../Helpers/CsrfHelper.asp" -->
 <!-- #include File="../Helpers/InputHelper.asp" -->
 <!-- #include File="../Helpers/OutputHelper.asp" -->
-<!-- #include file="../Libraries/StingerASP/stinger.asp" -->
+<!-- #include File="../Helpers/ValidationHelper.asp" -->
+<!-- #include File="../Models/_Model.asp" -->
 
 <%
 	' todo: csrf + validation'
@@ -12,24 +14,26 @@
 
 	Class ControllerClass
 		Public Sub AcceptRequest(childController)
-			If(Not csrf.DoesTokenExist()) Then
-				csrf.CreateToken()
+			If Request.ServerVariables("REQUEST_METHOD") = "POST" Then
+			    ' Prevent CSRF (Cross-Site Request Forgeries) by comparing request-generated tokens.
+			    If Request.Form(csrf.GetTokenKey()) = Session(csrf.GetTokenKey()) Then
+			    	' Create new token
+					csrf.SetToken()
+			    Else
+			    	error.Handle(CSRF_ERROR_CODE)
+			    End If
+
+			    'Check Request Prameter with Stinger
+ 				Dim errors : Set errors = validator.Validate()
+
+				If Not errors Is nothing And errors.count > 0 Then
+					'todo: return validator.format(errors)
+		      	End if
 			Else
-				If Request.ServerVariables("REQUEST_METHOD") = "POST" Then
-				    ' Prevent CSRF (Cross-Site Request Forgeries) by comparing request-generated tokens.
-				    If Request.Form(csrf.GetTokenKey()) = Session(csrf.GetTokenKey()) Then
-				    	' Create new token
-						csrf.SetToken()
-				    Else
-				    	error.Handle(CSRF_ERROR_CODE)
-				    End If
-				End If
+				error.Handle(UNALLOWED_HTTP_METHOD_ERROR_CODE)
 			End If
 
-			'Send Javascript Code for better user experience, pass form name as parameter
- 			output.Write(validator.getJavaScript ("form"))
-
- 			Call childController.ProcessRequest
+ 			Call childController.ProcessRequest()
 		End Sub
 	End Class
 %>

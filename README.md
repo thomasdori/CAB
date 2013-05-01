@@ -103,10 +103,11 @@ Security Issues Not Addressed in CAB
 
 Open Issues
 -----------
+### Important
 * Tests: stinger
-* Cookie access or setting "; Secure; HttpOnly" on server
-* Controller implementation
-* Model implementation
+
+### Would be Nice
+* Cast parameter in GetParameter
 * javascript frameworks like dhtmlx + ActivityIndicator
 * Error handling - no asp/server/sql messages
 * Inline code documentation could be more extensive

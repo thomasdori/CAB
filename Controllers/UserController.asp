@@ -8,9 +8,8 @@
 
 	Class UserControllerClass
 		Public Sub ProcessRequest
-			Dim firstName : firstName = Request("firstName") 'input.GetParameter("firstName")
-
-			output.WriteLine("firstName: " & firstName)
+			Dim lastName : lastName = input.GetParameter("lastName")
+			output.WriteLine("lastName: " & lastName)
 		End Sub
 	End Class
  %>

@@ -3,6 +3,7 @@
 <%
 	'Dependencies: OutputHelper.asp
 	Const CSRF_ERROR_CODE = "CSRF_ERROR_CODE"
+	Const UNALLOWED_HTTP_METHOD_ERROR_CODE = "UNALLOWED_HTTP_METHOD_ERROR_CODE"
 
 	Dim error : Set error = New ErrorHelperClass
 
@@ -11,7 +12,7 @@
 			' Check if the request is an ajax request
 			If (Request.ServerVariables("HTTP_X-Requested-With") = "XMLHttpRequest") Then
 				Select Case errorCode
-					Case CSRF_ERROR_CODE
+					Case CSRF_ERROR_CODE, UNALLOWED_HTTP_METHOD_ERROR_CODE
 						Response.Redirect("/Views/Errors/InvalidRequestError.asp")
 					Case Else
 						Response.Redirect("/Views/Errors/UnknownError.asp")
@@ -55,29 +56,6 @@
 			End If
 
 			GetAspErrors = ""
-		End Function
-
-		Public Function GetStingerErrors
-		    if session("PageLoadedOnce") then
-			    Dim errors, returnValue
-			    returnValue = ""
-			    'Perform Server Side Validation
-			    set errors = validator.validate
-				  ' display any errors found to the user
-				  if not errors is nothing then
-				    if errors.count > 0 then
-					    returnValue = returnValue & "<P>Your request did not pass Stinger validation!</P>"
-					    returnValue = returnValue &  "<TABLE BORDER=1 ALIGN=CENTER BGCOLOR=YELLOW><TR><TD>"
-					    returnValue = returnValue &  validator.format(errors)
-					    returnValue = returnValue &  "</TD></TR></TABLE>"
-				    else
-					    returnValue = returnValue &  "<P>Congratulations! Your request passed Stinger validation!</P>"
-		        end if
-		      end if
-		    end if
-		    Session("PageLoadedOnce") = true
-
-		    GetStingerErrors = returnValue
 		End Function
 	End Class
 %>

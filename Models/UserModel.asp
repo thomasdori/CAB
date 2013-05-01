@@ -1,5 +1,3 @@
-<!-- #include File="_Model.asp" -->
-
 <%
 	Dim userModel : Set userModel = New UserModelClass
 
@@ -8,7 +6,7 @@
 			Dim parameterList : Set parameterList = New List
 			parameterList.Add((New ProcedureParameter)("userId", userId, adInteger))
 
-			model.CallProcedure("sp_getUser", parameterList, GetRef(HasContentHandler), GetRef(RowHandler))
+			Call model.CallProcedure("sp_getUser", parameterList, GetRef(HasContentHandler), GetRef(RowHandler))
 		End Function
 
 		Private Sub HasContentHandler(recordset)

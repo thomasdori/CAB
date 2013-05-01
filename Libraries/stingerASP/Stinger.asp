@@ -28,8 +28,6 @@
  '
  ' @author jeff.williams@aspectsecurity.com
  '/
-Dim validator
-set validator = New Stinger
 
 class Stinger
 

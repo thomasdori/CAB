@@ -17,9 +17,7 @@
 
   Server.ScriptTimeOut = 600
 
-  Const LOG_LEVEL = 3
-
-  If LOG_LEVEL > 2 Then
+  If Session("LOG_LEVEL") < 3 Then
     On Error Resume Next
   End If
 %>

@@ -8,6 +8,9 @@ Sub Application_onEnd
 End Sub
 
 Sub Session_onStart
+	'Log Level: 1 - Log Critical Errors, 2 - Log Additional Information, 3 - Log Everyting and Stop On Error'
+	Session("LOG_LEVEL") = 3
+
 	Session("globalConnectionString") = ""
     Session.TimeOut = 15
     Session.codePage = 65001 ' UTF-8
