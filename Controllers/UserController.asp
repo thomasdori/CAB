@@ -9,7 +9,7 @@
 	Class UserControllerClass
 		Public Sub ProcessRequest
 			Dim lastName : lastName = input.GetString("lastName")
-			output.WriteLine("lastName: " & lastName)
+			controller.controllerResponse = "{""lastName"": """ & output.Prepare(lastName) & """}"
 		End Sub
 	End Class
  %>

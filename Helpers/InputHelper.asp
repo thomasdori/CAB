@@ -5,7 +5,7 @@
 	Class InputHelperClass
 		Public Function GetString(name)
 			'GetParameter = Request.Form(name)
-			GetParameter = Request.Form(encoder.encode(name))
+			GetString = Request.Form(encoder.encode(name))
 		End Function
 
 		'Todo: implement GetLng, GetInt, GetDate, GetTime, GetDbl, GetEmail

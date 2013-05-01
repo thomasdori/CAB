@@ -1,4 +1,4 @@
-<!-- #include File="../Helpers/ViewHelper.asp" -->
+<!-- #include File="_View.asp" -->
 
 <%=view.GetHeader()%>
 	<%=view.GetToken()%>

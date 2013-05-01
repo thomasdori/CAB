@@ -1,39 +1,54 @@
 <?xml version="1.0"?>
 <ruleset>
-	<name>Login Form</name>
-	<path>/Stinger-1.0r1/test</path>
-	<extraHeaderAction>ignore</extraHeaderAction>
+	<name>User controller</name>
+	<path></path>
+	<extraHeaderAction>continue</extraHeaderAction>
 	<extraCookieAction>continue</extraCookieAction>
-	<extraParameterAction>ignore</extraParameterAction>
+	<extraParameterAction>continue</extraParameterAction>
 
  	<rule>
 		<name>JSESSIONID</name>
 		<paramType>cookie</paramType>
 		<regex>^[A-F0-9]{32}$</regex>
 		<malformedAction>continue</malformedAction>
-		<missingAction>ignore</missingAction>
+		<missingAction>continue</missingAction>
 	</rule>
 
-<!--
 	<rule>
 		<name>referer</name>
 		<paramType>header</paramType>
 		<regex>^http.*$</regex>
 		<malformedAction>continue</malformedAction>
 		<malformedMessage>Session cookie tampering deteted</malformedMessage>
-		<missingAction>ignore</missingAction>
-	</rule>
-
-	<rule>
-		<name>username</name>
-		<paramType>parameter</paramType>
-		<regex>^[\w]{6}$</regex>
-		<malformedAction>continue</malformedAction>
-		<malformedMessage>Please correct your username</malformedMessage>
-		<missingMessage>You must enter a username</missingMessage>
 		<missingAction>continue</missingAction>
 	</rule>
 
+ 	<rule>
+		<name>firstName</name>
+		<paramType>PARAMETER</paramType>
+		<regex>^[a-zA-Z]{32}$</regex>
+		<malformedAction>continue</malformedAction>
+		<missingAction>continue</missingAction>
+	</rule>
+
+ 	<rule>
+		<name>lastName</name>
+		<paramType>PARAMETER</paramType>
+		<regex>^[a-zA-Z]{32}$</regex>
+		<malformedAction>continue</malformedAction>
+		<missingAction>continue</missingAction>
+	</rule>
+
+ 	<rule>
+		<name>token</name>
+		<paramType>PARAMETER</paramType>
+		<regex>^[a-zA-Z0-9\s.\-]+$</regex>
+		<malformedAction>continue</malformedAction>
+		<missingAction>continue</missingAction>
+	</rule>
+
+
+<!--
 	<rule>
 		<name>password</name>
 		<paramType>parameter</paramType>
@@ -43,15 +58,6 @@
 		<missingAction>continue</missingAction>
 		<missingMessage>You must enter a password</missingMessage>
 		<hidden>true</hidden>
-	</rule>
-
-	<rule>
-		<name>domain</name>
-		<paramType>parameter</paramType>
-		<regex>^$|[\w]{4,8}$</regex>
-		<malformedAction>continue</malformedAction>
-		<messageLevel>detailed</messageLevel>
-		<missingAction>ignore</missingAction>
 	</rule>
  	-->
 </ruleset>
