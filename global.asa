@@ -8,7 +8,7 @@ Sub Application_onEnd
 End Sub
 
 Sub Session_onStart
-	Session("serverToConnect") = ""
+	Session("globalConnectionString") = ""
     Session.TimeOut = 15
     Session.codePage = 65001 ' UTF-8
     Session.lcid = 1033 ' en-us

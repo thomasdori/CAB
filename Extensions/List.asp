@@ -3,7 +3,7 @@
 		Dim list()
 
 		Public Sub Add(value)
-			Dim newSize = Uboutnd(list) + 1
+			Dim newSize : Set newSize = Ubound(list) + 1
 		    ReDim Preserve list(newSize)
 		    list(newSize) = value
 		End Sub
@@ -12,7 +12,7 @@
 			Dim i
 
 			For i = 0 To Ubound(list)
-				fnc(list[i])
+				fnc(list(i))
 			Next
 		End Sub
 	End Class

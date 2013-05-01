@@ -8,8 +8,8 @@
 		Private rangeMax
 
 		Private Sub Class_Initialize()
-			Private rangeMinimum = 0
-			Private rangeMax = 255
+			rangeMinimum = 0
+			rangeMax = 255
 		End Sub
 
 		Public Function Decode(text)
@@ -49,7 +49,7 @@
 
 		Public Function EncodeUrl(text)
 			EncodeUrl = Server.URLEncode(text)
-		End Sub
+		End Function
 
 		Private Function IsUnAllowedCharacter(value)
 			IsUnAllowedCharacter = (value <> 46 And value <> 47 And value <> 58 And chr(value) <> " ")

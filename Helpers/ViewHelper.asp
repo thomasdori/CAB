@@ -5,7 +5,6 @@
 <!-- #include File="ErrorHelper.asp" -->
 <!-- #include File="OutputHelper.asp" -->
 <!-- #include File="UrlHelper.asp" -->
-<!-- #include File="../Libraries/stingerASP/Stinger.asp" -->
 
 <%
 
@@ -52,11 +51,12 @@
 	                  "    <!--[if lt IE 7]>" &_
 	                  "        <p class=""chromeframe"">You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/"">upgrade your browser</a> or <a href=""http://www.google.com/chromeframe/?redirect=true"">activate Google Chrome Frame</a> to improve your experience.</p>" &_
 	                  "    <![endif]-->" &_
-	                  "    <input type=""hidden"" id=""token"" value=""" & output.prepare(csrf.getParameter()) & """/>"
+	                  "    <input type=""hidden"" id=""token"" value=""" & output.Prepare(csrf.GetParameter()) & """/>"
+	                  output.writeLine("token: "& Session("token"))
 	    End Function
 
 		Public Function GetFooter
-			GetFooter = error.getCustomErrors & error.getStingerErrors & error.getAspErrors & "</body></html>"
+			GetFooter = error.getCustomErrors & error.getAspErrors & "</body></html>"
 		End Function
 	End Class
 %>

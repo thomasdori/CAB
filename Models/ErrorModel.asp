@@ -1,6 +1,4 @@
 <!-- #include File="../Helpers/DateTimeHelper.asp" -->
-<!-- #include File="../Libraries/adovbs.inc" -->
-
 <!-- #include File="_Model.asp" -->
 
 <%

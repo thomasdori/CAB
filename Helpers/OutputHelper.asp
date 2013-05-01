@@ -3,12 +3,12 @@
 
 	Class OutputHelperClass
 		Public Function Prepare(value)
-			Prepare = encoder.encode(value)
-		End Sub
+			Prepare = value 'encoder.encode(value)
+		End Function
 
 		Public Function PrepareUrl(value)
 			PrepareUlr = encoder.encodeUrl(value)
-		End Sub
+		End Function
 
 		Public Sub Write(value)
 			Response.Write(Prepare(value))

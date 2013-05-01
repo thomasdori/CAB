@@ -18,11 +18,8 @@
 			command.CommandTimeout = 0
 			command.CommandText = procedureName
 
-
-			'todo: iterate over parameter
-			For Each parameter In parameterList
-				command.Parameters.Append objConn.CreateParameter(parameter.Name, parameter.Type, adParamInput, -1, parameter.Value)
-			Next
+			'Iterate over parameter
+			parameterList.ForEach(GetRef(AddParameter))
 
 			Set recordSet = command.Execute()
 
@@ -32,7 +29,7 @@
 				.LockType       = 4 'adLockBatchOptimistic
 			End With
 
-			If Not recordSet.Eof
+			If Not recordSet.Eof() Then
 				Call HasContentHandler(recordSet)
 				Do While Not recordSet.Eof
 					Call RowHandler(recordSet)
@@ -48,7 +45,7 @@
 		End Function
 
 		Private Function AddParameter(paremeter)
-
+			command.Parameters.Append objConn.CreateParameter(parameter.Name, parameter.Type, adParamInput, -1, parameter.Value)
 		End Function
 
 		Private Function GetConnectionString()
